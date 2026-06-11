@@ -1,0 +1,73 @@
+import { Instagram, Facebook, Youtube, Music2, Phone, Mail, MapPin } from "lucide-react";
+import { Logo } from "./Logo";
+import { site } from "@/config/site";
+
+// SEÇÃO: FOOTER
+export function Footer() {
+  const cols = [
+    {
+      t: "Navegação",
+      links: site.nav.map((n) => ({ label: n.label, href: n.href })),
+    },
+    {
+      t: "Benefícios",
+      links: [
+        { label: "Telemedicina", href: "#beneficios" },
+        { label: "Telepsicologia", href: "#beneficios" },
+        { label: "Assistência Funeral", href: "#beneficios" },
+        { label: "Descontos e Vantagens", href: "#beneficios" },
+        { label: "Assistência PET", href: "#planos" },
+      ],
+    },
+    {
+      t: "Ajuda",
+      links: [
+        { label: "Perguntas Frequentes", href: site.links.faq },
+        { label: "Política de Privacidade", href: site.links.politicaPrivacidade },
+        { label: "Termos de Uso", href: site.links.termosUso },
+        { label: "Fale Conosco", href: site.links.contato },
+      ],
+    },
+  ];
+
+  return (
+    <footer id="contato" className="bg-navy-deep text-white/80 pt-14 pb-6">
+      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-5 gap-10">
+        <div className="lg:col-span-1">
+          <Logo light />
+          <p className="mt-4 text-xs leading-relaxed text-white/60">
+            Cuidado, acolhimento e benefícios para pessoas com TEA, PCD, neurodivergentes e suas famílias.
+          </p>
+          <div className="mt-4 flex gap-3 text-white/70">
+            <a href={site.links.instagram} aria-label="Instagram"><Instagram className="h-4 w-4 hover:text-teal" /></a>
+            <a href={site.links.facebook} aria-label="Facebook"><Facebook className="h-4 w-4 hover:text-teal" /></a>
+            <a href={site.links.youtube} aria-label="YouTube"><Youtube className="h-4 w-4 hover:text-teal" /></a>
+            <a href={site.links.tiktok} aria-label="TikTok"><Music2 className="h-4 w-4 hover:text-teal" /></a>
+          </div>
+        </div>
+        {cols.map((c) => (
+          <div key={c.t}>
+            <div className="font-bold text-white text-xs tracking-widest uppercase">{c.t}</div>
+            <ul className="mt-4 space-y-2 text-sm">
+              {c.links.map((i) => (
+                <li key={i.label}><a href={i.href} className="hover:text-teal transition">{i.label}</a></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+        <div>
+          <div className="font-bold text-white text-xs tracking-widest uppercase">Atendimento</div>
+          <ul className="mt-4 space-y-2 text-sm">
+            <li className="flex items-center gap-2"><Phone className="h-3.5 w-3.5" /><a href={site.contato.telefoneHref} className="hover:text-teal">{site.contato.telefone}</a></li>
+            <li className="flex items-center gap-2"><Mail className="h-3.5 w-3.5" /><a href={`mailto:${site.contato.email}`} className="hover:text-teal">{site.contato.email}</a></li>
+            <li className="flex items-start gap-2"><MapPin className="h-3.5 w-3.5 mt-1" /><span>{site.contato.horario.join(" · ")}</span></li>
+          </ul>
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto px-6 mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-2 text-xs text-white/50">
+        <div>{site.contato.endereco}</div>
+        <div>© {new Date().getFullYear()} {site.brand.name}. Todos os direitos reservados.</div>
+      </div>
+    </footer>
+  );
+}
