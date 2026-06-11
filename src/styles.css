@@ -32,30 +32,40 @@
   --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
 }
 
+/* ===== PALETA OFICIAL — MEU CLUBE TEA =====
+   Principal (Saúde/Confiança):    #0B2E8A  → navy
+   Secundária (Tecnologia):         #00B8D9  → teal
+   Inclusão (Neurodivergência):     #7B2FF7  → violet
+   Conversão (CTA):                 #FF8A00  → orange
+   Branca:                          #FFFFFF
+   Cinza Claro Premium:             #F5F7FA
+   Texto Escuro:                    #1B2540
+   =========================================== */
+
 :root {
   --radius: 0.75rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.18 0.04 265);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.04 265);
-  --primary: oklch(0.45 0.22 290);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.96 0.01 260);
-  --secondary-foreground: oklch(0.2 0.04 265);
-  --muted: oklch(0.96 0.01 260);
-  --muted-foreground: oklch(0.5 0.03 260);
-  --accent: oklch(0.96 0.01 260);
-  --accent-foreground: oklch(0.2 0.04 265);
-  --border: oklch(0.92 0.01 260);
-  --input: oklch(0.92 0.01 260);
-  --ring: oklch(0.45 0.22 290);
+  --background: #FFFFFF;
+  --foreground: #1B2540;
+  --card: #FFFFFF;
+  --card-foreground: #1B2540;
+  --primary: #0B2E8A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F5F7FA;
+  --secondary-foreground: #1B2540;
+  --muted: #F5F7FA;
+  --muted-foreground: #5B6478;
+  --accent: #F5F7FA;
+  --accent-foreground: #1B2540;
+  --border: #E5E9F0;
+  --input: #E5E9F0;
+  --ring: #0B2E8A;
 
-  --navy: oklch(0.22 0.09 270);
-  --navy-deep: oklch(0.16 0.08 270);
-  --violet: oklch(0.5 0.24 295);
-  --violet-light: oklch(0.7 0.18 300);
-  --orange: oklch(0.72 0.18 50);
-  --teal: oklch(0.65 0.12 195);
+  --navy: #0B2E8A;
+  --navy-deep: #061C5C;
+  --violet: #7B2FF7;
+  --violet-light: #A06BFF;
+  --orange: #FF8A00;
+  --teal: #00B8D9;
 }
 
 @layer base {
@@ -70,11 +80,20 @@
 }
 
 @utility bg-hero-gradient {
-  background: linear-gradient(135deg, oklch(0.22 0.12 280) 0%, oklch(0.32 0.22 295) 50%, oklch(0.25 0.15 275) 100%);
+  background: linear-gradient(135deg, #0B2E8A 0%, #1E3FAE 55%, #7B2FF7 100%);
 }
 @utility bg-navy-gradient {
-  background: linear-gradient(180deg, var(--navy-deep), var(--navy));
+  background: linear-gradient(180deg, #061C5C, #0B2E8A);
 }
 @utility bg-violet-gradient {
-  background: linear-gradient(135deg, var(--violet), var(--violet-light));
+  background: linear-gradient(135deg, #7B2FF7, #A06BFF);
+}
+@utility bg-cta-gradient {
+  background: linear-gradient(135deg, #FF8A00, #FFB347);
+}
+@utility text-brand-gradient {
+  background: linear-gradient(135deg, #0B2E8A, #7B2FF7, #00B8D9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
