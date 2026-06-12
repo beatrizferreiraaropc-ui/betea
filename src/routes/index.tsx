@@ -46,7 +46,6 @@ export const Route = createFileRoute("/")({
  *  5. FeaturesBar      FeaturesBar.tsx
  *  6. VideoSection     VideoSection.tsx        (1920x1080 e 1080x1920)
  *  7. PartnersStats    PartnersStats.tsx       (estatísticas + grid de logos)
- *  8. PartnersStats    PartnersStats.tsx       (estatísticas + grid de logos)
  *  9. Impact           Impact.tsx
  * 10. HowItWorks       HowItWorks.tsx
  * 11. Testimonials     Testimonials.tsx
@@ -54,7 +53,7 @@ export const Route = createFileRoute("/")({
  * 13. Partners         Partners.tsx
  * 14. Ambassador       Ambassador.tsx          (Embaixadores do Impacto · fundo #0B2E8A)
  * 15. Newsletter       Newsletter.tsx
- * 16. Footer           Footer.tsx
+  *           Footer.tsx
  */
 function Index() {
   return (
