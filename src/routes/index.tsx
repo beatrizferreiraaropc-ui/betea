@@ -45,7 +45,7 @@ export const Route = createFileRoute("/")({
  *  4. Plans            Plans.tsx               (fundo #F5F7FA, bordas por plano)
  *  5. FeaturesBar      FeaturesBar.tsx
  *  6. VideoSection     VideoSection.tsx        (1920x1080 e 1080x1920)
- *  7. AudioSection     AudioSection.tsx        (depoimentos em áudio)
+ *  7. PartnersStats    PartnersStats.tsx       (estatísticas + grid de logos)
  *  8. PartnersStats    PartnersStats.tsx       (estatísticas + grid de logos)
  *  9. Impact           Impact.tsx
  * 10. HowItWorks       HowItWorks.tsx
