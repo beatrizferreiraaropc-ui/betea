@@ -5,7 +5,6 @@ import { Benefits } from "@/components/sections/Benefits";
 import { Plans } from "@/components/sections/Plans";
 import { FeaturesBar } from "@/components/sections/FeaturesBar";
 import { VideoSection } from "@/components/sections/VideoSection";
-import { AudioSection } from "@/components/sections/AudioSection";
 import { PartnersStats } from "@/components/sections/PartnersStats";
 import { Impact } from "@/components/sections/Impact";
 import { HowItWorks } from "@/components/sections/HowItWorks";
@@ -46,8 +45,7 @@ export const Route = createFileRoute("/")({
  *  4. Plans            Plans.tsx               (fundo #F5F7FA, bordas por plano)
  *  5. FeaturesBar      FeaturesBar.tsx
  *  6. VideoSection     VideoSection.tsx        (1920x1080 e 1080x1920)
- *  7. AudioSection     AudioSection.tsx        (depoimentos em áudio)
- *  8. PartnersStats    PartnersStats.tsx       (estatísticas + grid de logos)
+ *  7. PartnersStats    PartnersStats.tsx       (estatísticas + grid de logos)
  *  9. Impact           Impact.tsx
  * 10. HowItWorks       HowItWorks.tsx
  * 11. Testimonials     Testimonials.tsx
@@ -55,7 +53,7 @@ export const Route = createFileRoute("/")({
  * 13. Partners         Partners.tsx
  * 14. Ambassador       Ambassador.tsx          (Embaixadores do Impacto · fundo #0B2E8A)
  * 15. Newsletter       Newsletter.tsx
- * 16. Footer           Footer.tsx
+  *           Footer.tsx
  */
 function Index() {
   return (
@@ -66,7 +64,7 @@ function Index() {
       <Plans />
       <FeaturesBar />
       <VideoSection />
-      <AudioSection />
+      
       <PartnersStats />
       <Impact />
       <HowItWorks />

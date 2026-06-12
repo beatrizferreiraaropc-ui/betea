@@ -1,87 +1,67 @@
-# 06 · Vídeos (apresentação + reels verticais)
+# 06 · Depoimentos em Vídeo
 
 **Componente React:** `src/components/sections/VideoSection.tsx`
-**Editar conteúdo:** `src/config/site.ts → videos`
+**Editar conteúdo:** `src/config/site.ts → videos.depoimentos`
 
-## Objetivo
-Seção com **1 vídeo horizontal** (apresentação 1920×1080) + **3 vídeos verticais**
-(reels/depoimentos 1080×1920).
+## Conceito
+3 cards no mesmo formato dos depoimentos em texto (e do antigo card de áudio):
+área de vídeo no topo + nome + descrição abaixo. Sem cores quentes — a hierarquia
+visual é reservada para os preços, ícones de benefícios e o CTA.
 
-## Cores
-- Fundo: `#F5F7FA`
-- Player vazio: gradiente navy
+## Estrutura Elementor (recomendada)
+1. Section com `bg #F5F7FA`, padding `80px / 64px`.
+2. Heading central + subtítulo.
+3. **Inner Section com 3 colunas** (vira 1 coluna no mobile).
+4. Dentro de cada coluna, monte assim:
+   - **Widget Vídeo** (YouTube / Vimeo / hospedado) → aspect-ratio 16:9, border-radius 16px
+   - **Widget HTML** com o bloco identificador (ícone + nome + descrição)
 
-## Estrutura Elementor
-1. Section bg `#F5F7FA`, padding `96px / 64px`.
-2. Heading centralizado.
-3. Container com **Video widget** (YouTube/Vimeo/MP4 hospedado), aspect-ratio 16:9, max-width 900px.
-4. Sub-heading "Histórias que inspiram".
-5. Inner section 3 colunas com **Video widget** em cada, aspect-ratio 9:16.
+> Mantenha o widget de vídeo do Elementor — ele cuida de lazy-load, capa,
+> aspect-ratio e responsividade. Não use iframe cru.
 
-## HTML alternativo (se preferir colar embed)
+## HTML do bloco identificador (abaixo de cada vídeo)
 
 ```html
-<section class="mct-videos" id="videos">
-  <header>
-    <span class="mct-eyebrow">Em movimento</span>
-    <h3>Conheça o Meu Clube TEA</h3>
-    <p>Assista em 1 minuto como transformamos a rotina de famílias atípicas.</p>
-  </header>
-
-  <div class="mct-videos__main">
-    <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID"
-            allowfullscreen
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+<div class="mct-vcard__id">
+  <span class="mct-vcard__icon" aria-hidden>
+    <!-- ícone de play (SVG) -->
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="#7B2FF7"><path d="M8 5v14l11-7z"/></svg>
+  </span>
+  <div class="mct-vcard__meta">
+    <b>Juliana A.</b>
+    <span>Cliente Meu Clube TEA</span>
   </div>
-
-  <h4>Histórias que inspiram</h4>
-  <div class="mct-videos__reels">
-    <div class="reel"><iframe src="https://www.youtube.com/embed/REEL_1" allowfullscreen></iframe></div>
-    <div class="reel"><iframe src="https://www.youtube.com/embed/REEL_2" allowfullscreen></iframe></div>
-    <div class="reel"><iframe src="https://www.youtube.com/embed/REEL_3" allowfullscreen></iframe></div>
-  </div>
-</section>
+</div>
 ```
 
-## CSS
+## CSS (cola em "CSS Avançado" da coluna ou no CSS global)
 
 ```css
-.mct-videos{ background:#F5F7FA; padding:96px 24px; }
-.mct-videos header{ max-width:680px; margin:0 auto 40px; text-align:center; }
-.mct-videos h3{ font-size:36px; color:#1B2540; }
-.mct-videos p{ color:#5B6478; margin-top:12px; }
+.mct-videos{ background:#F5F7FA; padding:80px 24px; }
+.mct-videos__head{ max-width:680px; margin:0 auto 40px; text-align:center; }
+.mct-videos__head h3{ font-size:32px; color:#1B2540; }
 
-.mct-videos__main{
-  max-width:900px; margin:0 auto;
-  aspect-ratio:16/9; border-radius:20px; overflow:hidden;
+.mct-vcard{
+  background:#fff; border:1px solid #E5E9F0; border-radius:20px;
+  padding:20px; box-shadow:0 4px 12px rgba(11,46,138,.04);
+  display:flex; flex-direction:column; gap:12px;
+}
+.mct-vcard__video{
+  aspect-ratio:16/9; border-radius:14px; overflow:hidden;
   background:linear-gradient(180deg,#061C5C,#0B2E8A);
-  box-shadow:0 25px 50px -12px rgba(11,46,138,.25);
 }
-.mct-videos__main iframe{ width:100%; height:100%; border:0; display:block; }
+.mct-vcard__id{ display:flex; align-items:center; gap:12px; padding:0 4px; }
+.mct-vcard__icon{
+  width:40px; height:40px; border-radius:9999px;
+  background:rgba(123,47,247,.10); color:#7B2FF7;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.mct-vcard__meta b{ display:block; font-size:14px; color:#1B2540; }
+.mct-vcard__meta span{ font-size:12px; color:#5B6478; }
 
-.mct-videos h4{ text-align:center; font-size:24px; margin:64px 0 24px; color:#1B2540; }
-
-.mct-videos__reels{
-  max-width:900px; margin:0 auto;
-  display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
-}
-.mct-videos__reels .reel{
-  aspect-ratio:9/16; border-radius:20px; overflow:hidden;
-  background:linear-gradient(180deg,#061C5C,#0B2E8A);
-  box-shadow:0 12px 30px rgba(11,46,138,.15);
-}
-.mct-videos__reels iframe{ width:100%; height:100%; border:0; display:block; }
-
-@media (max-width:767px){
-  .mct-videos{ padding:64px 16px; }
-  .mct-videos h3{ font-size:28px; }
-  .mct-videos__reels{ grid-template-columns:1fr; max-width:300px; }
-}
-@media (min-width:768px) and (max-width:1023px){
-  .mct-videos__reels{ grid-template-columns:repeat(2,1fr); }
-}
+@media (max-width:767px){ .mct-videos{ padding:56px 16px; } }
 ```
 
 ## Formatos esperados
-- Horizontal (apresentação): **1920 × 1080** (16:9)
-- Vertical (reels/depoimentos): **1080 × 1920** (9:16)
+- Horizontal (capa do card): **1920×1080** (16:9)
+- Vertical (Reels/Shorts): use o widget de vídeo do Elementor com aspect-ratio 9:16 se preferir esse formato em alguma coluna.

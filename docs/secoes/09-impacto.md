@@ -3,11 +3,12 @@
 **Componente React:** `src/components/sections/Impact.tsx`
 **Editar conteúdo:** `src/config/site.ts → impacto`
 
-## Conteúdo
-- +15 mil famílias
-- +50 mil consultas
-- +200 especialistas
-- Até 10% do lucro para causas sociais
+## CTA
+O botão agora é uma **âncora interna** que leva o visitante de volta à seção de planos.
+
+- Label: **CONHEÇA NOSSOS PLANOS**
+- href: `#planos`
+- Estilo: laranja (`#FF8A00`), pílula com seta para cima.
 
 ## HTML
 
@@ -17,7 +18,7 @@
     <div>
       <h3>Impacto que transforma vidas</h3>
       <p>Mais que benefícios, um propósito. Cada plano ajuda a construir um mundo mais inclusivo.</p>
-      <a class="mct-btn-outline" href="https://meuclubetea.com.br/impacto-social/">CONHEÇA NOSSO IMPACTO</a>
+      <a class="mct-btn-cta" href="#planos">↑ CONHEÇA NOSSOS PLANOS</a>
     </div>
     <div class="mct-impact__card">
       <div><b>+15 mil</b><span>famílias atendidas</span></div>
