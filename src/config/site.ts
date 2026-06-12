@@ -139,18 +139,6 @@ export const site = {
     },
   },
 
-  // ---------- ÁUDIOS ----------
-  // Substitua src pelo URL do .mp3/.ogg ou cole iframe do Spotify/SoundCloud
-  audios: {
-    titulo: "Histórias em áudio",
-    subtitulo: "Depoimentos, dicas e conversas reais com famílias da nossa comunidade.",
-    items: [
-      { titulo: "Depoimento — Família A", autor: "Juliana A.", src: "" },
-      { titulo: "Depoimento — Família B", autor: "Carlos M.", src: "" },
-      { titulo: "Depoimento — Família C", autor: "Fernanda L.", src: "" },
-      { titulo: "Podcast Meu Clube TEA — Ep. 01", autor: "Equipe MCT", src: "" },
-    ],
-  },
   parceiros: [
     { nome: "ExpoTEA", url: "#" },
     { nome: "GIRO1", url: "#" },

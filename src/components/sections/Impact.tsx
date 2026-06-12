@@ -1,6 +1,7 @@
+import { ArrowUp } from "lucide-react";
 import { site } from "@/config/site";
 
-// SEÇÃO: IMPACTO (estatísticas)
+// SEÇÃO: IMPACTO — CTA agora leva o visitante de volta à seção de planos (#planos)
 export function Impact() {
   const stats = [
     { n: site.impacto.familias, l: "famílias atendidas" },
@@ -16,8 +17,11 @@ export function Impact() {
           <p className="mt-4 text-muted-foreground">
             Mais que benefícios, um propósito. Cada plano ajuda a construir um mundo mais inclusivo e com mais oportunidades.
           </p>
-          <a href={site.links.impacto} className="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-full border border-violet text-violet font-semibold text-sm hover:bg-violet hover:text-white transition">
-            CONHEÇA NOSSO IMPACTO
+          <a
+            href="#planos"
+            className="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-full bg-orange text-white font-semibold text-sm hover:brightness-110 transition shadow-lg"
+          >
+            <ArrowUp className="h-4 w-4" /> CONHEÇA NOSSOS PLANOS
           </a>
         </div>
         <div className="bg-card rounded-2xl p-8 grid grid-cols-2 md:grid-cols-4 gap-6 shadow-sm border border-border">

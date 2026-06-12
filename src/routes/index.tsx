@@ -5,7 +5,6 @@ import { Benefits } from "@/components/sections/Benefits";
 import { Plans } from "@/components/sections/Plans";
 import { FeaturesBar } from "@/components/sections/FeaturesBar";
 import { VideoSection } from "@/components/sections/VideoSection";
-import { AudioSection } from "@/components/sections/AudioSection";
 import { PartnersStats } from "@/components/sections/PartnersStats";
 import { Impact } from "@/components/sections/Impact";
 import { HowItWorks } from "@/components/sections/HowItWorks";
