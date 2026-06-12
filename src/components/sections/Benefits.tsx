@@ -1,21 +1,17 @@
 import { Stethoscope, Brain, Shield, Tag } from "lucide-react";
 
-// SEÇÃO: BENEFÍCIOS — cores oficiais do briefing por item
+// SEÇÃO: BENEFÍCIOS — sem título/subtítulo (apenas os cards coloridos, como na referência)
 // Telemedicina #00B8D9 · Telepsicologia #7B2FF7 · Assistência Funeral #0B2E8A · Descontos #FF8A00
 export function Benefits() {
   const items = [
-    { i: Stethoscope, hex: "#00B8D9", t: "Telemedicina", s: "Tranquilidade imediata, 24/7" },
-    { i: Brain,       hex: "#7B2FF7", t: "Telepsicologia", s: "Equilíbrio emocional para a família" },
+    { i: Stethoscope, hex: "#00B8D9", t: "Telemedicina", s: "Consultas online com especialistas, 24/7" },
+    { i: Brain,       hex: "#7B2FF7", t: "Telepsicologia", s: "Equilíbrio emocional para toda a família" },
     { i: Shield,      hex: "#0B2E8A", t: "Assistência Funeral", s: "Apoio total em momentos difíceis" },
     { i: Tag,         hex: "#FF8A00", t: "Descontos e Vantagens", s: "Economia inteligente no dia a dia" },
   ];
   return (
-    <section id="beneficios" className="py-16 md:py-24 bg-background">
+    <section id="beneficios" className="py-12 md:py-16 bg-background">
       <div className="max-w-7xl mx-auto px-5 md:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="text-xs uppercase tracking-[0.3em] text-violet font-semibold">Nossos benefícios</div>
-          <h2 className="mt-3 text-3xl md:text-4xl font-bold">Tudo o que sua família precisa em um só lugar.</h2>
-        </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
           {items.map(({ i: Icon, hex, t, s }) => (
             <div key={t} className="text-center bg-card rounded-2xl p-5 md:p-7 border border-border hover:shadow-lg hover:-translate-y-1 transition">
