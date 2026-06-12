@@ -79,8 +79,9 @@
   h1, h2, h3, h4 { letter-spacing: -0.02em; }
 }
 
+/* GRADIENTE OFICIAL DO BRIEFING — 90deg */
 @utility bg-hero-gradient {
-  background: linear-gradient(135deg, #0B2E8A 0%, #1E3FAE 55%, #7B2FF7 100%);
+  background: linear-gradient(90deg, #0B2E8A 0%, #4A3AFF 50%, #7B2FF7 100%);
 }
 @utility bg-navy-gradient {
   background: linear-gradient(180deg, #061C5C, #0B2E8A);
@@ -89,11 +90,15 @@
   background: linear-gradient(135deg, #7B2FF7, #A06BFF);
 }
 @utility bg-cta-gradient {
-  background: linear-gradient(135deg, #FF8A00, #FFB347);
+  background: linear-gradient(135deg, #FF8A00, #FF9F2E);
 }
 @utility text-brand-gradient {
-  background: linear-gradient(135deg, #0B2E8A, #7B2FF7, #00B8D9);
+  background: linear-gradient(90deg, #0B2E8A, #4A3AFF, #7B2FF7);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+/* Overlay escuro para imagens de fundo (hero) */
+@utility bg-hero-overlay {
+  background: linear-gradient(90deg, rgba(11,46,138,0.92) 0%, rgba(74,58,255,0.78) 50%, rgba(123,47,247,0.85) 100%);
 }
