@@ -132,9 +132,9 @@ export const site = {
       titulo: "Histórias que inspiram",
       // Lista de vídeos verticais (Reels/Shorts) — 1080x1920
       items: [
-        { nome: "Família A.", embedUrl: "", poster: "" },
-        { nome: "Família B.", embedUrl: "", poster: "" },
-        { nome: "Família C.", embedUrl: "", poster: "" },
+        { nome: "Juliana A.", embedUrl: "", poster: "" },
+        { nome: "Carlos M.", embedUrl: "", poster: "" },
+        { nome: "Fernanda L.", embedUrl: "", poster: "" },
       ],
     },
   },
