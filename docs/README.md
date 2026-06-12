@@ -20,7 +20,6 @@ docs/
 │   ├── 04-planos.md
 │   ├── 05-features-bar.md
 │   ├── 06-videos.md
-│   ├── 07-audios.md
 │   ├── 08-parceiros-stats.md
 │   ├── 09-impacto.md
 │   ├── 10-como-funciona.md
