@@ -65,7 +65,7 @@ function Index() {
       <Plans />
       <FeaturesBar />
       <VideoSection />
-      <AudioSection />
+      
       <PartnersStats />
       <Impact />
       <HowItWorks />
