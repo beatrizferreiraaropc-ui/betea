@@ -61,7 +61,7 @@ export const site = {
     {
       id: "essencial",
       nome: "PLANO ESSENCIAL",
-      cor: "essencial",
+      cor: "#00B8D9",
       destaque: false,
       ribbon: null,
       tag: null,
@@ -80,7 +80,7 @@ export const site = {
     {
       id: "familia",
       nome: "PLANO FAMÍLIA",
-      cor: "familia",
+      cor: "#7B2FF7",
       destaque: true,
       ribbon: null,
       tag: "Recomendado por Especialistas",
@@ -99,7 +99,7 @@ export const site = {
     {
       id: "protecao-total",
       nome: "PLANO PROTEÇÃO TOTAL",
-      cor: "protecao",
+      cor: "#0B2E8A",
       destaque: false,
       ribbon: "MAIS COMPLETO",
       tag: null,
@@ -139,7 +139,18 @@ export const site = {
     },
   },
 
-  // ---------- PARCEIROS ----------
+  // ---------- ÁUDIOS ----------
+  // Substitua src pelo URL do .mp3/.ogg ou cole iframe do Spotify/SoundCloud
+  audios: {
+    titulo: "Histórias em áudio",
+    subtitulo: "Depoimentos, dicas e conversas reais com famílias da nossa comunidade.",
+    items: [
+      { titulo: "Depoimento — Família A", autor: "Juliana A.", src: "" },
+      { titulo: "Depoimento — Família B", autor: "Carlos M.", src: "" },
+      { titulo: "Depoimento — Família C", autor: "Fernanda L.", src: "" },
+      { titulo: "Podcast Meu Clube TEA — Ep. 01", autor: "Equipe MCT", src: "" },
+    ],
+  },
   parceiros: [
     { nome: "ExpoTEA", url: "#" },
     { nome: "GIRO1", url: "#" },
