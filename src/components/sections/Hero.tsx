@@ -89,27 +89,28 @@ export function Hero() {
         </div>
 
         {/* COLUNA DIREITA — Caixinha "Impacto que transforma vidas" (DESKTOP somente) */}
-        <aside className="hidden lg:block">
-          <div className="relative rounded-2xl bg-white text-foreground p-7 shadow-2xl border border-white/40 max-w-md ml-auto">
-            <div className="h-12 w-12 rounded-full bg-violet flex items-center justify-center shadow-lg">
-              <HeartHandshake className="h-6 w-6 text-white" />
+        <aside className="hidden lg:flex lg:justify-end">
+          <div className="relative rounded-2xl bg-white/95 backdrop-blur text-foreground p-5 shadow-xl border border-white/60 w-[290px] mr-2 xl:mr-6">
+            <div className="flex items-center gap-3">
+              <div className="h-10 w-10 rounded-full bg-violet flex items-center justify-center shadow-md shrink-0">
+                <HeartHandshake className="h-5 w-5 text-white" />
+              </div>
+              <h3 className="text-[15px] font-bold text-navy leading-tight">Impacto que<br/>transforma vidas</h3>
             </div>
-            <h3 className="mt-4 text-lg font-bold text-navy">Impacto que transforma vidas</h3>
-            <p className="mt-2 text-sm text-foreground/70 leading-snug">
-              Até <strong className="text-violet">10% do lucro</strong> destinado a causas de
-              apoio a famílias atípicas.
+            <p className="mt-3 text-[12px] text-foreground/70 leading-snug">
+              Até <strong className="text-violet">10% do lucro</strong> destinado a causas de apoio a famílias atípicas.
             </p>
-            <div className="mt-5 grid grid-cols-3 gap-3 text-center">
+            <div className="mt-4 grid grid-cols-3 gap-2 text-center">
               {[
-                { Icon: Users, hex: "#0B2E8A", label: "Famílias beneficiadas" },
-                { Icon: Stethoscope, hex: "#7B2FF7", label: "Consultas realizadas" },
-                { Icon: UserCog, hex: "#00B8D9", label: "Especialistas parceiros" },
+                { Icon: Users, hex: "#0B2E8A", label: "Famílias" },
+                { Icon: Stethoscope, hex: "#7B2FF7", label: "Consultas" },
+                { Icon: UserCog, hex: "#00B8D9", label: "Especialistas" },
               ].map(({ Icon, hex, label }) => (
-                <div key={label} className="flex flex-col items-center gap-1.5">
-                  <div className="h-10 w-10 rounded-full flex items-center justify-center" style={{ backgroundColor: hex }}>
-                    <Icon className="h-5 w-5 text-white" />
+                <div key={label} className="flex flex-col items-center gap-1">
+                  <div className="h-8 w-8 rounded-full flex items-center justify-center shadow-sm" style={{ backgroundColor: hex }}>
+                    <Icon className="h-4 w-4 text-white" />
                   </div>
-                  <span className="text-[10.5px] font-semibold text-foreground/75 leading-tight">{label}</span>
+                  <span className="text-[10px] font-semibold text-foreground/75 leading-tight">{label}</span>
                 </div>
               ))}
             </div>
