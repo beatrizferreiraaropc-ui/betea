@@ -44,7 +44,7 @@ export function Ambassador() {
   ];
 
   return (
-    <section id="embaixadores" className="py-16 md:py-20 px-5 md:px-6 bg-secondary">
+    <section id="embaixadores" className="pt-16 md:pt-20 pb-28 md:pb-36 px-5 md:px-6 bg-secondary">
       <div className="max-w-5xl mx-auto rounded-3xl bg-navy-gradient text-white overflow-hidden shadow-2xl">
         <div className="px-6 md:px-12 pt-10 md:pt-14 pb-10 md:pb-14">
           {/* 1. Badge */}
