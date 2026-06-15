@@ -29,7 +29,7 @@ export function Benefits() {
         {/* 1. Cards sobrepostos ao hero (margem negativa reforçada) */}
         <div className="-mt-24 md:-mt-28 lg:-mt-32 relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {items.map(({ i: Icon, hex, t, s }) => (
-            <div key={t} className="text-center bg-card rounded-2xl p-5 md:p-7 border border-border shadow-xl hover:-translate-y-1 hover:shadow-2xl transition">
+            <div key={t} className="text-center bg-card rounded-2xl p-5 md:p-7 border border-border shadow-none hover:shadow-2xl hover:-translate-y-1 transition">
               <div
                 className="mx-auto h-14 w-14 md:h-16 md:w-16 rounded-full flex items-center justify-center shadow-lg"
                 style={{ backgroundColor: hex }}

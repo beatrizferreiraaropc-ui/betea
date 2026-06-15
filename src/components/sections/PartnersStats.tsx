@@ -35,19 +35,19 @@ export function PartnersStats() {
         </div>
 
         {/* Estatísticas */}
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {stats.map(({ icon: Icon, n, l }) => (
             <div
               key={l}
-              className="rounded-2xl p-5 flex items-center gap-4 border"
+              className="rounded-2xl p-4 md:p-5 flex items-center gap-3 md:gap-4 border"
               style={{ backgroundColor: "#12389E", borderColor: "rgba(0,184,217,0.25)" }}
             >
-              <div className="h-12 w-12 shrink-0 rounded-full flex items-center justify-center" style={{ backgroundColor: "rgba(0,184,217,0.15)" }}>
-                <Icon className="h-5 w-5" style={{ color: "#00B8D9" }} />
+              <div className="h-10 w-10 md:h-12 md:w-12 shrink-0 rounded-full flex items-center justify-center" style={{ backgroundColor: "rgba(0,184,217,0.15)" }}>
+                <Icon className="h-4 w-4 md:h-5 md:w-5" style={{ color: "#00B8D9" }} />
               </div>
               <div className="min-w-0">
-                <div className="text-2xl md:text-3xl font-bold leading-none">{n}</div>
-                <div className="text-xs md:text-sm text-white/70 mt-1">{l}</div>
+                <div className="text-xl md:text-3xl font-bold leading-none">{n}</div>
+                <div className="text-[11px] md:text-sm text-white/70 mt-1 leading-tight">{l}</div>
               </div>
             </div>
           ))}

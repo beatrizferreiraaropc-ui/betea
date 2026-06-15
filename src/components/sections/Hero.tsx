@@ -32,12 +32,12 @@ export function Hero() {
         className="md:hidden absolute right-0 bottom-0 h-[55%] w-[60%] object-cover object-right-bottom pointer-events-none select-none opacity-95"
       />
 
-      <div className="relative max-w-7xl mx-auto px-5 md:px-8 pt-14 md:pt-20 pb-40 md:pb-44 lg:pb-44 grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-center">
+      <div className="relative max-w-7xl mx-auto px-5 md:px-8 pt-14 md:pt-20 lg:pt-28 pb-40 md:pb-44 lg:pb-56 grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-center">
 
         {/* COLUNA ESQUERDA — texto + CTAs */}
         <div className="max-w-[88%] md:max-w-xl lg:max-w-none">
-          <div className="inline-flex items-center gap-2 text-[10px] md:text-xs uppercase tracking-[0.22em] font-semibold bg-white/10 backdrop-blur border border-white/25 rounded-full px-4 py-2">
-            <ShieldCheck className="h-3.5 w-3.5 text-teal" />
+          <div className="inline-flex items-center gap-2 text-[10px] md:text-xs uppercase tracking-[0.22em] font-semibold bg-white/10 backdrop-blur border border-white/25 rounded-full px-4 py-2 whitespace-nowrap">
+            <ShieldCheck className="h-3.5 w-3.5 text-teal shrink-0" />
             Saúde, Acolhimento e Benefícios
           </div>
 
@@ -52,28 +52,28 @@ export function Hero() {
             Telemedicina, telepsicologia, assistência familiar e descontos exclusivos. Mais do que um plano — uma rede de apoio para você e quem mais importa.
           </p>
 
-          {/* CTAs delicados, sempre lado a lado */}
-          <div className="mt-7 flex flex-row flex-wrap items-center gap-3">
+          {/* CTAs delicados, sempre lado a lado (inclusive mobile) */}
+          <div className="mt-7 flex flex-row flex-nowrap items-center gap-3">
             <a
               href="#planos"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-orange text-white font-semibold text-sm hover:brightness-110 transition shadow-md whitespace-nowrap"
+              className="inline-flex items-center gap-2 px-5 md:px-6 py-3 rounded-full bg-orange text-white font-semibold text-sm hover:brightness-110 transition shadow-md whitespace-nowrap"
             >
-              Conheça Nossos Planos
+              Nossos Planos
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
               href={site.links.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/70 text-white font-semibold text-sm hover:bg-white/10 transition whitespace-nowrap"
+              className="inline-flex items-center gap-2 px-5 md:px-6 py-3 rounded-full border border-white/70 text-white font-semibold text-sm hover:bg-white/10 transition whitespace-nowrap"
             >
               <MessageCircle className="h-4 w-4" />
-              Fale no WhatsApp
+              Saiba Mais
             </a>
           </div>
 
-          {/* Mini-ícones delicados sob os CTAs (referência cliente) */}
-          <ul className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] md:text-xs text-white/85">
+          {/* Mini-ícones delicados sob os CTAs — somente desktop (lg+) */}
+          <ul className="mt-6 hidden lg:flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] md:text-xs text-white/85">
             {[
               { Icon: ShieldCheck, label: "Atendimento seguro" },
               { Icon: Stethoscope, label: "Especialistas" },
