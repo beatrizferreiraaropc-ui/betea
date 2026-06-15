@@ -22,7 +22,7 @@ export function Hero() {
         src={fundoBanner.url}
         alt=""
         aria-hidden="true"
-        className="hidden md:block absolute inset-y-0 right-0 h-full w-1/2 lg:w-[55%] object-cover object-right pointer-events-none select-none opacity-90"
+        className="hidden md:block absolute inset-y-0 right-0 h-full w-[48%] lg:w-[52%] object-cover object-right pointer-events-none select-none opacity-90"
       />
       {/* Imagem mobile (canto inferior direito) */}
       <img
@@ -32,7 +32,8 @@ export function Hero() {
         className="md:hidden absolute right-0 bottom-0 h-[55%] w-[60%] object-cover object-right-bottom pointer-events-none select-none opacity-95"
       />
 
-      <div className="relative max-w-7xl mx-auto px-5 md:px-8 pt-14 md:pt-20 pb-40 md:pb-44 lg:pb-48 grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
+      <div className="relative max-w-7xl mx-auto px-5 md:px-8 pt-14 md:pt-20 pb-40 md:pb-44 lg:pb-44 grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-center">
+
         {/* COLUNA ESQUERDA — texto + CTAs */}
         <div className="max-w-[88%] md:max-w-xl lg:max-w-none">
           <div className="inline-flex items-center gap-2 text-[10px] md:text-xs uppercase tracking-[0.22em] font-semibold bg-white/10 backdrop-blur border border-white/25 rounded-full px-4 py-2">
