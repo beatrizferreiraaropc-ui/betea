@@ -152,7 +152,7 @@ export const site = {
   embaixador: {
     comissaoPrimeira: "20%",
     comissaoRecorrente: "3%",
-    mesesRecorrencia: 3,
+    mesesRecorrencia: 12,
     ctaUrl: "https://meuclubetea.com.br/seja-embaixador/",
   },
 
