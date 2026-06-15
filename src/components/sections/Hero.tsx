@@ -22,7 +22,7 @@ export function Hero() {
         src={fundoBanner.url}
         alt=""
         aria-hidden="true"
-        className="hidden md:block absolute inset-y-0 right-0 h-full w-1/2 lg:w-[55%] object-cover object-right pointer-events-none select-none opacity-90"
+        className="hidden md:block absolute inset-y-0 right-0 h-full w-[48%] lg:w-[52%] object-cover object-right pointer-events-none select-none opacity-90"
       />
       {/* Imagem mobile (canto inferior direito) */}
       <img
@@ -32,7 +32,8 @@ export function Hero() {
         className="md:hidden absolute right-0 bottom-0 h-[55%] w-[60%] object-cover object-right-bottom pointer-events-none select-none opacity-95"
       />
 
-      <div className="relative max-w-7xl mx-auto px-5 md:px-8 pt-14 md:pt-20 pb-40 md:pb-44 lg:pb-48 grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
+      <div className="relative max-w-7xl mx-auto px-5 md:px-8 pt-14 md:pt-20 pb-40 md:pb-44 lg:pb-44 grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-center">
+
         {/* COLUNA ESQUERDA — texto + CTAs */}
         <div className="max-w-[88%] md:max-w-xl lg:max-w-none">
           <div className="inline-flex items-center gap-2 text-[10px] md:text-xs uppercase tracking-[0.22em] font-semibold bg-white/10 backdrop-blur border border-white/25 rounded-full px-4 py-2">
@@ -70,30 +71,46 @@ export function Hero() {
               Fale no WhatsApp
             </a>
           </div>
+
+          {/* Mini-ícones delicados sob os CTAs (referência cliente) */}
+          <ul className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] md:text-xs text-white/85">
+            {[
+              { Icon: ShieldCheck, label: "Atendimento seguro" },
+              { Icon: Stethoscope, label: "Especialistas" },
+              { Icon: HeartHandshake, label: "Acolhimento" },
+              { Icon: Users, label: "Toda a família" },
+            ].map(({ Icon, label }) => (
+              <li key={label} className="inline-flex items-center gap-1.5">
+                <Icon className="h-3.5 w-3.5 text-teal" />
+                <span className="font-medium tracking-wide">{label}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* COLUNA DIREITA — Caixinha "Impacto que transforma vidas" (DESKTOP somente) */}
-        <aside className="hidden lg:block">
-          <div className="relative rounded-2xl bg-white text-foreground p-7 shadow-2xl border border-white/40 max-w-md ml-auto">
-            <div className="h-12 w-12 rounded-full bg-violet flex items-center justify-center shadow-lg">
-              <HeartHandshake className="h-6 w-6 text-white" />
+        <aside className="hidden lg:flex lg:justify-end">
+          <div className="relative rounded-2xl bg-white/95 backdrop-blur text-foreground p-5 shadow-xl border border-white/60 w-[290px] mr-2 xl:mr-6">
+            <div className="flex items-center gap-3">
+              <div className="h-10 w-10 rounded-full bg-violet flex items-center justify-center shadow-md shrink-0">
+                <HeartHandshake className="h-5 w-5 text-white" />
+              </div>
+              <h3 className="text-[15px] font-bold text-navy leading-tight">Impacto que<br/>transforma vidas</h3>
             </div>
-            <h3 className="mt-4 text-lg font-bold text-navy">Impacto que transforma vidas</h3>
-            <p className="mt-2 text-sm text-foreground/70 leading-snug">
-              Até <strong className="text-violet">10% do lucro</strong> destinado a causas de
-              apoio a famílias atípicas.
+            <p className="mt-3 text-[12px] text-foreground/70 leading-snug">
+              Até <strong className="text-violet">10% do lucro</strong> destinado a causas de apoio a famílias atípicas.
             </p>
-            <div className="mt-5 grid grid-cols-3 gap-3 text-center">
+            <div className="mt-4 grid grid-cols-3 gap-2 text-center">
               {[
-                { Icon: Users, hex: "#0B2E8A", label: "Famílias beneficiadas" },
-                { Icon: Stethoscope, hex: "#7B2FF7", label: "Consultas realizadas" },
-                { Icon: UserCog, hex: "#00B8D9", label: "Especialistas parceiros" },
+                { Icon: Users, hex: "#0B2E8A", label: "Famílias" },
+                { Icon: Stethoscope, hex: "#7B2FF7", label: "Consultas" },
+                { Icon: UserCog, hex: "#00B8D9", label: "Especialistas" },
               ].map(({ Icon, hex, label }) => (
-                <div key={label} className="flex flex-col items-center gap-1.5">
-                  <div className="h-10 w-10 rounded-full flex items-center justify-center" style={{ backgroundColor: hex }}>
-                    <Icon className="h-5 w-5 text-white" />
+                <div key={label} className="flex flex-col items-center gap-1">
+                  <div className="h-8 w-8 rounded-full flex items-center justify-center shadow-sm" style={{ backgroundColor: hex }}>
+                    <Icon className="h-4 w-4 text-white" />
                   </div>
-                  <span className="text-[10.5px] font-semibold text-foreground/75 leading-tight">{label}</span>
+                  <span className="text-[10px] font-semibold text-foreground/75 leading-tight">{label}</span>
                 </div>
               ))}
             </div>
