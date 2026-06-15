@@ -70,6 +70,21 @@ export function Hero() {
               Fale no WhatsApp
             </a>
           </div>
+
+          {/* Mini-ícones delicados sob os CTAs (referência cliente) */}
+          <ul className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] md:text-xs text-white/85">
+            {[
+              { Icon: ShieldCheck, label: "Atendimento seguro" },
+              { Icon: Stethoscope, label: "Especialistas" },
+              { Icon: HeartHandshake, label: "Acolhimento" },
+              { Icon: Users, label: "Toda a família" },
+            ].map(({ Icon, label }) => (
+              <li key={label} className="inline-flex items-center gap-1.5">
+                <Icon className="h-3.5 w-3.5 text-teal" />
+                <span className="font-medium tracking-wide">{label}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* COLUNA DIREITA — Caixinha "Impacto que transforma vidas" (DESKTOP somente) */}
