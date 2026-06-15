@@ -33,27 +33,27 @@ export const Route = createFileRoute("/")({
 
 /**
  * LANDING PAGE — MEU CLUBE TEA
- * Cada <Section /> abaixo é um arquivo independente em src/components/sections/.
- * Todos os links/textos/URLs vivem em src/config/site.ts.
- * Para WordPress + Elementor Pro, veja docs/secoes/ — 1 arquivo por seção
- * com HTML + CSS prontos para colar.
  *
- * Ordem:
- *  1. Header           src/components/sections/Header.tsx
- *  2. Hero             Hero.tsx                (imagem de fundo + overlay 90deg)
- *  3. Benefits         Benefits.tsx            (cores oficiais por benefício)
- *  4. Plans            Plans.tsx               (fundo #F5F7FA, bordas por plano)
- *  5. FeaturesBar      FeaturesBar.tsx
- *  6. VideoSection     VideoSection.tsx        (1920x1080 e 1080x1920)
- *  7. PartnersStats    PartnersStats.tsx       (estatísticas + grid de logos)
- *  9. Impact           Impact.tsx
- * 10. HowItWorks       HowItWorks.tsx
- * 11. Testimonials     Testimonials.tsx
- * 12. About            About.tsx
- * 13. Partners         Partners.tsx
- * 14. Ambassador       Ambassador.tsx          (Embaixadores do Impacto · fundo #0B2E8A)
- * 15. Newsletter       Newsletter.tsx
-  *           Footer.tsx
+ * Cada <Section /> abaixo é um arquivo independente em src/components/sections/.
+ * Todos os textos / URLs / contatos vivem em src/config/site.ts.
+ * Para migração WordPress + Elementor Pro, veja docs/secoes/ — 1 arquivo por
+ * seção com HTML + CSS prontos para colar.
+ *
+ * Ordem das seções (e arquivo correspondente):
+ *  1. Header         Header.tsx        (top bar navy + barra branca com logo)
+ *  2. Hero           Hero.tsx          (banner com família + CTAs delicados)
+ *  3. Benefits       Benefits.tsx      (cards sobrepostos + faixas mobile)
+ *  4. Plans          Plans.tsx         (3 planos lado a lado)
+ *  5. FeaturesBar    FeaturesBar.tsx
+ *  6. VideoSection   VideoSection.tsx
+ *  7. PartnersStats  PartnersStats.tsx (estatísticas + logos)
+ *  8. Impact         Impact.tsx
+ *  9. HowItWorks     HowItWorks.tsx
+ * 10. Testimonials   Testimonials.tsx
+ * 11. About          About.tsx
+ * 12. Partners       Partners.tsx
+ * 13. Ambassador     Ambassador.tsx    (Embaixadores do Impacto)
+ * 14. Footer         Footer.tsx        (central de atendimento sobreposta + rodapé navy)
  */
 function Index() {
   return (
@@ -64,7 +64,6 @@ function Index() {
       <Plans />
       <FeaturesBar />
       <VideoSection />
-      
       <PartnersStats />
       <Impact />
       <HowItWorks />
