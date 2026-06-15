@@ -151,13 +151,6 @@ export function Ambassador() {
             >
               QUERO SER UM EMBAIXADOR <ArrowUpRight className="h-4 w-4 shrink-0" />
             </a>
-          <div className="mt-9 flex flex-col items-center gap-3">
-            <a
-              href={embaixador.ctaUrl}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-cta-gradient text-white font-semibold text-sm md:text-base shadow-lg hover:brightness-110 transition tracking-wide"
-            >
-              QUERO SER UM EMBAIXADOR <ArrowUpRight className="h-4 w-4" />
-            </a>
             <p className="text-xs md:text-sm text-white/70 inline-flex items-center gap-2">
               <Lock className="h-3.5 w-3.5" />
               Processo simples, seguro e{" "}
