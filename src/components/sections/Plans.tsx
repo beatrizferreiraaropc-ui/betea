@@ -60,7 +60,7 @@ export function Plans() {
                 </ul>
                 <a
                   href={p.productUrl}
-                  className="mt-8 inline-flex items-center justify-center w-full py-3 rounded-full font-semibold text-sm transition text-white shadow hover:brightness-110"
+                  className="mt-8 inline-flex items-center justify-center w-full py-3 rounded-full font-semibold text-sm transition text-white shadow-sm hover:shadow-md hover:brightness-110"
                   style={{ backgroundColor: featured ? "#FF8A00" : p.cor }}
                 >
                   {p.ctaLabel}
