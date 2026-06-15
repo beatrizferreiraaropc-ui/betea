@@ -109,25 +109,23 @@ export function Ambassador() {
             Seu reconhecimento por transformar vidas:
           </h3>
 
-          {/* 7. Barras de comissão */}
-          <div className="mt-6 space-y-4 max-w-2xl mx-auto">
-            <CommissionRow
+          {/* 7. Barras de comissão — 2 colunas no mobile, lado a lado no desktop */}
+          <div className="mt-6 grid grid-cols-2 gap-3 md:gap-4 max-w-2xl mx-auto">
+            <CommissionCard
               Icon={Handshake}
               iconBg="#00B8D9"
               title="Bônus de indicação"
-              subtitle="(primeira mensalidade)"
+              subtitle="primeira mensalidade"
               value={embaixador.comissaoPrimeira}
               valueBg="linear-gradient(90deg,#00B8D9,#26D4F0)"
-              progress={92}
             />
-            <CommissionRow
+            <CommissionCard
               Icon={CircleDollarSign}
               iconBg="#7B2FF7"
-              title="Bônus recorrente mensal"
-              subtitle={`por até ${embaixador.mesesRecorrencia} meses`}
+              title="Bônus recorrente"
+              subtitle={`até ${embaixador.mesesRecorrencia} meses`}
               value={embaixador.comissaoRecorrente}
               valueBg="linear-gradient(90deg,#7B2FF7,#A06BFF)"
-              progress={28}
             />
           </div>
 
