@@ -13,16 +13,15 @@ export function Plans() {
           <p className="mt-3 text-muted-foreground">Cobertura nacional, atendimento humanizado e benefícios reais.</p>
         </div>
 
-        <div className="mt-12 grid md:grid-cols-3 gap-6 items-stretch">
+        <div className="mt-12 grid md:grid-cols-3 gap-8 md:gap-6 items-stretch">
           {site.planos.map((p) => {
             const featured = p.destaque;
             return (
               <div
                 key={p.id}
-                className="relative rounded-3xl p-7 md:p-8 bg-white shadow-sm hover:shadow-xl transition flex flex-col"
+                className={`relative rounded-3xl p-7 md:p-8 bg-white shadow-sm hover:shadow-xl transition flex flex-col ${featured ? "md:-mt-4" : ""}`}
                 style={{
                   border: `2px solid ${p.cor}`,
-                  marginTop: featured ? "-1rem" : 0,
                 }}
               >
                 {p.tag && (
