@@ -1,118 +1,117 @@
-# 📚 MEU CLUBE TEA — Guia de migração para WordPress + Elementor Pro
+# MEU CLUBE TEA — Guia de migração WordPress + Elementor Pro
 
-Este projeto foi construído **modularmente**, com **1 componente React por seção**
-do site. Para você migrar tudo para o seu WordPress já existente (que roda
-**WooCommerce** + **Elementor Pro** + sistema de afiliados), criamos esta
-documentação dividida em **1 arquivo por seção**.
+Este guia foi escrito para você montar o site **usando apenas widgets nativos do
+Elementor / Elementor Pro** (sem widget de HTML). Cada seção do site tem um
+arquivo próprio em `docs/secoes/` com:
+
+1. **Widgets nativos** que você vai usar (Heading, Image, Icon Box, Button, etc.)
+2. **Estrutura de Section / Container** (colunas, alinhamento, padding)
+3. **CSS Classes** que você atribui em cada widget na aba `Avançado → CSS Classes`
+4. **CSS personalizado** (1 bloco por seção) — colar em
+   `Editar Section → Avançado → CSS personalizado`
+5. **Conteúdo** (textos, links, cores, ícones) já pronto pra copiar
+6. **Responsividade** — comportamento mobile / tablet / desktop
+
+> Você não precisa colar HTML em lugar nenhum. As classes e o CSS dão o visual,
+> o Elementor cuida da estrutura.
 
 ---
 
-## 📁 Estrutura
+## Estrutura de arquivos
 
 ```
 docs/
-├── README.md                  ← este arquivo
-├── 00-paleta-tokens.md        ← cores, tipografia, breakpoints, gradientes
-├── secoes/
-│   ├── 01-header.md
-│   ├── 02-hero.md
-│   ├── 03-beneficios.md
-│   ├── 04-planos.md
-│   ├── 05-features-bar.md
-│   ├── 06-videos.md
-│   ├── 08-parceiros-stats.md
-│   ├── 09-impacto.md
-│   ├── 10-como-funciona.md
-│   ├── 11-depoimentos.md
-│   ├── 12-sobre.md
-│   ├── 13-parceiros-logos.md
-│   ├── 14-embaixadores.md
-│   ├── 15-newsletter.md
-│   └── 16-footer.md
+├── README.md                ← este arquivo
+├── 00-paleta-tokens.md      ← variáveis CSS globais (cole 1 vez no Site Settings)
+└── secoes/
+    ├── 01-header.md
+    ├── 02-hero.md
+    ├── 03-beneficios.md
+    ├── 04-planos.md
+    ├── 05-features-bar.md
+    ├── 06-videos.md
+    ├── 07-parceiros-stats.md
+    ├── 08-impacto.md
+    ├── 09-como-funciona.md
+    ├── 10-depoimentos.md
+    ├── 11-sobre.md
+    ├── 12-parceiros-logos.md
+    ├── 13-embaixadores.md
+    └── 14-footer.md
 ```
 
-Cada arquivo de seção contém:
-
-1. **Print + objetivo** da seção
-2. **Cores e tokens** usados (hex)
-3. **Tipografia** (família, tamanho desktop / tablet / mobile)
-4. **Estrutura Elementor** (Section → Container → Widgets recomendados)
-5. **HTML pronto** para colar no widget **HTML** ou **Container > HTML personalizado**
-6. **CSS avançado** pronto para colar em **Avançado → CSS personalizado**
-7. **Links / URLs** a configurar (botões, produtos WooCommerce, redes sociais)
-8. **Responsividade** — comportamento mobile (≤767px) e tablet (768–1023px)
+A ordem das seções no site é exatamente essa.
 
 ---
 
-## 🎨 Paleta oficial (briefing)
+## Ordem de execução (faça uma vez antes de começar)
 
-| Token            | HEX       | Uso |
-|------------------|-----------|-----|
-| Navy             | `#0B2E8A` | Cor principal (saúde, confiança) |
-| Navy Card        | `#12389E` | Cards da seção Embaixadores |
-| Navy Deep        | `#061C5C` | Footer e gradientes navy |
-| Teal             | `#00B8D9` | Tecnologia / Telemedicina |
-| Violet           | `#7B2FF7` | Inclusão / Telepsicologia |
-| Indigo gradient  | `#4A3AFF` | Meio do gradiente principal |
-| Orange CTA       | `#FF8A00` | Botões e conversão |
-| Orange Hover     | `#FF9F2E` | Hover do botão CTA |
-| White            | `#FFFFFF` | — |
-| Cinza Claro      | `#F5F7FA` | Fundo seção Planos |
-| Texto Escuro     | `#1B2540` | Cor de texto padrão |
-
-**Gradiente oficial:**
-```css
-background: linear-gradient(90deg, #0B2E8A 0%, #4A3AFF 50%, #7B2FF7 100%);
-```
+1. **Site Settings → Layout → Breakpoints**
+   - Mobile: `767`
+   - Tablet: `1024`
+   - Laptop: `1366`
+2. **Site Settings → Custom CSS** — cole o bloco do arquivo
+   `00-paleta-tokens.md` (variáveis, fonte, botões padrão).
+3. **Site Settings → Custom Code → `<head>`** — cole o `<link>` do Google Fonts
+   (Plus Jakarta Sans) que está em `00-paleta-tokens.md`.
+4. **Site Settings → Typography** — Default Heading / Default Body →
+   `Plus Jakarta Sans`.
+5. Comece pelo Header (`01-header.md`) e siga a ordem dos arquivos.
 
 ---
 
-## 🔤 Tipografia
+## Convenção das classes
 
-- **Família:** `Plus Jakarta Sans` (Google Fonts) — já carregada no `<head>`.
-- **Pesos:** 400 (texto), 600 (CTA), 700 (títulos), 800 (hero).
-- **Letter-spacing** em títulos: `-0.02em`.
+Todas as classes começam com `mct-` (Meu Clube TEA), seguidas pelo nome da
+seção. Exemplo:
 
-No Elementor: **Site Settings → Typography → Default Heading/Body Font** → `Plus Jakarta Sans`.
+| Classe              | Onde atribuir                              |
+|---------------------|--------------------------------------------|
+| `mct-hero`          | Section do Hero                            |
+| `mct-hero__badge`   | Heading widget do badge                    |
+| `mct-hero__cta`     | Button widget do CTA principal             |
+| `mct-plan--destaque`| Coluna do plano em destaque                |
 
----
-
-## 📱 Breakpoints
-
-| Dispositivo | Largura       | Tailwind |
-|-------------|---------------|----------|
-| Mobile      | ≤ 767px       | (base)   |
-| Tablet      | 768 – 1023px  | `md:`    |
-| Desktop     | ≥ 1024px      | `lg:`    |
-
-No Elementor use **Site Settings → Layout → Breakpoints**:
-- Mobile: 767
-- Tablet: 1024
-- Laptop/Desktop: 1280+
+Você **não precisa decorar nada** — cada arquivo de seção lista exatamente quais
+classes ir colando em quais widgets.
 
 ---
 
-## ✏️ Onde editar conteúdo do protótipo React
+## Paleta oficial
 
-Tudo está centralizado em **`src/config/site.ts`** — URLs, telefones, e-mails,
-preços, benefícios dos planos, vídeos, áudios, embaixador, etc.
+| Token              | HEX        | Uso                                |
+|--------------------|------------|------------------------------------|
+| Navy               | `#0B2E8A`  | Cor principal                      |
+| Navy Card          | `#12389E`  | Cards Embaixadores                 |
+| Navy Deep          | `#061C5C`  | Footer / topo de gradientes navy   |
+| Teal               | `#00B8D9`  | Tecnologia / Telemedicina          |
+| Violet             | `#7B2FF7`  | Inclusão / Telepsicologia          |
+| Indigo             | `#4A3AFF`  | Meio do gradiente do Hero          |
+| Orange             | `#FF8A00`  | CTAs e conversão                   |
+| Orange Hover       | `#FF9F2E`  | Hover do CTA                       |
+| Cinza Claro        | `#F5F7FA`  | Fundo da seção Planos              |
+| Texto              | `#1B2540`  | Texto padrão                       |
+| Borda Suave        | `#E5E9F0`  | Bordas de cards                    |
 
-Você edita **um arquivo só** e o site todo se atualiza.
+Gradientes oficiais estão em `00-paleta-tokens.md`.
 
 ---
 
-## 🛒 WooCommerce — Links de produto dos planos
+## Onde editar o conteúdo no protótipo React
 
-Edite `src/config/site.ts → planos[].productUrl` ou siga a tabela em
-`secoes/04-planos.md`.
+Tudo (textos, links, telefone, e-mail, preços, vídeos) está em
+`src/config/site.ts`. Quando for migrar pro WordPress, copie os textos
+de lá. Para mudar o protótipo, edite só esse arquivo.
 
 ---
 
-## ✅ Checklist antes de migrar para WP
+## Checklist final antes de publicar no WP
 
-- [ ] Substituir as imagens (`src/assets/hero-family.jpg`, `ambassadors.jpg`) pelas finais do cliente.
-- [ ] Trocar URLs em `src/config/site.ts` pelos slugs reais do WooCommerce.
-- [ ] Adicionar embeds dos vídeos (apresentação + 3 verticais).
-- [ ] Adicionar URLs dos áudios (MP3 ou embed Spotify/SoundCloud).
-- [ ] Verificar logos de parceiros (texto → trocar por `<img>` no WP).
-- [ ] Conferir contato (telefone, e-mail, endereço) em `site.contato`.
+- [ ] Logo enviada em **Mídia** (`logo-meu-clube-tea.png`).
+- [ ] Imagens do hero (`fundo-banner.png` e `fundo-banner-mobi.png`) em Mídia.
+- [ ] Foto da seção Embaixadores em Mídia.
+- [ ] URLs dos produtos WooCommerce no botão de cada plano (seção 04).
+- [ ] URLs dos vídeos verticais e do vídeo de apresentação (seção 06).
+- [ ] Logos de parceiros (seções 07 e 12) em Mídia.
+- [ ] Telefone, e-mail e horário do rodapé conferidos.
+- [ ] Link de WhatsApp e link da Área do Cliente conferidos.

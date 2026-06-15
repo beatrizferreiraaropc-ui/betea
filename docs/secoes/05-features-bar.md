@@ -1,47 +1,79 @@
-# 05 · Faixa de Diferenciais (FeaturesBar)
+# Seção 05 · Faixa de Diferenciais
 
-**Componente React:** `src/components/sections/FeaturesBar.tsx`
+Faixa navy (gradiente vertical) com 6 itens em linha (ícone teal + texto curto).
 
-## Objetivo
-Faixa horizontal escura (gradiente navy) com 6 ícones de diferenciais.
+---
 
-## Cores
-- Fundo: `linear-gradient(180deg,#061C5C,#0B2E8A)`
-- Ícones: `#00B8D9` (teal)
-- Texto: `#FFFFFF`
+## Estrutura
 
-## HTML
-
-```html
-<section class="mct-featbar">
-  <div class="mct-featbar__inner">
-    <div><span>🌐</span>Atendimento 100% online</div>
-    <div><span>📍</span>Acesso nacional</div>
-    <div><span>💻</span>Plataforma digital</div>
-    <div><span>🤝</span>Atendimento humanizado</div>
-    <div><span>🔗</span>Rede de benefícios e descontos</div>
-    <div><span>⭐</span>Foco em TEA, PCD, neurodivergentes e famílias</div>
-  </div>
-</section>
+```
+Section [.mct-featbar]
+└── Container 1 coluna  (max-width 1200px, padding lateral)
+    └── Inner Section 6 colunas  .mct-featbar__row
+        ├── Icon Box × 6  .mct-featbar__item
 ```
 
-## CSS
+---
+
+## Widgets nativos
+- **Icon Box** × 6 (ícone em cima, texto embaixo, alinhamento central).
+
+---
+
+## Conteúdo
+
+| Ícone (Lucide)       | Texto                                          |
+|----------------------|------------------------------------------------|
+| globe                | Atendimento 100% online                        |
+| map-pin              | Acesso nacional                                |
+| monitor              | Plataforma digital                             |
+| handshake            | Atendimento humanizado                         |
+| link                 | Rede de benefícios e descontos                 |
+| star                 | Foco em TEA, PCD, neurodivergentes e famílias  |
+
+Cor de todos os ícones: **`#00B8D9`** (teal). Texto branco.
+
+---
+
+## CSS Classes
+
+| Widget                  | CSS Class             |
+|-------------------------|-----------------------|
+| Section                 | `mct-featbar`         |
+| Inner Section (grid 6)  | `mct-featbar__row`    |
+| Cada Icon Box           | `mct-featbar__item`   |
+
+---
+
+## CSS personalizado (cole na Section)
 
 ```css
-.mct-featbar{ padding:24px; }
-.mct-featbar__inner{
-  max-width:1200px; margin:0 auto;
-  background:linear-gradient(180deg,#061C5C,#0B2E8A);
+selector{ padding:24px; background:transparent; }
+selector > .e-con-inner{
+  max-width:1280px; margin:0 auto;
+  background:var(--mct-grad-navy);
   border-radius:20px; padding:24px;
-  display:grid; grid-template-columns:repeat(6,1fr); gap:24px;
-  color:#fff;
 }
-.mct-featbar__inner > div{
-  display:flex; flex-direction:column; align-items:center; gap:8px;
-  text-align:center; font-size:12px; line-height:1.3;
-}
-.mct-featbar__inner span{ color:#00B8D9; font-size:22px; }
 
-@media (max-width:1023px){ .mct-featbar__inner{ grid-template-columns:repeat(3,1fr); } }
-@media (max-width:767px){ .mct-featbar__inner{ grid-template-columns:repeat(2,1fr); padding:20px; } }
+selector .mct-featbar__row > .e-con-inner{
+  display:grid !important;
+  grid-template-columns:repeat(6,1fr); gap:24px;
+}
+
+selector .mct-featbar__item{ text-align:center; color:#fff; }
+selector .mct-featbar__item .elementor-icon{ color:var(--mct-teal) !important; font-size:22px; margin-bottom:8px; }
+selector .mct-featbar__item .elementor-icon svg{ width:24px; height:24px; }
+selector .mct-featbar__item .elementor-icon-box-description{
+  font-size:12px; color:#fff; line-height:1.3;
+}
+
+/* Tablet */
+@media (max-width:1023px){
+  selector .mct-featbar__row > .e-con-inner{ grid-template-columns:repeat(3,1fr); }
+}
+/* Mobile */
+@media (max-width:767px){
+  selector > .e-con-inner{ padding:20px; }
+  selector .mct-featbar__row > .e-con-inner{ grid-template-columns:repeat(2,1fr); }
+}
 ```
