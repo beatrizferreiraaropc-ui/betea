@@ -65,10 +65,10 @@ export function Header() {
           </nav>
           <a
             href={site.links.agendarConsulta}
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-orange text-white font-semibold text-sm shadow-lg hover:brightness-110 transition"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-orange text-white font-semibold text-sm shadow-lg hover:brightness-110 transition whitespace-nowrap"
           >
             AGENDE SUA CONSULTA
-            <CalendarDays className="h-4 w-4" />
+            <CalendarDays className="h-4 w-4 shrink-0" />
           </a>
         </div>
       </div>
