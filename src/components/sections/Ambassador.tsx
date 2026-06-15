@@ -147,6 +147,13 @@ export function Ambassador() {
           <div className="mt-9 flex flex-col items-center gap-3">
             <a
               href={embaixador.ctaUrl}
+              className="inline-flex items-center gap-2 px-5 md:px-7 py-3 md:py-3.5 rounded-full bg-cta-gradient text-white font-semibold text-[13px] md:text-base shadow-lg hover:brightness-110 transition tracking-wide whitespace-nowrap"
+            >
+              QUERO SER UM EMBAIXADOR <ArrowUpRight className="h-4 w-4 shrink-0" />
+            </a>
+          <div className="mt-9 flex flex-col items-center gap-3">
+            <a
+              href={embaixador.ctaUrl}
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-cta-gradient text-white font-semibold text-sm md:text-base shadow-lg hover:brightness-110 transition tracking-wide"
             >
               QUERO SER UM EMBAIXADOR <ArrowUpRight className="h-4 w-4" />
