@@ -163,42 +163,35 @@ export function Ambassador() {
   );
 }
 
-type RowProps = {
+type CardProps = {
   Icon: typeof Handshake;
   iconBg: string;
   title: string;
   subtitle: string;
   value: string;
   valueBg: string;
-  progress: number;
 };
 
-function CommissionRow({ Icon, iconBg, title, subtitle, value, valueBg, progress }: RowProps) {
+function CommissionCard({ Icon, iconBg, title, subtitle, value, valueBg }: CardProps) {
   return (
-    <div className="flex items-center gap-4">
+    <div className="rounded-2xl border border-white/15 bg-white/[0.04] backdrop-blur p-4 md:p-5 flex flex-col items-center text-center gap-3">
       <div
-        className="h-12 w-12 md:h-14 md:w-14 shrink-0 rounded-full flex items-center justify-center shadow-lg"
+        className="h-11 w-11 md:h-12 md:w-12 shrink-0 rounded-full flex items-center justify-center shadow-lg"
         style={{ backgroundColor: `${iconBg}22`, border: `1.5px solid ${iconBg}` }}
       >
-        <Icon className="h-6 w-6 md:h-7 md:w-7" style={{ color: iconBg }} />
+        <Icon className="h-5 w-5 md:h-6 md:w-6" style={{ color: iconBg }} />
       </div>
-
-      <div className="flex-1 min-w-0 grid grid-cols-1 sm:grid-cols-[1fr_auto] items-center gap-3">
-        <div className="min-w-0">
-          <div className="font-bold text-sm md:text-base leading-tight">{title}</div>
-          <div className="text-xs md:text-sm text-white/70">{subtitle}</div>
-        </div>
-
-        <div className="relative w-full sm:w-56 h-10 rounded-full bg-white overflow-hidden">
-          <div
-            className="absolute inset-y-0 left-0 rounded-full"
-            style={{ width: `${progress}%`, background: valueBg }}
-          />
-          <span className="relative z-10 h-full flex items-center pl-4 font-extrabold text-white text-lg md:text-xl">
-            {value}
-          </span>
-        </div>
+      <div
+        className="inline-flex items-center justify-center px-4 py-1.5 rounded-full font-extrabold text-white text-lg md:text-xl shadow"
+        style={{ background: valueBg }}
+      >
+        {value}
+      </div>
+      <div className="min-w-0">
+        <div className="font-bold text-[13px] md:text-sm leading-tight">{title}</div>
+        <div className="text-[11px] md:text-xs text-white/70 mt-0.5">{subtitle}</div>
       </div>
     </div>
   );
 }
+
