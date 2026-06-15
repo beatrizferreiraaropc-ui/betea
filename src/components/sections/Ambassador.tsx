@@ -44,7 +44,7 @@ export function Ambassador() {
   ];
 
   return (
-    <section id="embaixadores" className="py-16 md:py-20 px-5 md:px-6 bg-secondary">
+    <section id="embaixadores" className="pt-16 md:pt-20 pb-28 md:pb-36 px-5 md:px-6 bg-secondary">
       <div className="max-w-5xl mx-auto rounded-3xl bg-navy-gradient text-white overflow-hidden shadow-2xl">
         <div className="px-6 md:px-12 pt-10 md:pt-14 pb-10 md:pb-14">
           {/* 1. Badge */}
@@ -149,9 +149,9 @@ export function Ambassador() {
           <div className="mt-9 flex flex-col items-center gap-3">
             <a
               href={embaixador.ctaUrl}
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-cta-gradient text-white font-bold text-sm md:text-base shadow-2xl hover:brightness-110 transition tracking-wide"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-cta-gradient text-white font-semibold text-sm md:text-base shadow-lg hover:brightness-110 transition tracking-wide"
             >
-              QUERO SER UM EMBAIXADOR <ArrowUpRight className="h-5 w-5" />
+              QUERO SER UM EMBAIXADOR <ArrowUpRight className="h-4 w-4" />
             </a>
             <p className="text-xs md:text-sm text-white/70 inline-flex items-center gap-2">
               <Lock className="h-3.5 w-3.5" />

@@ -26,8 +26,8 @@ export function Benefits() {
   return (
     <section id="beneficios" className="relative bg-background pb-14 md:pb-20">
       <div className="max-w-7xl mx-auto px-5 md:px-6">
-        {/* 1. Cards sobrepostos ao hero */}
-        <div className="-mt-20 md:-mt-24 relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        {/* 1. Cards sobrepostos ao hero (margem negativa reforçada) */}
+        <div className="-mt-24 md:-mt-28 lg:-mt-32 relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {items.map(({ i: Icon, hex, t, s }) => (
             <div key={t} className="text-center bg-card rounded-2xl p-5 md:p-7 border border-border shadow-xl hover:-translate-y-1 hover:shadow-2xl transition">
               <div
@@ -42,8 +42,8 @@ export function Benefits() {
           ))}
         </div>
 
-        {/* 2. Faixa azul-claro — Impacto que transforma vidas */}
-        <div className="mt-8 md:mt-10 rounded-2xl border border-teal/20 bg-[#E6F7FB] px-5 md:px-8 py-5 md:py-6 flex items-center gap-4 md:gap-6">
+        {/* 2. Faixa azul-claro — Impacto que transforma vidas (mobile/tablet apenas) */}
+        <div className="lg:hidden mt-8 md:mt-10 rounded-2xl border border-teal/20 bg-[#E6F7FB] px-5 md:px-8 py-5 md:py-6 flex items-center gap-4 md:gap-6">
           <div className="h-12 w-12 md:h-14 md:w-14 rounded-full bg-white shadow flex items-center justify-center shrink-0">
             <HeartHandshake className="h-6 w-6 md:h-7 md:w-7 text-teal" />
           </div>
@@ -56,8 +56,8 @@ export function Benefits() {
           <Users className="hidden sm:block h-8 w-8 md:h-10 md:w-10 text-teal/60 shrink-0" />
         </div>
 
-        {/* 3. Faixa navy — selos de confiança */}
-        <div className="mt-4 md:mt-5 rounded-2xl bg-navy-gradient text-white px-5 md:px-8 py-5 md:py-6 grid grid-cols-3 gap-3 md:gap-6">
+        {/* 3. Faixa navy — selos de confiança (mobile/tablet apenas) */}
+        <div className="lg:hidden mt-4 md:mt-5 rounded-2xl bg-navy-gradient text-white px-5 md:px-8 py-5 md:py-6 grid grid-cols-3 gap-3 md:gap-6">
           {selos.map(({ i: Icon, t }) => (
             <div key={t} className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
               <Icon className="h-6 w-6 md:h-7 md:w-7 text-teal shrink-0" />
@@ -69,3 +69,4 @@ export function Benefits() {
     </section>
   );
 }
+

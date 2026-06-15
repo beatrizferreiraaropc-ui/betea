@@ -45,15 +45,9 @@ export function Footer() {
       {/* 1. BLOCO BRANCO SOBREPOSTO AO AMBASSADOR */}
       <section
         aria-label="Central de atendimento"
-        className="relative -mt-12 md:-mt-16 z-10 bg-white"
-        style={{
-          backgroundImage:
-            "radial-gradient(#0B2E8A11 1px, transparent 1px), radial-gradient(#0B2E8A11 1px, transparent 1px)",
-          backgroundPosition: "0 0, 12px 12px",
-          backgroundSize: "24px 24px",
-        }}
+        className="relative -mt-20 md:-mt-28 z-10 bg-white rounded-t-3xl shadow-[0_-20px_40px_-30px_rgba(11,46,138,0.25)]"
       >
-        <div className="max-w-3xl mx-auto px-5 md:px-6 py-10 md:py-14 text-center flex flex-col items-center gap-5 rounded-t-3xl bg-white/95 shadow-[0_-20px_40px_-30px_rgba(11,46,138,0.25)]">
+        <div className="max-w-3xl mx-auto px-5 md:px-6 py-10 md:py-14 text-center flex flex-col items-center gap-5">
           <Logo className="h-16 md:h-20 w-auto" />
           <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-semibold text-foreground/85">
             {pills.map(({ Icon, label, hex }) => (
@@ -67,15 +61,16 @@ export function Footer() {
             href={site.links.whatsapp}
             target="_blank"
             rel="noreferrer"
-            className="mt-2 inline-flex items-center gap-3 px-6 py-3.5 rounded-full border-2 border-navy text-navy font-bold text-sm hover:bg-navy hover:text-white transition"
+            className="mt-2 inline-flex items-center gap-3 px-6 py-3 rounded-full border border-navy/70 text-navy font-semibold text-sm hover:bg-navy hover:text-white transition"
           >
             CENTRAL DE ATENDIMENTO
-            <span className="h-7 w-7 rounded-full bg-[#25D366] flex items-center justify-center">
-              <MessageCircle className="h-4 w-4 text-white" />
+            <span className="h-6 w-6 rounded-full bg-[#25D366] flex items-center justify-center">
+              <MessageCircle className="h-3.5 w-3.5 text-white" />
             </span>
           </a>
         </div>
       </section>
+
 
       {/* 2. FOOTER NAVY */}
       <footer id="contato" className="bg-navy-deep text-white/80 pt-14 pb-6">
