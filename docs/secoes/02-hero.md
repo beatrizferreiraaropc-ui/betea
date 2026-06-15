@@ -1,73 +1,49 @@
 # 02 · Hero (banner principal)
 
 **Componente React:** `src/components/sections/Hero.tsx`
+**Referência visual:** mockup mobile enviado pelo cliente (família ao fundo).
 
-## Objetivo
-Seção principal com **imagem de fundo** (família atípica) + **overlay com o gradiente
-oficial (90deg)**. Headline grande, sub-headline, 2 CTAs (laranja + WhatsApp outline)
-e 3 micro-features. Em desktop, à direita aparece um card flutuante de impacto.
+## Estrutura
+- Fundo: **gradiente oficial 90deg** `#0B2E8A → #4A3AFF → #7B2FF7`.
+- Imagem PNG da família com fade transparente posicionada à direita,
+  sobreposta ao gradiente.
+- Conteúdo (esquerda):
+  1. Badge "🛡 SAÚDE, ACOLHIMENTO E BENEFÍCIOS"
+  2. H1 — "Cuidado e benefícios para pessoas com TEA, PCD, neurodivergentes e suas famílias."
+  3. Linha decorativa teal (`#00B8D9`)
+  4. Subtítulo — "Telemedicina, telepsicologia, assistência funeral, descontos e muito mais em um só lugar."
+  5. 2 CTAs:
+     - 🟧 **CONHEÇA NOSSOS PLANOS** → `#planos`
+     - ⚪ **FALAR NO WHATSAPP** (ícone verde `#25D366`) → `site.links.whatsapp`
 
-## Imagem de fundo
-- Arquivo: `src/assets/hero-family.jpg` (substituir pela definitiva do cliente)
-- Recomendado: **1920×1080**, JPG comprimido (≤300KB), ponto focal à direita.
+## Assets
+| Uso     | Arquivo                              | Recomendado     |
+|---------|--------------------------------------|-----------------|
+| Desktop | `fundo-banner.png`                   | 1920×640 PNG    |
+| Mobile  | `fundo-banner-mobi.png`              | 900×1100 PNG    |
 
-## Cores
-- Background: imagem + overlay gradiente
-  ```css
-  background-image: url('/wp-content/uploads/hero-family.jpg');
-  background-size: cover;
-  background-position: center right;
-  ```
-- Overlay oficial:
-  ```css
-  background: linear-gradient(90deg,
-    rgba(11,46,138,.92) 0%,
-    rgba(74,58,255,.78) 50%,
-    rgba(123,47,247,.85) 100%);
-  ```
-- Texto: `#FFFFFF`
-- Destaque "famílias com TEA, PCD": `#00B8D9`
-- CTA primário: `#FF8A00` (hover `#FF9F2E`)
-- CTA secundário (WhatsApp): borda `rgba(255,255,255,.4)` · bg `rgba(255,255,255,.05)`
+> As duas imagens já possuem o fade transparente — basta posicioná-las à direita.
 
-## Tipografia
-| Elemento     | Desktop | Tablet | Mobile |
-|--------------|---------|--------|--------|
-| Eyebrow      | 12px    | 12px   | 11px   |
-| H1           | 60px    | 48px   | 32px   |
-| Parágrafo    | 18px    | 16px   | 15px   |
-| Botão        | 16px    | 15px   | 14px   |
-
-## HTML pronto
+## HTML (Elementor — widget HTML)
 
 ```html
 <section class="mct-hero" id="hero">
-  <div class="mct-hero__overlay"></div>
+  <picture class="mct-hero__img">
+    <source media="(max-width:767px)" srcset="/wp-content/uploads/fundo-banner-mobi.png">
+    <img src="/wp-content/uploads/fundo-banner.png" alt="" aria-hidden="true">
+  </picture>
+
   <div class="mct-hero__inner">
-    <div class="mct-hero__text">
-      <span class="mct-hero__eyebrow">● Health Tech · Acolhimento · Inclusão</span>
-      <h1>Cuidado especializado e benefícios transformadores para <span>famílias com TEA, PCD</span> e neurodivergentes.</h1>
-      <p>Telemedicina, telepsicologia, assistência familiar e descontos exclusivos. Mais do que um plano — uma rede de apoio para você e quem mais importa.</p>
-      <div class="mct-hero__ctas">
-        <a class="mct-btn-cta" href="#planos">Conheça Nossos Planos →</a>
-        <a class="mct-btn-ghost" href="https://wa.me/55119XXXXXXXX" target="_blank">💬 Dúvidas? Chat WhatsApp</a>
-      </div>
-      <div class="mct-hero__mini">
-        <div><b>Atendimento</b><span>100% online</span></div>
-        <div><b>Apoio</b><span>humanizado</span></div>
-        <div><b>Proteção</b><span>de dados</span></div>
-      </div>
+    <span class="mct-hero__badge">🛡 SAÚDE, ACOLHIMENTO E BENEFÍCIOS</span>
+    <h1>Cuidado e benefícios para pessoas com TEA, PCD, neurodivergentes e suas famílias.</h1>
+    <span class="mct-hero__rule"></span>
+    <p>Telemedicina, telepsicologia, assistência funeral, descontos e muito mais em um só lugar.</p>
+    <div class="mct-hero__ctas">
+      <a class="mct-btn-cta" href="#planos">CONHEÇA NOSSOS PLANOS →</a>
+      <a class="mct-btn-wpp" href="https://wa.me/55119XXXXXXXX" target="_blank">
+        <span class="ico">💬</span> FALAR NO WHATSAPP
+      </a>
     </div>
-    <aside class="mct-hero__card">
-      <div class="mct-hero__card-icon">♥</div>
-      <h3>Impacto que liberta vidas</h3>
-      <p>Até <b>10% do lucro</b> destinado a causas de apoio a famílias atípicas.</p>
-      <ul>
-        <li><b>+15k</b><span>famílias</span></li>
-        <li><b>+50k</b><span>consultas</span></li>
-        <li><b>+200</b><span>especialistas</span></li>
-      </ul>
-    </aside>
   </div>
 </section>
 ```
@@ -76,76 +52,57 @@ e 3 micro-features. Em desktop, à direita aparece um card flutuante de impacto.
 
 ```css
 .mct-hero{
-  position:relative; isolation:isolate;
-  padding:160px 0 110px;
-  background:url('/wp-content/uploads/hero-family.jpg') center right/cover no-repeat;
-  color:#fff; overflow:hidden;
+  position:relative; isolation:isolate; overflow:hidden;
+  background:linear-gradient(90deg,#0B2E8A 0%,#4A3AFF 50%,#7B2FF7 100%);
+  color:#fff;
 }
-.mct-hero__overlay{
-  position:absolute; inset:0; z-index:-1;
-  background:linear-gradient(90deg,
-    rgba(11,46,138,.92) 0%,
-    rgba(74,58,255,.78) 50%,
-    rgba(123,47,247,.85) 100%);
+.mct-hero__img{ position:absolute; inset:0; pointer-events:none; }
+.mct-hero__img img{
+  position:absolute; right:0; top:0; height:100%;
+  width:62%; object-fit:cover; object-position:right center;
 }
 .mct-hero__inner{
-  max-width:1200px; margin:0 auto; padding:0 24px;
-  display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center;
+  position:relative; max-width:1200px; margin:0 auto;
+  padding:80px 24px 96px;
 }
-.mct-hero__eyebrow{ color:#00B8D9; font-size:12px; letter-spacing:.25em; text-transform:uppercase; }
-.mct-hero h1{ font-size:60px; line-height:1.08; margin:.75rem 0 1.25rem; }
-.mct-hero h1 span{ color:#00B8D9; }
-.mct-hero p{ font-size:18px; line-height:1.55; color:rgba(255,255,255,.85); max-width:560px; }
-.mct-hero__ctas{ margin-top:1.75rem; display:flex; gap:12px; flex-wrap:wrap; }
-.mct-btn-ghost{
-  display:inline-flex; align-items:center; gap:.5rem;
-  padding:.75rem 1.25rem; border-radius:9999px;
-  color:#fff !important; background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.4); backdrop-filter:blur(4px);
-  font-weight:600; text-decoration:none; transition:.2s;
+.mct-hero__badge{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 16px; border-radius:9999px;
+  background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.25);
+  backdrop-filter:blur(6px);
+  font-size:11px; letter-spacing:.22em; text-transform:uppercase; font-weight:600;
 }
-.mct-btn-ghost:hover{ background:rgba(255,255,255,.15); }
-.mct-hero__mini{ margin-top:2.5rem; display:grid; grid-template-columns:repeat(3,1fr); gap:18px; max-width:420px; }
-.mct-hero__mini > div{ font-size:11px; line-height:1.2; }
-.mct-hero__mini b{ display:block; font-weight:700; }
-.mct-hero__mini span{ color:rgba(255,255,255,.7); }
+.mct-hero h1{ font-size:56px; line-height:1.05; max-width:680px; margin:24px 0 0; font-weight:700; }
+.mct-hero__rule{ display:block; width:80px; height:4px; border-radius:9999px; background:#00B8D9; margin:20px 0; }
+.mct-hero p{ font-size:18px; line-height:1.55; color:rgba(255,255,255,.9); max-width:520px; }
+.mct-hero__ctas{ margin-top:28px; display:flex; flex-wrap:wrap; gap:12px; max-width:520px; }
+.mct-btn-cta{
+  display:inline-flex; align-items:center; gap:8px; padding:14px 22px;
+  border-radius:9999px; background:#FF8A00; color:#fff; font-weight:700;
+  text-decoration:none; box-shadow:0 18px 35px -12px rgba(255,138,0,.55);
+}
+.mct-btn-wpp{
+  display:inline-flex; align-items:center; gap:10px; padding:14px 22px;
+  border-radius:9999px; background:#fff; color:#0B2E8A; font-weight:700;
+  text-decoration:none; box-shadow:0 18px 35px -12px rgba(0,0,0,.25);
+}
+.mct-btn-wpp .ico{
+  width:28px; height:28px; border-radius:9999px; background:#25D366;
+  display:inline-flex; align-items:center; justify-content:center; color:#fff;
+}
 
-.mct-hero__card{
-  background:rgba(255,255,255,.95); backdrop-filter:blur(8px);
-  color:#1B2540; border-radius:20px; padding:24px; max-width:320px;
-  box-shadow:0 25px 50px -12px rgba(0,0,0,.25);
-}
-.mct-hero__card-icon{
-  width:48px; height:48px; border-radius:9999px; background:#7B2FF7;
-  display:flex; align-items:center; justify-content:center; color:#fff; font-size:22px;
-  margin-bottom:12px;
-}
-.mct-hero__card ul{ list-style:none; padding:0; margin:14px 0 0;
-  display:grid; grid-template-columns:repeat(3,1fr); gap:8px; text-align:center; }
-.mct-hero__card li b{ display:block; font-weight:700; }
-.mct-hero__card li:nth-child(1) b{ color:#0B2E8A; }
-.mct-hero__card li:nth-child(2) b{ color:#7B2FF7; }
-.mct-hero__card li:nth-child(3) b{ color:#00B8D9; }
-.mct-hero__card li span{ display:block; font-size:10px; color:#5B6478; }
-
-/* TABLET */
-@media (max-width:1023px){
-  .mct-hero{ padding:140px 0 90px; }
-  .mct-hero__inner{ grid-template-columns:1fr; gap:32px; }
-  .mct-hero__card{ display:none; }
-  .mct-hero h1{ font-size:48px; }
-}
-/* MOBILE */
+@media (max-width:1023px){ .mct-hero h1{ font-size:44px; } .mct-hero__img img{ width:55%; } }
 @media (max-width:767px){
-  .mct-hero{ padding:120px 0 70px; background-position:center; }
-  .mct-hero h1{ font-size:32px; }
-  .mct-hero p{ font-size:15px; }
-  .mct-hero__ctas .mct-btn-cta,
-  .mct-hero__ctas .mct-btn-ghost{ width:100%; justify-content:center; }
+  .mct-hero__img img{ width:72%; }
+  .mct-hero__inner{ padding:56px 20px 80px; }
+  .mct-hero h1{ font-size:30px; max-width:62%; }
+  .mct-hero p{ font-size:15px; max-width:62%; }
+  .mct-hero__ctas{ flex-direction:column; }
+  .mct-btn-cta,.mct-btn-wpp{ width:100%; justify-content:space-between; }
 }
 ```
 
-## Responsividade
-- ≥1024px: grid 2 colunas (texto + card de impacto).
-- 768–1023px: 1 coluna, card de impacto oculto, h1 reduz para 48px.
-- ≤767px: imagem reposicionada para `center`, h1 32px, CTAs full-width empilhados.
+## Notas WordPress
+- Faça upload dos PNGs em **Mídia** e troque os caminhos `/wp-content/uploads/...`.
+- O botão "FALAR NO WHATSAPP" deve abrir em nova aba (`target="_blank"`).
+- O link "CONHEÇA NOSSOS PLANOS" usa âncora `#planos` para a seção de planos.

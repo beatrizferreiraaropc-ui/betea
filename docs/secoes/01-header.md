@@ -1,84 +1,93 @@
-# 01 · Header (cabeçalho + faixa superior)
+# 01 · Header (cabeçalho)
 
 **Componente React:** `src/components/sections/Header.tsx`
 **Editar conteúdo:** `src/config/site.ts → nav, links`
+**Referência visual:** mockup mobile enviado pelo cliente (10:11).
 
-## Objetivo
-Faixa superior com gradiente oficial (90deg), barra branca de navegação com logo,
-menu, botão "Área do Cliente" (outline navy) e botão "Quero Fazer Parte" (CTA laranja).
-Em mobile: hambúrguer abre drawer azul-navy com texto branco.
+## Estrutura
+1. **Linha 1** — Logo (esq) + botão hambúrguer violeta (dir).
+2. **Linha 2** — 3 ícones temáticos:
+   - ❤ Cuidados — `#00B8D9`
+   - ♿ Inclusão — `#7B2FF7`
+   - ★ Benefícios — `#FF8A00`
+3. **Linha 3** — Tagline: *Conexão que **acolhe** (teal). Benefícios que **transformam** (laranja).*
+4. **Botão flutuante** "AGENDE SUA CONSULTA 📅" — sobreposto entre header e hero (margem negativa).
 
 ## Cores
-- Faixa topo: gradiente oficial `linear-gradient(90deg,#0B2E8A,#4A3AFF,#7B2FF7)` · texto `#FFFFFF`
-- Nav: fundo `rgba(255,255,255,.95)` + `backdrop-filter: blur(8px)` · texto `#1B2540`
-- Link hover: `#7B2FF7`
-- Botão Área do Cliente: borda `#0B2E8A` · texto `#0B2E8A` · hover bg `#0B2E8A` / texto `#FFFFFF`
-- Botão CTA: bg `#FF8A00` · texto `#FFFFFF` · hover `#FF9F2E`
-- Drawer mobile: bg `#0B2E8A` · texto `#FFFFFF` · separadores `rgba(255,255,255,.1)`
+- Fundo header: `#FFFFFF`
+- Texto: `#1B2540`
+- Botão hambúrguer: bg `#7B2FF7`, ícone `#FFFFFF`, radius `12px`
+- Botão "Agende sua consulta": fundo `#FFFFFF`, texto `#0B2E8A`, sombra forte, ícone calendário `#7B2FF7`
 
-## Tipografia
-- Faixa topo: `12px` (mobile `11px`)
-- Links menu: `14px` peso `500`
-- Botões: `14px` peso `600`
-
-## Estrutura no Elementor
-
-Use o **Theme Builder → Header**.
-
-1. Section (full width, sem padding) → **Container vertical**
-2. Inner container 1: HTML widget com a faixa superior (cole HTML abaixo).
-3. Inner container 2: layout horizontal com 3 colunas
-   - Coluna 1 (auto): Logo (Site Logo widget)
-   - Coluna 2 (1fr): Nav Menu (Elementor Pro Nav Menu)
-   - Coluna 3 (auto): 2 botões (Área do Cliente + CTA) + ícone menu mobile
-
-## HTML — faixa superior (widget HTML)
+## HTML (Elementor — widget HTML)
 
 ```html
-<div class="mct-topbar">
-  Cuidado · Inclusão · Benefícios · Atendimento 100% humanizado para famílias com TEA, PCD e neurodivergentes.
-</div>
+<header class="mct-header">
+  <div class="mct-header__inner">
+    <div class="mct-header__row">
+      <a href="/" class="mct-header__logo">
+        <img src="/wp-content/uploads/logo-meu-clube-tea.jpeg" alt="Meu Clube TEA">
+      </a>
+      <button class="mct-header__burger" aria-label="Abrir menu">☰</button>
+    </div>
+
+    <ul class="mct-header__pills">
+      <li><span class="dot" style="color:#00B8D9">❤</span> Cuidados</li>
+      <li><span class="dot" style="color:#7B2FF7">♿</span> Inclusão</li>
+      <li><span class="dot" style="color:#FF8A00">★</span> Benefícios</li>
+    </ul>
+
+    <p class="mct-header__tagline">
+      Conexão que <b style="color:#00B8D9">acolhe</b>.
+      Benefícios que <b style="color:#FF8A00">transformam</b>.
+    </p>
+
+    <a class="mct-header__cta" href="https://meuclubetea.com.br/agendar/">
+      AGENDE SUA CONSULTA 📅
+    </a>
+  </div>
+</header>
 ```
 
-## CSS avançado (Avançado → CSS personalizado da seção)
+## CSS avançado
 
 ```css
-.mct-topbar{
-  background: linear-gradient(90deg,#0B2E8A 0%,#4A3AFF 50%,#7B2FF7 100%);
-  color:#fff; text-align:center;
-  font-size:12px; padding:8px 16px;
+.mct-header{ background:#fff; position:relative; z-index:40; }
+.mct-header__inner{ max-width:1200px; margin:0 auto; padding:20px 20px 28px; position:relative; }
+.mct-header__row{ display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.mct-header__logo img{ height:44px; width:auto; display:block; }
+.mct-header__burger{
+  width:44px; height:44px; border:0; border-radius:12px;
+  background:#7B2FF7; color:#fff; font-size:20px; cursor:pointer;
+  box-shadow:0 6px 18px -6px rgba(123,47,247,.5);
 }
-@media (max-width:767px){ .mct-topbar{ font-size:11px; } }
+.mct-header__pills{
+  list-style:none; padding:0; margin:18px 0 0;
+  display:flex; flex-wrap:wrap; gap:6px 24px; font-size:14px; font-weight:600; color:#1B2540;
+}
+.mct-header__pills li{ display:flex; align-items:center; gap:8px; }
+.mct-header__tagline{ margin:10px 0 0; font-size:15px; color:#1B2540; }
 
-/* Nav menu */
-selector .elementor-nav-menu a{
-  color:#1B2540; font-weight:500; font-size:14px;
-  transition:color .2s;
+.mct-header__cta{
+  position:absolute; right:20px; bottom:-24px;
+  display:inline-flex; align-items:center; gap:10px;
+  padding:14px 22px; border-radius:9999px;
+  background:#fff; color:#0B2E8A; font-weight:700; font-size:14px;
+  border:1px solid rgba(123,47,247,.15);
+  box-shadow:0 20px 40px -12px rgba(11,46,138,.25);
+  text-decoration:none; transition:.2s;
 }
-selector .elementor-nav-menu a:hover{ color:#7B2FF7; }
+.mct-header__cta:hover{ transform:translateY(-2px); }
 
-/* Botão Área do Cliente (outline) */
-.mct-btn-outline{
-  border:2px solid #0B2E8A; color:#0B2E8A; background:#fff;
-  padding:8px 18px; border-radius:9999px; font-weight:600; font-size:14px;
-  display:inline-flex; align-items:center; transition:.2s;
+@media (min-width:1024px){
+  .mct-header__inner{ padding:28px 32px 36px; }
+  .mct-header__logo img{ height:48px; }
 }
-.mct-btn-outline:hover{ background:#0B2E8A; color:#fff; }
 ```
 
-## Links a configurar
-- Logo → `/`
-- "Início" → `#hero`
-- "Benefícios" → `#beneficios`
-- "Planos" → `#planos`
-- "Como Funciona" → `#como-funciona`
-- "Embaixadores" → `#embaixadores`
-- "Sobre Nós" → `#sobre`
-- "Contato" → `#contato`
-- "Área do Cliente" → `https://meuclubetea.com.br/minha-conta/`
-- "Quero Fazer Parte" → `https://meuclubetea.com.br/planos/` (página com produtos WooCommerce)
-
-## Responsividade
-- ≥1024px: menu horizontal completo, ambos botões visíveis.
-- 768–1023px: menu vira hambúrguer; botão CTA visível, "Área do Cliente" some.
-- ≤767px: somente logo + hambúrguer (drawer com todos os links e ambos CTAs).
+## WordPress
+- Coloque o logo em **Aparência → Personalizar → Identidade do site**.
+- Crie um Header no **Theme Builder** com um único container vertical contendo
+  o HTML acima (widget HTML) + CSS na aba "Avançado → CSS personalizado".
+- O link de "AGENDE SUA CONSULTA" deve apontar para a página de agendamento
+  (definida em `site.links.agendarConsulta`).
