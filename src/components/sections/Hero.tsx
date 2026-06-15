@@ -91,7 +91,7 @@ export function Hero() {
               ].map(({ Icon, hex, label }) => (
                 <div key={label} className="flex flex-col items-center gap-1.5">
                   <div className="h-10 w-10 rounded-full flex items-center justify-center" style={{ backgroundColor: hex }}>
-                    <Icon className="h-4.5 w-4.5 text-white" />
+                    <Icon className="h-5 w-5 text-white" />
                   </div>
                   <span className="text-[10.5px] font-semibold text-foreground/75 leading-tight">{label}</span>
                 </div>
