@@ -43,7 +43,7 @@ export function Hero() {
 
           <h1 className="mt-6 text-[1.7rem] sm:text-4xl md:text-5xl lg:text-[3rem] font-bold leading-[1.08]">
             Cuidado e benefícios para pessoas com <span className="text-teal">TEA, PCD</span>,{" "}
-            <span style={{ color: "#B794FF" }}>neurodivergentes</span> e suas famílias.
+            <span style={{ color: "#D6CAF2" }}>neurodivergentes</span> e suas famílias.
           </h1>
 
           <span className="mt-5 block h-1 w-20 rounded-full bg-teal" aria-hidden />
@@ -102,9 +102,9 @@ export function Hero() {
             </p>
             <div className="mt-4 grid grid-cols-3 gap-2 text-center">
               {[
-                { Icon: Users, hex: "#0B2E8A", label: "Famílias" },
-                { Icon: Stethoscope, hex: "#7B2FF7", label: "Consultas" },
-                { Icon: UserCog, hex: "#00B8D9", label: "Especialistas" },
+                { Icon: Users, hex: "#3F74C2", label: "Famílias" },
+                { Icon: Stethoscope, hex: "#B8A4E8", label: "Consultas" },
+                { Icon: UserCog, hex: "#7FC8D4", label: "Especialistas" },
               ].map(({ Icon, hex, label }) => (
                 <div key={label} className="flex flex-col items-center gap-1">
                   <div className="h-8 w-8 rounded-full flex items-center justify-center shadow-sm" style={{ backgroundColor: hex }}>

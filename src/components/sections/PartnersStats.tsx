@@ -2,7 +2,7 @@ import { MapPin, Building2, Activity, Users } from "lucide-react";
 
 // SEÇÃO: ATENDIMENTO / PARCEIROS DE SAÚDE
 // Reproduz o mock mobile enviado pelo cliente (estatísticas + grid de logos),
-// porém com a paleta oficial (fundo navy #0B2E8A, NÃO laranja).
+// porém com a paleta oficial (fundo navy #3F74C2, NÃO laranja).
 export function PartnersStats() {
   const stats = [
     { icon: MapPin, n: "26", l: "Estados + DF" },
@@ -19,12 +19,12 @@ export function PartnersStats() {
   ];
 
   return (
-    <section id="atendimento" className="py-16 md:py-24" style={{ backgroundColor: "#0B2E8A" }}>
+    <section id="atendimento" className="py-16 md:py-24" style={{ backgroundColor: "#3F74C2" }}>
       <div className="max-w-7xl mx-auto px-5 md:px-6 text-white">
         <div className="text-center max-w-2xl mx-auto">
           <span
             className="inline-block text-[11px] font-bold tracking-[0.3em] uppercase px-4 py-1.5 rounded-full"
-            style={{ backgroundColor: "#12389E", color: "#00B8D9" }}
+            style={{ backgroundColor: "#5589D1", color: "#7FC8D4" }}
           >
             Atendimento
           </span>
@@ -40,10 +40,10 @@ export function PartnersStats() {
             <div
               key={l}
               className="rounded-2xl p-4 md:p-5 flex items-center gap-3 md:gap-4 border"
-              style={{ backgroundColor: "#12389E", borderColor: "rgba(0,184,217,0.25)" }}
+              style={{ backgroundColor: "#5589D1", borderColor: "rgba(0,184,217,0.25)" }}
             >
               <div className="h-10 w-10 md:h-12 md:w-12 shrink-0 rounded-full flex items-center justify-center" style={{ backgroundColor: "rgba(0,184,217,0.15)" }}>
-                <Icon className="h-4 w-4 md:h-5 md:w-5" style={{ color: "#00B8D9" }} />
+                <Icon className="h-4 w-4 md:h-5 md:w-5" style={{ color: "#7FC8D4" }} />
               </div>
               <div className="min-w-0">
                 <div className="text-xl md:text-3xl font-bold leading-none">{n}</div>
@@ -59,7 +59,7 @@ export function PartnersStats() {
             <div
               key={nome}
               className="h-16 md:h-20 rounded-xl flex items-center justify-center text-center text-xs md:text-sm font-semibold px-3"
-              style={{ backgroundColor: "#FFFFFF", color: "#0B2E8A" }}
+              style={{ backgroundColor: "#FFFFFF", color: "#3F74C2" }}
             >
               {nome}
             </div>

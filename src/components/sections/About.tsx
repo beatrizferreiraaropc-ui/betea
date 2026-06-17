@@ -15,19 +15,19 @@ export function About() {
   const cards: { icon: LucideIcon; hex: string; t: string; d: string }[] = [
     {
       icon: Heart,
-      hex: "#00B8D9",
+      hex: "#7FC8D4",
       t: "Propósito simples e poderoso",
       d: "Tornar o cuidado mais acessível para pessoas com TEA, PCD, neurodivergentes e suas famílias.",
     },
     {
       icon: Users,
-      hex: "#7B2FF7",
+      hex: "#B8A4E8",
       t: "Rede de apoio real",
       d: "Consultas, terapias, medicamentos e despesas do dia a dia centralizadas em um único lugar.",
     },
     {
       icon: Sparkles,
-      hex: "#FF8A00",
+      hex: "#F3A35C",
       t: "Saúde, acolhimento e economia",
       d: "Mais do que um clube de benefícios: praticidade, segurança e qualidade de vida.",
     },

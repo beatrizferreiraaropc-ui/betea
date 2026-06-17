@@ -25,19 +25,19 @@ export function Ambassador() {
   const pilares = [
     {
       Icon: HeartHandshake,
-      hex: "#00B8D9",
+      hex: "#7FC8D4",
       titulo: "Impacto real",
       desc: "Leve saúde e benefícios para famílias que precisam.",
     },
     {
       Icon: TrendingUp,
-      hex: "#A06BFF",
+      hex: "#D6CAF2",
       titulo: "Renda recorrente",
       desc: "Ganhe todos os meses com sua rede de associados.",
     },
     {
       Icon: MapPin,
-      hex: "#FF8A00",
+      hex: "#F3A35C",
       titulo: "Liberdade",
       desc: "Trabalhe de onde estiver, no seu ritmo.",
     },
@@ -113,19 +113,19 @@ export function Ambassador() {
           <div className="mt-6 grid grid-cols-2 gap-3 md:gap-4 max-w-2xl mx-auto">
             <CommissionCard
               Icon={Handshake}
-              iconBg="#00B8D9"
+              iconBg="#7FC8D4"
               title="Bônus de indicação"
               subtitle="primeira mensalidade"
               value={embaixador.comissaoPrimeira}
-              valueBg="linear-gradient(90deg,#00B8D9,#26D4F0)"
+              valueBg="linear-gradient(90deg,#7FC8D4,#A8DCE3)"
             />
             <CommissionCard
               Icon={CircleDollarSign}
-              iconBg="#7B2FF7"
+              iconBg="#B8A4E8"
               title="Bônus recorrente"
               subtitle={`até ${embaixador.mesesRecorrencia} meses`}
               value={embaixador.comissaoRecorrente}
-              valueBg="linear-gradient(90deg,#7B2FF7,#A06BFF)"
+              valueBg="linear-gradient(90deg,#B8A4E8,#D6CAF2)"
             />
           </div>
 

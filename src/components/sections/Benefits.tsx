@@ -11,10 +11,10 @@ import { Stethoscope, Brain, Shield, Tag, HeartHandshake, Users, ShieldCheck, Lo
  */
 export function Benefits() {
   const items = [
-    { i: Stethoscope, hex: "#00B8D9", t: "Telemedicina", s: "Consultas online com especialistas, 24/7" },
-    { i: Brain,       hex: "#7B2FF7", t: "Telepsicologia", s: "Equilíbrio emocional para toda a família" },
-    { i: Shield,      hex: "#0B2E8A", t: "Assistência Funeral", s: "Apoio total em momentos difíceis" },
-    { i: Tag,         hex: "#FF8A00", t: "Descontos e Vantagens", s: "Economia inteligente no dia a dia" },
+    { i: Stethoscope, hex: "#7FC8D4", t: "Telemedicina", s: "Consultas online com especialistas, 24/7" },
+    { i: Brain,       hex: "#B8A4E8", t: "Telepsicologia", s: "Equilíbrio emocional para toda a família" },
+    { i: Shield,      hex: "#3F74C2", t: "Assistência Funeral", s: "Apoio total em momentos difíceis" },
+    { i: Tag,         hex: "#F3A35C", t: "Descontos e Vantagens", s: "Economia inteligente no dia a dia" },
   ];
 
   const selos = [
@@ -43,7 +43,7 @@ export function Benefits() {
         </div>
 
         {/* 2. Faixa azul-claro — Impacto que transforma vidas (mobile/tablet apenas) */}
-        <div className="lg:hidden mt-8 md:mt-10 rounded-2xl border border-teal/20 bg-[#E6F7FB] px-5 md:px-8 py-5 md:py-6 flex items-center gap-4 md:gap-6">
+        <div className="lg:hidden mt-8 md:mt-10 rounded-2xl border border-teal/20 bg-[#EAF1FB] px-5 md:px-8 py-5 md:py-6 flex items-center gap-4 md:gap-6">
           <div className="h-12 w-12 md:h-14 md:w-14 rounded-full bg-white shadow flex items-center justify-center shrink-0">
             <HeartHandshake className="h-6 w-6 md:h-7 md:w-7 text-teal" />
           </div>
