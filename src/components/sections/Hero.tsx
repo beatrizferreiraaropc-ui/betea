@@ -43,7 +43,7 @@ export function Hero() {
 
           <h1 className="mt-6 text-[1.7rem] sm:text-4xl md:text-5xl lg:text-[3rem] font-bold leading-[1.08]">
             Cuidado e benefícios para pessoas com <span className="text-teal">TEA, PCD</span>,{" "}
-            <span style={{ color: "#D6CAF2" }}>neurodivergentes</span> e suas famílias.
+            <span className="text-violet-light">neurodivergentes</span> e suas famílias.
           </h1>
 
           <span className="mt-5 block h-1 w-20 rounded-full bg-teal" aria-hidden />
