@@ -2,7 +2,7 @@ import { Check } from "lucide-react";
 import { site } from "@/config/site";
 
 // SEÇÃO: PLANOS — fundo #F5F7FA, bordas por plano
-// Essencial #00B8D9 · Família #7B2FF7 (selo #FF8A00) · Proteção Total #0B2E8A
+// Essencial #7FC8D4 · Família #B8A4E8 (selo #F3A35C) · Proteção Total #3F74C2
 export function Plans() {
   return (
     <section id="planos" className="py-16 md:py-24" style={{ backgroundColor: "#F5F7FA" }}>
@@ -27,7 +27,7 @@ export function Plans() {
                 {p.tag && (
                   <div
                     className="absolute -top-3 left-1/2 -translate-x-1/2 text-white text-[11px] font-bold px-4 py-1 rounded-full whitespace-nowrap shadow"
-                    style={{ backgroundColor: "#FF8A00" }}
+                    style={{ backgroundColor: "#F3A35C" }}
                   >
                     {p.tag}
                   </div>
@@ -61,7 +61,7 @@ export function Plans() {
                 <a
                   href={p.productUrl}
                   className="mt-8 inline-flex items-center justify-center w-full py-3 rounded-full font-semibold text-sm transition text-white shadow-sm hover:shadow-md hover:brightness-110"
-                  style={{ backgroundColor: featured ? "#FF8A00" : p.cor }}
+                  style={{ backgroundColor: featured ? "#F3A35C" : p.cor }}
                 >
                   {p.ctaLabel}
                 </a>

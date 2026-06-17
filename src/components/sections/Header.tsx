@@ -20,9 +20,9 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   const pills = [
-    { Icon: Heart, label: "Cuidados", hex: "#00B8D9" },
-    { Icon: Accessibility, label: "Inclusão", hex: "#7B2FF7" },
-    { Icon: Star, label: "Benefícios", hex: "#FF8A00" },
+    { Icon: Heart, label: "Cuidados", hex: "#7FC8D4" },
+    { Icon: Accessibility, label: "Inclusão", hex: "#B8A4E8" },
+    { Icon: Star, label: "Benefícios", hex: "#F3A35C" },
   ];
 
   return (
@@ -102,8 +102,8 @@ export function Header() {
 
         {/* Linha 3 — tagline */}
         <p className="mt-3 text-sm sm:text-base text-foreground/80">
-          Conexão que <span style={{ color: "#00B8D9" }} className="font-semibold">acolhe</span>.{" "}
-          Benefícios que <span style={{ color: "#FF8A00" }} className="font-semibold">transformam</span>.
+          Conexão que <span style={{ color: "#7FC8D4" }} className="font-semibold">acolhe</span>.{" "}
+          Benefícios que <span style={{ color: "#F3A35C" }} className="font-semibold">transformam</span>.
         </p>
       </div>
 

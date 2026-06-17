@@ -7,32 +7,37 @@
 
 ```css
 :root{
-  /* Paleta oficial */
-  --mct-navy:        #0B2E8A;
-  --mct-navy-card:   #12389E;
-  --mct-navy-deep:   #061C5C;
-  --mct-teal:        #00B8D9;
-  --mct-violet:      #7B2FF7;
-  --mct-indigo:      #4A3AFF;
-  --mct-orange:      #FF8A00;
-  --mct-orange-hov:  #FF9F2E;
-  --mct-bg-soft:     #F5F7FA;
-  --mct-text:        #1B2540;
+  /* Paleta oficial — PASTEL (base azul do banner: #3F74C2) */
+  --mct-navy:        #3F74C2;   /* azul principal (banner) */
+  --mct-navy-card:   #5589D1;   /* cards internos sobre fundo navy */
+  --mct-navy-deep:   #2E5A9E;   /* gradientes / fundos escuros suaves */
+  --mct-blue-soft:   #EAF1FB;   /* superfície azul clara */
+
+  --mct-teal:        #7FC8D4;   /* acolhimento (pastel) */
+  --mct-violet:      #B8A4E8;   /* inclusão (lilás suave) */
+  --mct-violet-light:#D6CAF2;
+  --mct-orange:      #F3A35C;   /* CTA coral pastel */
+  --mct-orange-hov:  #F6B981;
+  --mct-peach:       #F6C9A8;
+
+  --mct-bg-soft:     #F5F7FB;
+  --mct-text:        #1F2A44;
   --mct-white:       #FFFFFF;
+  --mct-border:      #E2E8F1;
 
-  /* Gradientes oficiais */
-  --mct-grad-hero:   linear-gradient(90deg,#0B2E8A 0%,#4A3AFF 50%,#7B2FF7 100%);
-  --mct-grad-navy:   linear-gradient(180deg,#061C5C,#0B2E8A);
-  --mct-grad-violet: linear-gradient(135deg,#7B2FF7,#A06BFF);
-  --mct-grad-cta:    linear-gradient(135deg,#FF8A00,#FF9F2E);
+  /* Gradientes */
+  --mct-grad-hero:   linear-gradient(160deg,#2E5A9E 0%,#3F74C2 100%);
+  --mct-grad-navy:   linear-gradient(160deg,#2E5A9E 0%,#3F74C2 100%);
+  --mct-grad-violet: linear-gradient(135deg,#B8A4E8,#D6CAF2);
+  --mct-grad-cta:    linear-gradient(135deg,#F3A35C,#F6B981);
 
-  /* Sombras */
-  --mct-shadow-sm:  0 4px 12px rgba(11,46,138,.08);
-  --mct-shadow-md:  0 12px 30px rgba(11,46,138,.12);
-  --mct-shadow-lg:  0 25px 50px -12px rgba(11,46,138,.25);
+  /* Sombras suaves */
+  --mct-shadow-sm:  0 4px 12px rgba(63,116,194,.10);
+  --mct-shadow-md:  0 12px 28px -10px rgba(63,116,194,.22);
+  --mct-shadow-lg:  0 25px 50px -14px rgba(63,116,194,.28);
 
   /* Raios */
-  --mct-radius:    12px;
+  --mct-radius:    14px;
   --mct-radius-lg: 20px;
   --mct-radius-xl: 28px;
 }

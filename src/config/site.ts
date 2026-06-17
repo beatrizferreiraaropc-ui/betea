@@ -61,7 +61,7 @@ export const site = {
     {
       id: "essencial",
       nome: "PLANO ESSENCIAL",
-      cor: "#00B8D9",
+      cor: "#7FC8D4",
       destaque: false,
       ribbon: null,
       tag: null,
@@ -80,7 +80,7 @@ export const site = {
     {
       id: "familia",
       nome: "PLANO FAMÍLIA",
-      cor: "#7B2FF7",
+      cor: "#B8A4E8",
       destaque: true,
       ribbon: null,
       tag: "Recomendado por Especialistas",
@@ -99,7 +99,7 @@ export const site = {
     {
       id: "protecao-total",
       nome: "PLANO PROTEÇÃO TOTAL",
-      cor: "#0B2E8A",
+      cor: "#3F74C2",
       destaque: false,
       ribbon: "MAIS COMPLETO",
       tag: null,

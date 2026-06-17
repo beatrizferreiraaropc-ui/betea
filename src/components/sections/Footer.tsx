@@ -12,9 +12,9 @@ import { site } from "@/config/site";
  */
 export function Footer() {
   const pills = [
-    { Icon: Heart, label: "Cuidado", hex: "#00B8D9" },
-    { Icon: Accessibility, label: "Inclusão", hex: "#7B2FF7" },
-    { Icon: Star, label: "Benefícios", hex: "#FF8A00" },
+    { Icon: Heart, label: "Cuidado", hex: "#7FC8D4" },
+    { Icon: Accessibility, label: "Inclusão", hex: "#B8A4E8" },
+    { Icon: Star, label: "Benefícios", hex: "#F3A35C" },
   ];
 
   const cols = [

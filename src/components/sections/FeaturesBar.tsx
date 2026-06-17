@@ -3,12 +3,12 @@ import { Globe, MapPin, Monitor, HeartHandshake, Network, Star } from "lucide-re
 // SEÇÃO: FAIXA DE DIFERENCIAIS — cada ícone com cor da paleta oficial
 export function FeaturesBar() {
   const items = [
-    { i: Globe, t: "Atendimento 100% online", hex: "#00B8D9" },
-    { i: MapPin, t: "Acesso nacional", hex: "#FF8A00" },
-    { i: Monitor, t: "Plataforma digital", hex: "#7B2FF7" },
-    { i: HeartHandshake, t: "Atendimento humanizado", hex: "#FF8A00" },
-    { i: Network, t: "Rede de benefícios e descontos", hex: "#00B8D9" },
-    { i: Star, t: "Foco em TEA, PCD, neurodivergentes e famílias", hex: "#B794FF" },
+    { i: Globe, t: "Atendimento 100% online", hex: "#7FC8D4" },
+    { i: MapPin, t: "Acesso nacional", hex: "#F3A35C" },
+    { i: Monitor, t: "Plataforma digital", hex: "#B8A4E8" },
+    { i: HeartHandshake, t: "Atendimento humanizado", hex: "#F3A35C" },
+    { i: Network, t: "Rede de benefícios e descontos", hex: "#7FC8D4" },
+    { i: Star, t: "Foco em TEA, PCD, neurodivergentes e famílias", hex: "#D6CAF2" },
   ];
   return (
     <section className="py-6 px-6">
