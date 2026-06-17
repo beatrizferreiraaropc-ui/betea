@@ -28,44 +28,48 @@
   --color-violet-light: var(--violet-light);
   --color-orange: var(--orange);
   --color-teal: var(--teal);
+  --color-peach: var(--peach);
+  --color-blue-soft: var(--blue-soft);
   --color-ring-offset-background: var(--background);
   --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
 }
 
-/* ===== PALETA OFICIAL — MEU CLUBE TEA =====
-   Principal (Saúde/Confiança):    #0B2E8A  → navy
-   Secundária (Tecnologia):         #00B8D9  → teal
-   Inclusão (Neurodivergência):     #7B2FF7  → violet
-   Conversão (CTA):                 #FF8A00  → orange
-   Branca:                          #FFFFFF
-   Cinza Claro Premium:             #F5F7FA
-   Texto Escuro:                    #1B2540
-   =========================================== */
+/* ===== PALETA OFICIAL — MEU CLUBE TEA (PASTEL) =====
+   Azul principal (do banner):     #3F74C2  → navy
+   Azul profundo (gradientes):     #2E5A9E  → navy-deep
+   Lilás suave (inclusão):         #B8A4E8  → violet
+   Lilás claro:                    #D6CAF2  → violet-light
+   Coral pastel (CTA):             #F3A35C  → orange
+   Teal pastel (acolhimento):      #7FC8D4  → teal
+   Pêssego (apoio):                #F6C9A8  → peach
+   =================================================== */
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0.875rem;
   --background: #FFFFFF;
-  --foreground: #1B2540;
+  --foreground: #1F2A44;
   --card: #FFFFFF;
-  --card-foreground: #1B2540;
-  --primary: #0B2E8A;
+  --card-foreground: #1F2A44;
+  --primary: #3F74C2;
   --primary-foreground: #FFFFFF;
-  --secondary: #F5F7FA;
-  --secondary-foreground: #1B2540;
-  --muted: #F5F7FA;
-  --muted-foreground: #5B6478;
-  --accent: #F5F7FA;
-  --accent-foreground: #1B2540;
-  --border: #E5E9F0;
-  --input: #E5E9F0;
-  --ring: #0B2E8A;
+  --secondary: #F5F7FB;
+  --secondary-foreground: #1F2A44;
+  --muted: #F5F7FB;
+  --muted-foreground: #5C6A82;
+  --accent: #EAF1FB;
+  --accent-foreground: #1F2A44;
+  --border: #E2E8F1;
+  --input: #E2E8F1;
+  --ring: #3F74C2;
 
-  --navy: #0B2E8A;
-  --navy-deep: #061C5C;
-  --violet: #7B2FF7;
-  --violet-light: #A06BFF;
-  --orange: #FF8A00;
-  --teal: #00B8D9;
+  --navy: #3F74C2;
+  --navy-deep: #2E5A9E;
+  --violet: #B8A4E8;
+  --violet-light: #D6CAF2;
+  --orange: #F3A35C;
+  --teal: #7FC8D4;
+  --peach: #F6C9A8;
+  --blue-soft: #EAF1FB;
 }
 
 @layer base {
@@ -79,26 +83,25 @@
   h1, h2, h3, h4 { letter-spacing: -0.02em; }
 }
 
-/* GRADIENTE OFICIAL DO BRIEFING — 90deg */
+/* GRADIENTES — somente azul pastel, sem roxo no fim */
 @utility bg-hero-gradient {
-  background: linear-gradient(90deg, #0B2E8A 0%, #4A3AFF 50%, #7B2FF7 100%);
+  background: linear-gradient(160deg, #2E5A9E 0%, #3F74C2 100%);
 }
 @utility bg-navy-gradient {
-  background: linear-gradient(180deg, #061C5C, #0B2E8A);
+  background: linear-gradient(160deg, #2E5A9E 0%, #3F74C2 100%);
 }
 @utility bg-violet-gradient {
-  background: linear-gradient(135deg, #7B2FF7, #A06BFF);
+  background: linear-gradient(135deg, #B8A4E8, #D6CAF2);
 }
 @utility bg-cta-gradient {
-  background: linear-gradient(135deg, #FF8A00, #FF9F2E);
+  background: linear-gradient(135deg, #F3A35C, #F6B981);
 }
 @utility text-brand-gradient {
-  background: linear-gradient(90deg, #0B2E8A, #4A3AFF, #7B2FF7);
+  background: linear-gradient(90deg, #2E5A9E, #3F74C2);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-/* Overlay escuro para imagens de fundo (hero) */
 @utility bg-hero-overlay {
-  background: linear-gradient(90deg, rgba(11,46,138,0.92) 0%, rgba(74,58,255,0.78) 50%, rgba(123,47,247,0.85) 100%);
+  background: linear-gradient(160deg, rgba(46,90,158,0.88) 0%, rgba(63,116,194,0.78) 100%);
 }
