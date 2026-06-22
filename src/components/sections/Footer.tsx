@@ -24,7 +24,7 @@ export function Footer() {
       links: [
         { label: "Telemedicina", href: "#beneficios" },
         { label: "Telepsicologia", href: "#beneficios" },
-        { label: "Assistência Funeral", href: "#beneficios" },
+        { label: "Assistência Pet", href: "#beneficios" },
         { label: "Descontos e Vantagens", href: "#beneficios" },
         { label: "Assistência PET", href: "#planos" },
       ],

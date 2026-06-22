@@ -89,7 +89,7 @@ export const site = {
       beneficios: [
         "Tudo do Essencial",
         "Telepsicologia Avançada",
-        "Assistência Funeral Familiar",
+        "Assistência Familiar Ampliada",
         "Descontos Exclusivos",
         "Suporte Prioritário",
       ],
@@ -169,14 +169,14 @@ export const site = {
     titulo: "Sobre o Meu Clube TEA",
     subtitulo: "Cuidado, inclusão e benefícios para quem mais precisa.",
     paragrafos: [
-      "O Meu Clube TEA nasceu com um propósito simples e poderoso: tornar o cuidado mais acessível para pessoas com Transtorno do Espectro Autista (TEA), pessoas com deficiência (PCD), neurodivergentes e suas famílias.",
+      "O Meu Clube TEA nasceu com um propósito simples e poderoso: tornar o cuidado mais acessível para pessoas com Transtorno do Espectro Autista (TEA), pessoas com deficiência (PCD), neurodivergentes e suas famílias — e para toda família que busca mais saúde, economia e tranquilidade no dia a dia.",
       "Sabemos que a jornada de quem convive com o autismo e outras condições neurodivergentes é repleta de desafios. Consultas, terapias, medicamentos, deslocamentos e despesas do dia a dia fazem parte da realidade de milhares de famílias brasileiras.",
-      "Foi pensando nisso que criamos uma plataforma que une saúde, acolhimento, benefícios e economia em um único lugar. Mais do que um clube de benefícios, somos uma rede de apoio construída para oferecer praticidade, segurança e qualidade de vida.",
+      "Foi pensando nisso que criamos uma plataforma que une saúde, acolhimento, benefícios e economia em um único lugar. Mais do que um clube de benefícios, somos uma rede de apoio aberta a qualquer família que queira fazer parte.",
     ],
     missao:
       "Promover inclusão, acolhimento e acesso a serviços essenciais, contribuindo para uma vida mais digna, saudável e tranquila para milhares de famílias.",
     visao:
-      "Ser a maior comunidade de benefícios, cuidado e apoio para pessoas com TEA, PCD, neurodivergentes e seus familiares no Brasil.",
+      "Ser a maior comunidade de benefícios, cuidado e apoio para famílias no Brasil, com foco especial em pessoas com TEA, PCD e neurodivergentes.",
     valores: [
       "Inclusão",
       "Respeito",

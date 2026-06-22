@@ -9,10 +9,10 @@ import { site } from "@/config/site";
  */
 export function HowItWorks() {
   const steps = [
-    { n: 1, hex: "#7FC8D4", t: "Escolha seu plano", d: "Escolha o plano que melhor atende você e sua família." },
-    { n: 2, hex: "#B8A4E8", t: "Faça sua adesão", d: "Adesão rápida e segura em poucos minutos, tudo online." },
-    { n: 3, hex: "#F3A35C", t: "Acesse seus benefícios", d: "Use seus benefícios quando e onde quiser, com praticidade." },
-    { n: 4, hex: "#3F74C2", t: "Conte com a gente", d: "Nossa equipe está sempre pronta para cuidar de você e da sua família." },
+    { n: 1, hex: "#7FC8D4", t: "Escolha seu plano", d: "Compare os planos e escolha o que melhor atende sua família, sem compromisso." },
+    { n: 2, hex: "#B8A4E8", t: "Faça sua adesão", d: "Cadastro rápido e seguro, direto pelo computador ou celular, em poucos minutos." },
+    { n: 3, hex: "#F3A35C", t: "Acesse seus benefícios", d: "Agende consultas e use descontos com um toque, sem burocracia, direto pelo site." },
+    { n: 4, hex: "#3F74C2", t: "Conte com a gente", d: "Suporte humanizado disponível sempre que sua família precisar." },
   ];
 
   return (

@@ -12,6 +12,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { About } from "@/components/sections/About";
 import { Partners } from "@/components/sections/Partners";
 import { Ambassador } from "@/components/sections/Ambassador";
+import { Acompanhamento } from "@/components/sections/Acompanhamento";
 
 import { Footer } from "@/components/sections/Footer";
 
@@ -71,6 +72,7 @@ function Index() {
       <About />
       <Partners />
       <Ambassador />
+      <Acompanhamento />
       <Footer />
     </main>
   );
