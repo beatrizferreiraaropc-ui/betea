@@ -48,7 +48,8 @@ export function Header() {
         </div>
       </div>
 
-      {/* Barra principal desktop removida — usamos o mesmo estilo do mobile/tablet em todas as telas. */}
+      {/* ====== MENU UNIFICADO (mobile, tablet e desktop com o mesmo estilo) ====== */}
+      <div className="max-w-7xl mx-auto px-5 md:px-7 lg:px-8 pt-5 pb-7">
         {/* Linha 1 — Logo grande + hambúrguer */}
         <div className="flex items-center justify-between gap-4">
           <a href={site.links.home} aria-label="Meu Clube TEA — Início" className="shrink-0">
