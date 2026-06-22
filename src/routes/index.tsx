@@ -13,6 +13,7 @@ import { About } from "@/components/sections/About";
 import { Partners } from "@/components/sections/Partners";
 import { Ambassador } from "@/components/sections/Ambassador";
 import { Acompanhamento } from "@/components/sections/Acompanhamento";
+import { CentralAtendimento } from "@/components/sections/CentralAtendimento";
 
 import { Footer } from "@/components/sections/Footer";
 
@@ -72,6 +73,7 @@ function Index() {
       <About />
       <Partners />
       <Ambassador />
+      <CentralAtendimento />
       <Acompanhamento />
       <Footer />
     </main>

@@ -42,37 +42,7 @@ export function Footer() {
 
   return (
     <>
-      {/* 1. BLOCO BRANCO SOBREPOSTO AO AMBASSADOR */}
-      <section
-        aria-label="Central de atendimento"
-        className="relative -mt-20 md:-mt-28 z-10 bg-white rounded-t-3xl shadow-[0_-20px_40px_-30px_rgba(11,46,138,0.25)]"
-      >
-        <div className="max-w-3xl mx-auto px-5 md:px-6 py-10 md:py-14 text-center flex flex-col items-center gap-5">
-          <Logo className="h-16 md:h-20 w-auto" />
-          <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-semibold text-foreground/85">
-            {pills.map(({ Icon, label, hex }) => (
-              <li key={label} className="flex items-center gap-2">
-                <Icon className="h-4 w-4" style={{ color: hex }} strokeWidth={2.2} />
-                {label}
-              </li>
-            ))}
-          </ul>
-          <a
-            href={site.links.whatsapp}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-2 inline-flex items-center gap-3 px-6 py-3 rounded-full border border-navy/70 text-navy font-semibold text-sm hover:bg-navy hover:text-white transition"
-          >
-            CENTRAL DE ATENDIMENTO
-            <span className="h-6 w-6 rounded-full bg-[#25D366] flex items-center justify-center">
-              <MessageCircle className="h-3.5 w-3.5 text-white" />
-            </span>
-          </a>
-        </div>
-      </section>
-
-
-      {/* 2. FOOTER NAVY */}
+      {/* FOOTER NAVY (bloco branco "Central de Atendimento" foi movido para sua própria seção) */}
       <footer id="contato" className="bg-navy-deep text-white/80 pt-14 pb-6">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-5 gap-10">
           <div className="lg:col-span-1">

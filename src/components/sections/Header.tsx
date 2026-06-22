@@ -48,33 +48,8 @@ export function Header() {
         </div>
       </div>
 
-      {/* Barra principal desktop */}
-      <div className="hidden lg:block">
-        <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between gap-8">
-          <a href={site.links.home} aria-label="Meu Clube TEA — Início" className="shrink-0">
-            <Logo className="h-14 w-auto" />
-          </a>
-          <nav aria-label="Menu principal">
-            <ul className="flex items-center gap-7 text-sm font-semibold text-foreground/85">
-              {site.nav.map((i) => (
-                <li key={i.label}>
-                  <a href={i.href} className="hover:text-violet transition">{i.label}</a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <a
-            href={site.links.agendarConsulta}
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-orange text-white font-semibold text-sm shadow-lg hover:brightness-110 transition whitespace-nowrap"
-          >
-            AGENDE SUA CONSULTA
-            <CalendarDays className="h-4 w-4 shrink-0" />
-          </a>
-        </div>
-      </div>
-
-      {/* ====== MOBILE / TABLET (< lg) ====== */}
-      <div className="lg:hidden max-w-7xl mx-auto px-5 md:px-7 pt-5 pb-7">
+      {/* ====== MENU UNIFICADO (mobile, tablet e desktop com o mesmo estilo) ====== */}
+      <div className="max-w-7xl mx-auto px-5 md:px-7 lg:px-8 pt-5 pb-7">
         {/* Linha 1 — Logo grande + hambúrguer */}
         <div className="flex items-center justify-between gap-4">
           <a href={site.links.home} aria-label="Meu Clube TEA — Início" className="shrink-0">
@@ -107,8 +82,8 @@ export function Header() {
         </p>
       </div>
 
-      {/* Botão flutuante AGENDE — apenas mobile/tablet */}
-      <div className="lg:hidden relative max-w-7xl mx-auto px-5 md:px-7">
+      {/* Botão flutuante AGENDE — todas as telas */}
+      <div className="relative max-w-7xl mx-auto px-5 md:px-7 lg:px-8">
         <a
           href={site.links.agendarConsulta}
           className="absolute right-5 md:right-7 -bottom-6 z-30 inline-flex items-center gap-3 bg-white text-navy font-semibold text-sm md:text-base px-5 py-3.5 rounded-full shadow-xl border border-violet/15 hover:shadow-2xl hover:-translate-y-0.5 transition"
