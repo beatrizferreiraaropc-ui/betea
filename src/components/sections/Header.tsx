@@ -48,33 +48,7 @@ export function Header() {
         </div>
       </div>
 
-      {/* Barra principal desktop */}
-      <div className="hidden lg:block">
-        <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between gap-8">
-          <a href={site.links.home} aria-label="Meu Clube TEA — Início" className="shrink-0">
-            <Logo className="h-14 w-auto" />
-          </a>
-          <nav aria-label="Menu principal">
-            <ul className="flex items-center gap-7 text-sm font-semibold text-foreground/85">
-              {site.nav.map((i) => (
-                <li key={i.label}>
-                  <a href={i.href} className="hover:text-violet transition">{i.label}</a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <a
-            href={site.links.agendarConsulta}
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-orange text-white font-semibold text-sm shadow-lg hover:brightness-110 transition whitespace-nowrap"
-          >
-            AGENDE SUA CONSULTA
-            <CalendarDays className="h-4 w-4 shrink-0" />
-          </a>
-        </div>
-      </div>
-
-      {/* ====== MOBILE / TABLET (< lg) ====== */}
-      <div className="lg:hidden max-w-7xl mx-auto px-5 md:px-7 pt-5 pb-7">
+      {/* Barra principal desktop removida — usamos o mesmo estilo do mobile/tablet em todas as telas. */}
         {/* Linha 1 — Logo grande + hambúrguer */}
         <div className="flex items-center justify-between gap-4">
           <a href={site.links.home} aria-label="Meu Clube TEA — Início" className="shrink-0">
