@@ -82,8 +82,8 @@ export function Header() {
         </p>
       </div>
 
-      {/* Botão flutuante AGENDE — apenas mobile/tablet */}
-      <div className="lg:hidden relative max-w-7xl mx-auto px-5 md:px-7">
+      {/* Botão flutuante AGENDE — todas as telas */}
+      <div className="relative max-w-7xl mx-auto px-5 md:px-7 lg:px-8">
         <a
           href={site.links.agendarConsulta}
           className="absolute right-5 md:right-7 -bottom-6 z-30 inline-flex items-center gap-3 bg-white text-navy font-semibold text-sm md:text-base px-5 py-3.5 rounded-full shadow-xl border border-violet/15 hover:shadow-2xl hover:-translate-y-0.5 transition"
