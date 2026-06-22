@@ -1,155 +1,149 @@
-# Seção 01 · Header
+# Seção 01 · Header (unificado)
 
-Cabeçalho com versão desktop (barra fina superior + logo + menu + CTA) e
-versão mobile (logo grande + hambúrguer + pills + tagline + CTA flutuante).
+Cabeçalho com **o mesmo estilo em mobile, tablet e desktop**:
+
+1. Barra fina superior (apenas desktop ≥1024px): contato + Área do Cliente
+2. Bloco principal:
+   - Logo grande à esquerda
+   - Botão hambúrguer violeta à direita (abre o drawer com o menu completo)
+3. Linha de pills coloridos: **Cuidado · Inclusão · Benefícios**
+4. Tagline curta colorida
+5. Botão flutuante **"AGENDE SUA CONSULTA"** sobreposto ao Hero
 
 > No Elementor Pro o header é montado em **Theme Builder → Header**.
-> Use duas versões: uma para Desktop e outra para Mobile/Tablet
-> (na hora de publicar o Header, você escolhe a condição de exibição
-> "Display on devices").
+> Não use duas versões: uma só funciona em todas as telas.
 
 ---
 
-## Versão DESKTOP (≥ 1024px)
+## Estrutura
 
-### Estrutura
 ```
-Section [.mct-header-top]                    (barra fina navy)
-└── Container 1 coluna [.mct-header-top__inner]
-    ├── Icon List       (telefone, e-mail, horário)
-    └── Icon List       (Área do Cliente, Seja Embaixador)
+Section [.mct-topbar]                       (só desktop)
+└── Container 2 col
+    ├── Icon List (telefone, e-mail, horário)
+    └── Icon List (Área do Cliente, Seja Embaixador)
 
-Section [.mct-header-main]                   (barra branca)
-└── Container 3 colunas
-    ├── Image           (logo)                .mct-header-main__logo
-    ├── Nav Menu        (menu principal)      .mct-header-main__nav
-    └── Button          (AGENDE SUA CONSULTA) .mct-header-main__cta
+Section [.mct-header]                       (todas as telas)
+└── Container 1 col [.mct-header__inner]
+    ├── Container 2 col [.mct-header__row]
+    │   ├── Image (logo grande)             .mct-header__logo
+    │   └── Button (hambúrguer violeta)     .mct-header__menu
+    ├── Icon List (3 pills)                 .mct-header__pills
+    └── Heading / Text (tagline)            .mct-header__tag
+
+Botão flutuante AGENDE
+└── Button [.mct-header__cta]               (posicionado absolutamente)
+
+Drawer/Off-canvas
+└── Popup do Elementor Pro                  .mct-drawer
 ```
-
-### Widgets nativos
-- **Icon List** (Elementor Pro): para os links da topbar com ícones de telefone, e-mail, calendário.
-- **Image**: logo (use `logo-meu-clube-tea.png`).
-- **Nav Menu** (Elementor Pro): menu WordPress já cadastrado.
-- **Button**: CTA laranja.
-
-### Conteúdo
-
-| Widget         | Texto / Link                                                                 |
-|----------------|------------------------------------------------------------------------------|
-| Topbar e-mail  | `contato@meuclubetea.com.br`                                                 |
-| Topbar tel.    | `(11) 9XXXX-XXXX`                                                            |
-| Topbar horário | `Seg a Sex 09h–18h`                                                          |
-| Topbar links   | `Área do Cliente`, `Seja Embaixador`                                         |
-| Menu           | Home · Planos · Benefícios · Como Funciona · Depoimentos · Sobre · Contato   |
-| Botão CTA      | `AGENDE SUA CONSULTA` (ícone calendário) → página de agendamento             |
 
 ---
 
-## Versão MOBILE / TABLET (< 1024px)
-
-### Estrutura
-```
-Section [.mct-header-mb]
-└── Container 1 coluna [.mct-header-mb__inner]
-    ├── Inner Section 2 col   .mct-header-mb__row
-    │   ├── Image (logo)
-    │   └── Menu Anchor / WP Mobile Menu  (hambúrguer)
-    ├── Icon List horizontal  .mct-header-mb__pills
-    ├── Heading (tagline)     .mct-header-mb__tagline
-    └── Button (CTA flutuante).mct-header-mb__cta
-```
-
-### Pills (Icon List horizontal)
-| Item        | Ícone (Lucide / FontAwesome)  | Cor       |
-|-------------|-------------------------------|-----------|
-| Cuidados    | Heart                         | `#00B8D9` |
-| Inclusão    | Acessibilidade / Wheelchair   | `#7B2FF7` |
-| Benefícios  | Star                          | `#FF8A00` |
-
-### Tagline
-> Conexão que **acolhe**. Benefícios que **transformam**.
-(`acolhe` em teal · `transformam` em laranja)
+## Widgets nativos
+- **Icon List**: topbar e pills coloridos.
+- **Image**: logo (`logo-meu-clube-tea.png`).
+- **Button**: hambúrguer (ícone Menu) e CTA "AGENDE SUA CONSULTA".
+- **Heading**: tagline.
+- **Popup (Elementor Pro)**: drawer/off-canvas com o menu principal.
 
 ---
 
-## CSS Classes a atribuir
+## Conteúdo
 
-| Widget                            | CSS Class                  |
-|-----------------------------------|----------------------------|
-| Section topbar desktop            | `mct-header-top`           |
-| Container interno da topbar       | `mct-header-top__inner`    |
-| Section barra principal desktop   | `mct-header-main`          |
-| Logo desktop                      | `mct-header-main__logo`    |
-| Nav Menu desktop                  | `mct-header-main__nav`     |
-| Botão CTA desktop                 | `mct-header-main__cta`     |
-| Section header mobile             | `mct-header-mb`            |
-| Container interno mobile          | `mct-header-mb__inner`     |
-| Inner Section (logo + hambúrguer) | `mct-header-mb__row`       |
-| Icon List das pills               | `mct-header-mb__pills`     |
-| Tagline (Heading)                 | `mct-header-mb__tagline`   |
-| Botão CTA flutuante mobile        | `mct-header-mb__cta`       |
+| Local            | Texto / Link                                |
+|------------------|---------------------------------------------|
+| Topbar tel.      | `(11) 9XXXX-XXXX`                           |
+| Topbar e-mail    | `contato@meuclubetea.com.br`                |
+| Topbar horário   | `Seg–Sex · 8h às 18h`                       |
+| Topbar links     | Área do Cliente · Seja Embaixador            |
+| Pills            | Cuidado (teal) · Inclusão (violeta) · Benefícios (laranja) |
+| Tagline          | `Conexão que acolhe. Benefícios que transformam.` |
+| CTA flutuante    | `AGENDE SUA CONSULTA` (ícone calendário)     |
+
+---
+
+## CSS Classes
+
+| Widget                   | CSS Class                |
+|--------------------------|--------------------------|
+| Section topbar           | `mct-topbar`             |
+| Section header principal | `mct-header`             |
+| Container interno        | `mct-header__inner`      |
+| Linha logo + hambúrguer  | `mct-header__row`        |
+| Logo                     | `mct-header__logo`       |
+| Botão hambúrguer         | `mct-header__menu`       |
+| Icon List dos pills      | `mct-header__pills`      |
+| Tagline                  | `mct-header__tag`        |
+| Botão CTA flutuante      | `mct-header__cta`        |
 
 ---
 
 ## CSS personalizado
 
-Cole em **Site Settings → Custom CSS** (vale para qualquer header reaproveitável).
-
 ```css
-/* ===== Topbar Desktop ===== */
-.mct-header-top{ background:var(--mct-navy); color:#fff; font-size:12px; }
-.mct-header-top__inner{ max-width:1280px; margin:0 auto; padding:8px 32px;
-  display:flex; justify-content:space-between; align-items:center; gap:24px; }
-.mct-header-top a{ color:rgba(255,255,255,.85); text-decoration:none; }
-.mct-header-top a:hover{ color:var(--mct-teal); }
+/* === Topbar (desktop) === */
+.mct-topbar{ background:var(--mct-navy-deep); color:#fff; padding:8px 24px; font-size:12px; }
+.mct-topbar > .e-con-inner{
+  max-width:1280px; margin:0 auto;
+  display:flex !important; justify-content:space-between; align-items:center; gap:24px;
+}
+.mct-topbar .elementor-icon-list-text{ color:rgba(255,255,255,.85); }
+.mct-topbar a:hover .elementor-icon-list-text{ color:var(--mct-teal); }
+@media (max-width:1023px){ .mct-topbar{ display:none; } }
 
-/* ===== Barra Principal Desktop ===== */
-.mct-header-main{ background:#fff; }
-.mct-header-main > .e-con-inner{ max-width:1280px; padding:20px 32px;
-  display:grid !important; grid-template-columns:auto 1fr auto; align-items:center; gap:32px; }
-.mct-header-main__logo img{ height:56px; width:auto; }
-.mct-header-main__nav a{ font-size:14px; font-weight:600; color:#1B2540; }
-.mct-header-main__nav a:hover{ color:var(--mct-violet); }
-.mct-header-main__cta .elementor-button{
-  background:var(--mct-orange); color:#fff;
+/* === Header principal === */
+.mct-header{ background:#fff; padding:20px 24px 28px; position:relative; z-index:40; }
+.mct-header__inner{ max-width:1280px; margin:0 auto; }
+
+.mct-header__row{
+  display:flex !important; align-items:center; justify-content:space-between; gap:16px;
+}
+.mct-header__logo img{ max-height:80px; width:auto; }
+
+/* Botão hambúrguer */
+.mct-header__menu .elementor-button{
+  background:var(--mct-violet); color:#fff;
+  width:48px; height:48px; padding:0; border-radius:12px;
+  box-shadow:var(--mct-shadow-sm);
+}
+.mct-header__menu .elementor-button:hover{ filter:brightness(1.1); }
+
+/* Pills coloridos */
+.mct-header__pills{ margin-top:20px; }
+.mct-header__pills .elementor-icon-list-items{
+  display:flex !important; flex-wrap:wrap; gap:8px 24px;
+}
+.mct-header__pills .elementor-icon-list-text{
+  font-weight:600; font-size:14px; color:var(--mct-text);
+}
+
+/* Tagline */
+.mct-header__tag{ margin-top:12px; font-size:15px; color:var(--mct-text); }
+.mct-header__tag strong.teal  { color:var(--mct-teal);   font-weight:600; }
+.mct-header__tag strong.orange{ color:var(--mct-orange); font-weight:600; }
+
+/* Botão flutuante AGENDE */
+.mct-header__cta{
+  position:absolute; right:24px; bottom:-24px; z-index:30;
+  background:#fff; color:var(--mct-navy) !important;
   padding:14px 22px; border-radius:9999px; font-weight:700; font-size:14px;
-  box-shadow:0 14px 30px -10px rgba(255,138,0,.5); white-space:nowrap;
+  border:1px solid rgba(184,164,232,.25);
+  box-shadow:var(--mct-shadow-lg); transition:transform .2s, box-shadow .2s;
 }
-.mct-header-main__cta .elementor-button:hover{ background:var(--mct-orange-hov); }
+.mct-header__cta:hover{ transform:translateY(-2px); box-shadow:0 30px 60px -16px rgba(63,116,194,.35); }
 
-/* ===== Header Mobile ===== */
-.mct-header-mb{ background:#fff; position:relative; z-index:40; }
-.mct-header-mb__inner{ max-width:1280px; margin:0 auto; padding:20px 20px 28px; position:relative; }
-.mct-header-mb__row{ display:flex; justify-content:space-between; align-items:center; }
-.mct-header-mb__row img{ height:64px; width:auto; }
-.mct-header-mb__row .menu-toggle,
-.mct-header-mb__row [role="button"]{
-  width:48px; height:48px; border-radius:12px;
-  background:var(--mct-violet); color:#fff; font-size:22px;
-  box-shadow:0 8px 20px -8px rgba(123,47,247,.5);
-}
-.mct-header-mb__pills{ margin-top:18px; }
-.mct-header-mb__pills ul{ display:flex; flex-wrap:wrap; gap:8px 24px !important; }
-.mct-header-mb__pills .elementor-icon-list-text{ font-size:14px; font-weight:600; color:#1B2540; }
-.mct-header-mb__tagline{ font-size:15px; color:#1B2540; margin-top:10px; }
-.mct-header-mb__tagline strong:nth-of-type(1){ color:var(--mct-teal); }
-.mct-header-mb__tagline strong:nth-of-type(2){ color:var(--mct-orange); }
-.mct-header-mb__cta{ position:absolute; right:20px; bottom:-24px; z-index:30; }
-.mct-header-mb__cta .elementor-button{
-  background:#fff; color:var(--mct-navy);
-  padding:14px 22px; border-radius:9999px; font-weight:700; font-size:14px;
-  border:1px solid rgba(123,47,247,.15);
-  box-shadow:0 20px 40px -12px rgba(11,46,138,.25);
-}
-
-/* ===== Visibilidade entre Desktop e Mobile ===== */
-.mct-header-top, .mct-header-main{ display:block; }
-.mct-header-mb{ display:none; }
-@media (max-width:1023px){
-  .mct-header-top, .mct-header-main{ display:none !important; }
-  .mct-header-mb{ display:block; }
+/* Mobile */
+@media (max-width:767px){
+  .mct-header{ padding:20px 16px 28px; }
+  .mct-header__logo img{ max-height:64px; }
+  .mct-header__cta{ right:16px; font-size:13px; padding:12px 18px; }
 }
 ```
 
-> Se preferir, em vez do CSS de visibilidade, use a aba
-> **Avançado → Responsive → Hide on…** de cada Section.
+---
+
+## Responsivo
+- **Mobile/Tablet/Desktop**: mesmo layout (logo grande + hambúrguer + pills + tagline + CTA flutuante).
+- **Topbar**: visível apenas em desktop (≥1024px).
+- Menu completo abre em **Drawer/Popup do Elementor Pro** ao clicar no hambúrguer.

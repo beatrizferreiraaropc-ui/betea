@@ -1,32 +1,38 @@
-# 🎨 00 · Paleta, tokens e variáveis globais
+# 00 · Paleta, tokens e variáveis globais
 
-> Cole este bloco em **Elementor → Site Settings → Custom CSS** (ou no `style.css` do
-> filho do tema). Ele expõe as variáveis CSS oficiais do briefing para todo o site.
+> Cole este bloco em **Elementor → Site Settings → Custom CSS**.
+> Ele expõe as variáveis CSS oficiais do site para todas as seções.
+
+Paleta oficial **PASTEL**, ancorada no azul do banner principal: `#3F74C2`.
+
+---
 
 ## CSS global
 
 ```css
 :root{
-  /* Paleta oficial — PASTEL (base azul do banner: #3F74C2) */
-  --mct-navy:        #3F74C2;   /* azul principal (banner) */
+  /* Azuis (base do site) */
+  --mct-navy:        #3F74C2;   /* azul principal — fundo dos blocos navy */
   --mct-navy-card:   #5589D1;   /* cards internos sobre fundo navy */
   --mct-navy-deep:   #2E5A9E;   /* gradientes / fundos escuros suaves */
-  --mct-blue-soft:   #EAF1FB;   /* superfície azul clara */
+  --mct-blue-soft:   #EAF1FB;   /* superfície azul muito clara */
 
-  --mct-teal:        #7FC8D4;   /* acolhimento (pastel) */
-  --mct-violet:      #B8A4E8;   /* inclusão (lilás suave) */
+  /* Cores de marca (pastel) */
+  --mct-teal:        #7FC8D4;   /* Cuidado / acolhimento */
+  --mct-violet:      #B8A4E8;   /* Inclusão (lilás suave) */
   --mct-violet-light:#D6CAF2;
-  --mct-orange:      #F3A35C;   /* CTA coral pastel */
+  --mct-orange:      #F3A35C;   /* CTAs (coral pastel) */
   --mct-orange-hov:  #F6B981;
   --mct-peach:       #F6C9A8;
 
+  /* Neutros */
   --mct-bg-soft:     #F5F7FB;
   --mct-text:        #1F2A44;
+  --mct-muted:       #5C6A82;
   --mct-white:       #FFFFFF;
   --mct-border:      #E2E8F1;
 
   /* Gradientes */
-  --mct-grad-hero:   linear-gradient(160deg,#2E5A9E 0%,#3F74C2 100%);
   --mct-grad-navy:   linear-gradient(160deg,#2E5A9E 0%,#3F74C2 100%);
   --mct-grad-violet: linear-gradient(135deg,#B8A4E8,#D6CAF2);
   --mct-grad-cta:    linear-gradient(135deg,#F3A35C,#F6B981);
@@ -50,17 +56,18 @@ html, body{
 }
 h1,h2,h3,h4{ letter-spacing:-0.02em; font-weight:700; }
 
-/* Botão CTA padrão */
+/* Botão CTA padrão (laranja pastel) */
 .mct-btn-cta{
   display:inline-flex; align-items:center; gap:.5rem;
   padding:.875rem 1.5rem; border-radius:9999px;
-  background:var(--mct-orange); color:#fff !important;
+  background:var(--mct-grad-cta); color:#fff !important;
   font-weight:700; font-size:.95rem; letter-spacing:.01em;
-  box-shadow:var(--mct-shadow-md); transition:background .2s, transform .2s;
+  box-shadow:var(--mct-shadow-md); transition:filter .2s, transform .2s;
   text-decoration:none;
 }
-.mct-btn-cta:hover{ background:var(--mct-orange-hov); transform:translateY(-1px); }
+.mct-btn-cta:hover{ filter:brightness(1.05); transform:translateY(-1px); }
 
+/* Botão outline (navy) */
 .mct-btn-outline{
   display:inline-flex; align-items:center; gap:.5rem;
   padding:.75rem 1.25rem; border-radius:9999px;
@@ -72,9 +79,11 @@ h1,h2,h3,h4{ letter-spacing:-0.02em; font-weight:700; }
 .mct-btn-outline:hover{ background:var(--mct-navy); color:#fff !important; }
 ```
 
+---
+
 ## Google Fonts
 
-No `<head>` (Elementor → Site Settings → Custom Code → `<head>`):
+Cole no **Site Settings → Custom Code → `<head>`**:
 
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,7 +91,9 @@ No `<head>` (Elementor → Site Settings → Custom Code → `<head>`):
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 ```
 
-## Breakpoints (Elementor → Site Settings → Layout → Breakpoints)
+---
+
+## Breakpoints (Site Settings → Layout → Breakpoints)
 
 | Breakpoint | Valor |
 |------------|-------|
@@ -90,3 +101,21 @@ No `<head>` (Elementor → Site Settings → Custom Code → `<head>`):
 | Tablet     | 1024  |
 | Laptop     | 1366  |
 | Desktop    | 1920  |
+
+---
+
+## Tabela de cores (referência rápida)
+
+| Token              | HEX        | Uso                                    |
+|--------------------|------------|----------------------------------------|
+| Navy               | `#3F74C2`  | Azul principal (banner / embaixadores) |
+| Navy Card          | `#5589D1`  | Cards internos sobre fundo navy        |
+| Navy Deep          | `#2E5A9E`  | Topo dos gradientes navy               |
+| Blue Soft          | `#EAF1FB`  | Superfícies azul claríssimo            |
+| Teal               | `#7FC8D4`  | Cuidado / acolhimento                  |
+| Violet             | `#B8A4E8`  | Inclusão (lilás pastel)                |
+| Orange             | `#F3A35C`  | CTAs (laranja pastel)                  |
+| Bg Soft            | `#F5F7FB`  | Fundos suaves                          |
+| Texto              | `#1F2A44`  | Texto padrão                           |
+| Texto Mudo         | `#5C6A82`  | Textos secundários                     |
+| Borda              | `#E2E8F1`  | Bordas de cards                        |
