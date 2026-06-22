@@ -68,7 +68,7 @@ export function Hero() {
               className="inline-flex items-center gap-2 px-5 md:px-6 py-3 rounded-full border border-white/70 text-white font-semibold text-sm hover:bg-white/10 transition whitespace-nowrap"
             >
               <MessageCircle className="h-4 w-4" />
-              Saiba Mais
+              Falar com um Especialista
             </a>
           </div>
 

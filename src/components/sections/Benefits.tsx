@@ -13,7 +13,7 @@ export function Benefits() {
   const items = [
     { i: Stethoscope, hex: "#7FC8D4", t: "Telemedicina", s: "Consultas online com especialistas, 24/7" },
     { i: Brain,       hex: "#B8A4E8", t: "Telepsicologia", s: "Equilíbrio emocional para toda a família" },
-    { i: Shield,      hex: "#3F74C2", t: "Assistência Funeral", s: "Apoio total em momentos difíceis" },
+    { i: Shield,      hex: "#3F74C2", t: "Assistência Pet", s: "Veterinário online e descontos para o seu pet" },
     { i: Tag,         hex: "#F3A35C", t: "Descontos e Vantagens", s: "Economia inteligente no dia a dia" },
   ];
 
