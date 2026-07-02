@@ -32,7 +32,7 @@ export function Hero() {
         className="md:hidden absolute right-0 bottom-0 h-[55%] w-[60%] object-cover object-right-bottom pointer-events-none select-none opacity-95"
       />
 
-      <div className="relative max-w-7xl mx-auto px-5 md:px-8 pt-14 md:pt-20 lg:pt-28 pb-40 md:pb-44 lg:pb-56 grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-center">
+      <div className="relative max-w-7xl mx-auto px-5 md:px-8 pt-14 md:pt-40 lg:pt-52 pb-40 md:pb-44 lg:pb-56 grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-center">
 
         {/* COLUNA ESQUERDA — texto + CTAs */}
         <div className="max-w-[88%] md:max-w-xl lg:max-w-none">
