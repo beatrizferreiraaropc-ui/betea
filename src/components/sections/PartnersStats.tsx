@@ -1,21 +1,15 @@
 import { MapPin, Building2, Activity, Users } from "lucide-react";
+import parceiros1 from "@/assets/parceiros-saude-1.svg.asset.json";
+import parceiros2 from "@/assets/parceiros-saude-2.svg.asset.json";
 
 // SEÇÃO: ATENDIMENTO / PARCEIROS DE SAÚDE
-// Reproduz o mock mobile enviado pelo cliente (estatísticas + grid de logos),
-// porém com a paleta oficial (fundo navy #3F74C2, NÃO laranja).
+// Estatísticas + duas faixas com logos reais dos parceiros (SVGs enviados pelo cliente).
 export function PartnersStats() {
   const stats = [
     { icon: MapPin, n: "26", l: "Estados + DF" },
     { icon: Building2, n: "1.736", l: "Municípios atendidos" },
     { icon: Activity, n: "4.612", l: "Procedimentos" },
     { icon: Users, n: "16.661", l: "Parceiros de Saúde" },
-  ];
-
-  // Logos dos parceiros de saúde (texto-only por enquanto, troque por <img> no WordPress)
-  const logos = [
-    "Sabin", "Farmácia Preço Popular", "Centro de Medicina", "Frei Galvão",
-    "Richet", "Padrão", "Exame", "Hospital Vitória",
-    "Clementino Fraga", "Lab Pasteur", "Extrafarma", "Drogasmil",
   ];
 
   return (
@@ -53,17 +47,24 @@ export function PartnersStats() {
           ))}
         </div>
 
-        {/* Grid de logos */}
-        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
-          {logos.map((nome) => (
-            <div
-              key={nome}
-              className="h-16 md:h-20 rounded-xl flex items-center justify-center text-center text-xs md:text-sm font-semibold px-3"
-              style={{ backgroundColor: "#FFFFFF", color: "#3F74C2" }}
-            >
-              {nome}
-            </div>
-          ))}
+        {/* Faixas com logos reais */}
+        <div className="mt-12 flex flex-col gap-4 md:gap-5">
+          <div className="bg-white rounded-2xl p-4 md:p-6">
+            <img
+              src={parceiros1.url}
+              alt="Parceiros de saúde do Meu Clube TEA — grupo 1"
+              className="w-full h-auto object-contain"
+              loading="lazy"
+            />
+          </div>
+          <div className="bg-white rounded-2xl p-4 md:p-6">
+            <img
+              src={parceiros2.url}
+              alt="Parceiros de saúde do Meu Clube TEA — grupo 2"
+              className="w-full h-auto object-contain"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </section>
