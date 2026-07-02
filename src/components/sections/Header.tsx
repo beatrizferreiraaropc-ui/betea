@@ -48,39 +48,69 @@ export function Header() {
         </div>
       </div>
 
-      {/* ====== MENU UNIFICADO (mobile, tablet e desktop com o mesmo estilo) ====== */}
+      {/* ====== MENU UNIFICADO ====== */}
       <div className="max-w-7xl mx-auto px-5 md:px-7 lg:px-8 pt-5 pb-7">
-        {/* Linha 1 — Logo grande + hambúrguer */}
-        <div className="flex items-center justify-between gap-4">
-          <a href={site.links.home} aria-label="Meu Clube TEA — Início" className="shrink-0">
-            <Logo className="h-16 sm:h-20 w-auto" />
-          </a>
-          <button
-            type="button"
-            aria-label="Abrir menu"
-            onClick={() => setOpen(true)}
-            className="h-12 w-12 inline-flex items-center justify-center rounded-xl bg-violet text-white shadow-md hover:brightness-110 transition"
-          >
-            <Menu className="h-6 w-6" />
-          </button>
+        {/* MOBILE / TABLET — logo + hambúrguer, pills e tagline abaixo */}
+        <div className="lg:hidden">
+          <div className="flex items-center justify-between gap-4">
+            <a href={site.links.home} aria-label="Meu Clube TEA — Início" className="shrink-0">
+              <Logo className="h-16 sm:h-20 w-auto" />
+            </a>
+            <button
+              type="button"
+              aria-label="Abrir menu"
+              onClick={() => setOpen(true)}
+              className="h-12 w-12 inline-flex items-center justify-center rounded-xl bg-violet text-white shadow-md hover:brightness-110 transition"
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
+          <ul className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-semibold text-foreground/85">
+            {pills.map(({ Icon, label, hex }) => (
+              <li key={label} className="flex items-center gap-2">
+                <Icon className="h-4 w-4 shrink-0" style={{ color: hex }} strokeWidth={2.2} />
+                <span>{label}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-sm sm:text-base text-foreground/80">
+            Conexão que <span style={{ color: "#7FC8D4" }} className="font-semibold">acolhe</span>.{" "}
+            Benefícios que <span style={{ color: "#F3A35C" }} className="font-semibold">transformam</span>.
+          </p>
         </div>
 
-        {/* Linha 2 — pills */}
-        <ul className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-semibold text-foreground/85">
-          {pills.map(({ Icon, label, hex }) => (
-            <li key={label} className="flex items-center gap-2">
-              <Icon className="h-4 w-4 shrink-0" style={{ color: hex }} strokeWidth={2.2} />
-              <span>{label}</span>
-            </li>
-          ))}
-        </ul>
-
-        {/* Linha 3 — tagline */}
-        <p className="mt-3 text-sm sm:text-base text-foreground/80">
-          Conexão que <span style={{ color: "#7FC8D4" }} className="font-semibold">acolhe</span>.{" "}
-          Benefícios que <span style={{ color: "#F3A35C" }} className="font-semibold">transformam</span>.
-        </p>
+        {/* DESKTOP — logo esquerda, pills + tagline à direita, hambúrguer no canto */}
+        <div className="hidden lg:flex items-center justify-between gap-8">
+          <a href={site.links.home} aria-label="Meu Clube TEA — Início" className="shrink-0">
+            <Logo className="h-20 xl:h-24 w-auto" />
+          </a>
+          <div className="flex items-center gap-6 flex-1 justify-end">
+            <div className="flex flex-col items-end gap-2">
+              <ul className="flex items-center gap-x-7 text-sm font-semibold text-foreground/85">
+                {pills.map(({ Icon, label, hex }) => (
+                  <li key={label} className="flex items-center gap-2">
+                    <Icon className="h-4 w-4 shrink-0" style={{ color: hex }} strokeWidth={2.2} />
+                    <span>{label}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-sm text-foreground/80">
+                Conexão que <span style={{ color: "#7FC8D4" }} className="font-semibold">acolhe</span>.{" "}
+                Benefícios que <span style={{ color: "#F3A35C" }} className="font-semibold">transformam</span>.
+              </p>
+            </div>
+            <button
+              type="button"
+              aria-label="Abrir menu"
+              onClick={() => setOpen(true)}
+              className="h-12 w-12 inline-flex items-center justify-center rounded-xl bg-violet text-white shadow-md hover:brightness-110 transition shrink-0"
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
+        </div>
       </div>
+
 
       {/* Botão flutuante AGENDE — todas as telas */}
       <div className="relative max-w-7xl mx-auto px-5 md:px-7 lg:px-8">
