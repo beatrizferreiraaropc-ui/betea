@@ -1,12 +1,11 @@
 import { Heart, Accessibility, Star, MessageCircle } from "lucide-react";
 import { Logo } from "./Logo";
 import { site } from "@/config/site";
+import videoCentral from "@/assets/video-central.mp4.asset.json";
 
 /**
- * SEÇÃO: CENTRAL DE ATENDIMENTO (bloco branco sobreposto ao CTA do Embaixador)
- *
- * Vem LOGO após a seção Ambassador para sobrepor o botão "QUERO SER UM EMBAIXADOR",
- * conforme referência aprovada. Mesmo bloco em todas as breakpoints (mobile/tablet/desktop).
+ * SEÇÃO: CENTRAL DE ATENDIMENTO (bloco branco sobreposto ao Acompanhamento).
+ * Agora inclui um vídeo curto acima do botão "CENTRAL DE ATENDIMENTO".
  */
 export function CentralAtendimento() {
   const pills = [
@@ -18,9 +17,9 @@ export function CentralAtendimento() {
   return (
     <section
       aria-label="Central de atendimento"
-      className="relative -mt-20 md:-mt-24 z-10 bg-white rounded-t-3xl shadow-[0_-20px_40px_-30px_rgba(11,46,138,0.25)]"
+      className="relative bg-white"
     >
-      <div className="max-w-3xl mx-auto px-5 md:px-6 py-10 md:py-14 text-center flex flex-col items-center gap-5">
+      <div className="max-w-3xl mx-auto px-5 md:px-6 py-14 md:py-20 text-center flex flex-col items-center gap-6">
         <Logo className="h-16 md:h-20 w-auto" />
         <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-semibold text-foreground/85">
           {pills.map(({ Icon, label, hex }) => (
@@ -30,6 +29,20 @@ export function CentralAtendimento() {
             </li>
           ))}
         </ul>
+
+        {/* Vídeo curto antes do botão */}
+        <div className="mt-2 w-full max-w-2xl rounded-3xl overflow-hidden shadow-xl border border-border/60 bg-black">
+          <video
+            src={videoCentral.url}
+            className="w-full h-auto block"
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls
+          />
+        </div>
+
         <a
           href={site.links.whatsapp}
           target="_blank"
