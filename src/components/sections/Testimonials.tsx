@@ -1,6 +1,6 @@
 import { BadgeCheck, Star } from "lucide-react";
 
-// SEÇÃO: DEPOIMENTOS
+// SEÇÃO: DEPOIMENTOS — gradiente azul pastel + cards glass (estilo "vidro Apple")
 export function Testimonials() {
   const items = [
     { q: "O Meu Clube TEA mudou nossa rotina. Conseguimos atendimento rápido e humanizado quando mais precisamos.", n: "Juliana A.", r: "Mãe de menina com TEA" },
@@ -8,15 +8,27 @@ export function Testimonials() {
     { q: "Os descontos e benefícios fazem toda a diferença no nosso orçamento. Super indico!", n: "Fernanda L.", r: "Mãe na nossa família TEA" },
   ];
   return (
-    <section id="depoimentos" className="py-20 bg-navy-gradient text-white">
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-[1fr_2fr] gap-10 items-center">
+    <section id="depoimentos" className="relative py-20 bg-navy-gradient-soft text-white overflow-hidden">
+      {/* Blobs pastel — profundidade sem sair da paleta */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-20 -left-24 h-80 w-80 rounded-full"
+        style={{ background: "radial-gradient(closest-side, rgba(127,200,212,0.28), transparent)" }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-24 -right-20 h-96 w-96 rounded-full"
+        style={{ background: "radial-gradient(closest-side, rgba(184,164,232,0.22), transparent)" }}
+      />
+
+      <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-[1fr_2fr] gap-10 items-center">
         <div>
           <div className="text-xs uppercase tracking-[0.3em] text-teal font-semibold">Quem já faz parte, recomenda</div>
           <h3 className="mt-3 text-4xl font-bold leading-tight">Histórias reais,<br />pessoas reais.</h3>
         </div>
         <div className="grid md:grid-cols-3 gap-4">
           {items.map((t) => (
-            <div key={t.n} className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10">
+            <div key={t.n} className="glass-dark rounded-2xl p-6">
               <p className="text-sm leading-relaxed">&ldquo;{t.q}&rdquo;</p>
               <div className="mt-5 flex items-center gap-3">
                 <div className="h-9 w-9 rounded-full bg-violet-light/50" />
