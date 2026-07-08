@@ -2,8 +2,7 @@ import { Zap, CalendarCheck, Headset } from "lucide-react";
 
 /**
  * SEÇÃO: ACOMPANHAMENTO DE VERDADE
- * Reaproveita o estilo de card branco com ícone redondo da seção Benefícios.
- * Inserida entre Embaixadores e Footer.
+ * Fundo bg-mist + cards glass (borda 1px branca, blur, shadow flutuante).
  */
 export function Acompanhamento() {
   const cards = [
@@ -28,8 +27,20 @@ export function Acompanhamento() {
   ];
 
   return (
-    <section id="acompanhamento" className="py-16 md:py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-5 md:px-6">
+    <section id="acompanhamento" className="relative py-16 md:py-24 bg-mist overflow-hidden">
+      {/* Blobs pastel sutis */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-10 -left-24 h-72 w-72 rounded-full blur-3xl"
+        style={{ background: "radial-gradient(closest-side, rgba(127,200,212,0.25), transparent)" }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute bottom-10 -right-24 h-72 w-72 rounded-full blur-3xl"
+        style={{ background: "radial-gradient(closest-side, rgba(184,164,232,0.22), transparent)" }}
+      />
+
+      <div className="relative max-w-7xl mx-auto px-5 md:px-6">
         <div className="text-center max-w-2xl mx-auto">
           <div className="text-xs uppercase tracking-[0.3em] text-violet font-semibold">
             Pensado para o seu dia a dia
@@ -46,13 +57,18 @@ export function Acompanhamento() {
           {cards.map(({ i: Icon, hex, t, s }) => (
             <div
               key={t}
-              className="text-center bg-card rounded-2xl p-6 md:p-7 border border-border shadow-none hover:shadow-2xl hover:-translate-y-1 transition"
+              className="glass-card text-center rounded-2xl p-6 md:p-7 hover:-translate-y-1 transition"
+              style={{ boxShadow: `0 20px 40px -20px ${hex}55, inset 0 1px 0 rgba(255,255,255,0.7)` }}
             >
               <div
-                className="mx-auto h-14 w-14 md:h-16 md:w-16 rounded-full flex items-center justify-center shadow-lg"
-                style={{ backgroundColor: hex }}
+                className="mx-auto h-14 w-14 md:h-16 md:w-16 rounded-full flex items-center justify-center"
+                style={{
+                  backgroundColor: `${hex}22`,
+                  border: `1px solid ${hex}80`,
+                  boxShadow: `0 8px 20px -8px ${hex}88`,
+                }}
               >
-                <Icon className="h-6 w-6 md:h-7 md:w-7 text-white" />
+                <Icon className="h-6 w-6 md:h-7 md:w-7" style={{ color: hex }} strokeWidth={2} />
               </div>
               <div className="mt-4 font-bold text-base md:text-lg">{t}</div>
               <div className="text-sm text-muted-foreground mt-2 leading-relaxed">{s}</div>

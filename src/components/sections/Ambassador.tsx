@@ -28,8 +28,33 @@ export function Ambassador() {
 
   return (
     <section id="embaixadores" className="py-20 md:py-28 px-5 md:px-6 bg-secondary">
-      <div className="max-w-2xl mx-auto rounded-3xl bg-navy-gradient text-white overflow-hidden shadow-xl">
-        <div className="px-6 md:px-10 py-12 md:py-14">
+      <div className="relative max-w-2xl mx-auto rounded-3xl bg-ambassador-gradient text-white overflow-hidden shadow-xl">
+        {/* Ornamentos decorativos à direita — orbs pastel + linhas diagonais */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-16 -right-16 h-64 w-64 rounded-full blur-3xl"
+          style={{ background: "radial-gradient(closest-side, rgba(127,200,212,0.35), transparent)" }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -bottom-20 -right-24 h-72 w-72 rounded-full blur-3xl"
+          style={{ background: "radial-gradient(closest-side, rgba(184,164,232,0.30), transparent)" }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-10 -left-16 h-48 w-48 rounded-full blur-3xl"
+          style={{ background: "radial-gradient(closest-side, rgba(246,201,168,0.22), transparent)" }}
+        />
+        <svg
+          aria-hidden
+          className="hidden md:block pointer-events-none absolute -right-4 top-4 opacity-[0.10]"
+          width="220" height="220" viewBox="0 0 220 220" fill="none"
+        >
+          {[30, 55, 82, 110].map((r) => (
+            <circle key={r} cx="150" cy="80" r={r} stroke="white" strokeWidth="1" />
+          ))}
+        </svg>
+        <div className="relative px-6 md:px-10 py-12 md:py-14">
 
           {/* 1. Badge */}
           <div className="flex justify-center">
