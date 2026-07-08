@@ -1,121 +1,98 @@
 ## Objetivo
-Aplicar as 7 alterações solicitadas mantendo paleta pastel, responsividade e organização por seção (facilita a migração pro Elementor). Nada além do que foi pedido será tocado.
+Refinamento visual "futurístico Apple/glassmorphism" em 6 seções, com **glass pills**, bordas 1px translúcidas, blur/backdrop, gradientes suaves e ornamentos delicados. Mantém 100% a paleta pastel atual (navy #3F74C2, teal #7FC8D4, violet #B8A4E8, orange #F3A35C, peach #F6C9A8) e a estrutura de 1 arquivo por seção (Elementor-ready).
 
-## Ativos recebidos (do zip)
-- `imagem da seçao parceiros.svg` + `segunda imagem seçao parceiro.svg` → 2 faixas com logos reais dos parceiros
-- `video seçao perguntas.mp4` → vídeo da nova seção FAQ
-- `video da ultima seção.mp4` → vídeo antes do botão da Central de Atendimento
-- `print com as marcaçoes de onde sera as alteraçoes.svg` → referência visual das marcações
-
-Todos serão subidos via `lovable-assets` (CDN) e referenciados por `.asset.json` — nada de binário no repo.
+Referência de estilo: pills com contorno fininho + fundo translúcido + blur (como no banner do site enviado e no visual de apps Apple).
 
 ---
 
-## Alterações
+## Padrão global "Glass" (adicionar em `src/styles.css`)
+Novos utilitários reutilizáveis, sem cor nova:
 
-### 1. Header desktop (`src/components/sections/Header.tsx`)
-- **Desktop (≥lg)**: reorganizar em 2 colunas dentro do bloco branco:
-  - Coluna esquerda: logo grande (como está).
-  - Coluna direita (alinhada à direita, verticalmente centrada): os 3 pills `Cuidados · Inclusão · Benefícios` **em linha** + a tagline `Conexão que acolhe. Benefícios que transformam.` logo abaixo + o hambúrguer violeta no canto.
-  - Isso elimina o espaço vazio à direita do logo no desktop.
-- **Mobile/tablet (<lg)**: mantém exatamente como está hoje (logo em cima, hambúrguer à direita, pills e tagline empilhados abaixo).
-- Botão flutuante "AGENDE SUA CONSULTA" continua igual.
-
-### 2. Hero (`src/components/sections/Hero.tsx`)
-- Descer o card de copy para não cobrir a família na imagem:
-  - Desktop: aumentar `padding-top` do card (ou empurrar via `mt`) para o card iniciar mais abaixo, deixando o topo da imagem livre.
-  - Mobile: manter posicionamento atual (a imagem mobile já é separada).
-- Nenhuma outra alteração no conteúdo.
-
-### 3. Parceiros de Saúde — `PartnersStats.tsx` (seção 07)
-- Substituir a grade textual "TEMSaúde / UNIESUD / etc." por **os 2 SVGs enviados**:
-  - Uma faixa branca com `parceiros1.svg` (logos alinhados horizontalmente).
-  - Abaixo, outra faixa com `parceiros2.svg`.
-- Estatísticas (+15 mil famílias etc.) permanecem inalteradas.
-- Docs: atualizar `docs/secoes/07-parceiros-stats.md` para refletir "usar SVG único" (mais simples de reproduzir no Elementor com widget Image).
-
-### 4. Substituir "Parceiros Institucionais" por CTA (`Partners.tsx` → CTA)
-- Renomear `Partners.tsx` para `CtaSobre.tsx` (ou reescrever conteúdo):
-  - Faixa navy com gradient sutil, título grande + subtítulo curto + botão laranja arredondado.
-  - Copy proposta:
-    - Eyebrow: `PRÓXIMO PASSO`
-    - Título: `Faça parte de uma comunidade que acolhe.`
-    - Subtítulo: `Escolha seu plano e comece hoje mesmo a cuidar de quem você ama com mais tranquilidade.`
-    - Botão: `QUERO FAZER PARTE` → `site.links.queroFazerParte`
-  - *(Copy pode ser trocada — me diga se prefere outra)*
-- Deletar `docs/secoes/12-parceiros-logos.md` e criar `docs/secoes/12-cta-sobre.md`.
-
-### 5. Nova seção: **Vídeo + Perguntas Frequentes** (`FaqVideo.tsx`)
-- Inserir logo depois do CTA (item 4).
-- Layout 2 colunas no desktop, empilhado no mobile:
-  - Esquerda: player do `video seçao perguntas.mp4` (rounded, sombra suave, autoplay muted loop).
-  - Direita: título "Perguntas Frequentes" + Accordion com 5 perguntas usando `src/components/ui/accordion.tsx` (já existe no projeto). Perguntas iniciais (revisáveis por você):
-    1. Como funcionam as consultas por telemedicina?
-    2. O Meu Clube TEA atende em todo o Brasil?
-    3. Posso cancelar a assinatura quando quiser?
-    4. Preciso ter diagnóstico de TEA/PCD para assinar?
-    5. Como funciona a Assistência PET?
-- Criar `docs/secoes/13-faq-video.md` com HTML/CSS pronto para Elementor (widget Video + widget Accordion).
-
-### 6. Inversão + vídeo na última seção (`src/routes/index.tsx` + `CentralAtendimento.tsx`)
-- **Nova ordem final da página**:
-  1. Header
-  2. Hero
-  3. Benefits
-  4. Plans
-  5. FeaturesBar
-  6. VideoSection (a atual, mantida)
-  7. PartnersStats (com SVGs novos)
-  8. Impact
-  9. HowItWorks
-  10. Testimonials
-  11. About
-  12. **CtaSobre** (novo — substitui Partners)
-  13. **FaqVideo** (nova seção)
-  14. Ambassador
-  15. **Acompanhamento** ← subiu (antes do CentralAtendimento)
-  16. **CentralAtendimento** ← agora com vídeo antes do botão
-  17. Footer
-- Em `CentralAtendimento.tsx`: adicionar o `video da ultima seção.mp4` acima do botão "CENTRAL DE ATENDIMENTO", mesmo estilo arredondado/sombra do FAQ.
-- Ajustar `docs/README.md` (mapa das 18 seções) e renumerar `docs/secoes/*` conforme necessário (14 acompanhamento, 15 central, 16 footer viram 15/16/17).
-
-### 7. Responsividade & organização (aplicado em todos os itens acima)
-- Todo layout novo usa grid/flex com breakpoints `md:`/`lg:` conforme padrão do projeto.
-- Cada seção continua isolada em 1 arquivo (`.tsx` + doc `.md` correspondente) para facilitar recriação no Elementor.
-- Nenhuma cor/fonte nova — só reuso dos tokens `--mct-navy / teal / violet / orange`.
-
----
-
-## Detalhes técnicos
-
-**Upload de assets (executado no início do build mode):**
-```bash
-lovable-assets create --file /tmp/zip/parceiros1.svg   --filename parceiros-saude-1.svg  > src/assets/parceiros-saude-1.svg.asset.json
-lovable-assets create --file /tmp/zip/parceiros2.svg   --filename parceiros-saude-2.svg  > src/assets/parceiros-saude-2.svg.asset.json
-lovable-assets create --file /tmp/zip/video-faq.mp4    --filename video-faq.mp4          > src/assets/video-faq.mp4.asset.json
-lovable-assets create --file /tmp/zip/video-ultima.mp4 --filename video-central.mp4      > src/assets/video-central.mp4.asset.json
+```css
+@utility glass-pill {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255,255,255,0.7);
+  box-shadow: 0 4px 24px -8px rgba(63,116,194,0.15), inset 0 1px 0 rgba(255,255,255,0.8);
+  border-radius: 9999px;
+}
+@utility glass-card {
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: 0 20px 40px -20px rgba(63,116,194,0.18), inset 0 1px 0 rgba(255,255,255,0.7);
+}
+@utility glass-dark {  /* para usar sobre backgrounds azuis */
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255,255,255,0.22);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+}
+@utility bg-navy-gradient-soft {
+  background: linear-gradient(160deg, #2E5A9E 0%, #3F74C2 55%, #5A8ED0 100%);
+}
+@utility bg-mist {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5F9FD 60%, #EAF1FB 100%);
+}
 ```
+*Só a propriedade padrão `backdrop-filter` — sem prefixos manuais (Lightning CSS adiciona).*
 
-**Arquivos criados/renomeados/apagados:**
-- ✏️ `src/components/sections/Header.tsx` — reorganização desktop
-- ✏️ `src/components/sections/Hero.tsx` — reposicionar card
-- ✏️ `src/components/sections/PartnersStats.tsx` — trocar grade por 2 `<img>`
-- 🗑 `src/components/sections/Partners.tsx` → substituído por `CtaSobre.tsx`
-- ➕ `src/components/sections/FaqVideo.tsx`
-- ✏️ `src/components/sections/CentralAtendimento.tsx` — inserir vídeo
-- ✏️ `src/routes/index.tsx` — nova ordem
-- ✏️ `docs/README.md`, `docs/secoes/07-parceiros-stats.md`
-- 🗑 `docs/secoes/12-parceiros-logos.md` → ➕ `docs/secoes/12-cta-sobre.md`
-- ➕ `docs/secoes/13-faq-video.md`
-- 🔁 Renumerar `docs/secoes/14…16` para acomodar a nova seção
+---
 
-## O que **não** vai mudar
-- Paleta, fontes, tokens de cor, textos das seções que não foram citadas (Benefits, Plans, HowItWorks, Testimonials, Ambassador, Footer etc.).
-- Estrutura de config em `src/config/site.ts` (apenas leitura).
-- Nenhum backend / rota / integração.
+## 1. Header desktop (`Header.tsx`)
+- Logo maior no `lg` (h-20 → h-24).
+- Bloco direito em **linha única**: pills `Cuidado · Inclusão · Benefícios` + separador `·` fino + tagline `Conexão que acolhe. Benefícios que transformam.` **lado a lado** (não empilhados).
+- Pills recebem `glass-pill` (fundo translúcido, borda 1px, blur) — o efeito "vidro Apple" que o usuário citou.
+- Mobile/tablet inalterado.
 
-## Pontos que quero confirmar (mas não travam o plano)
-- Copy do novo CTA (item 4) — se você preferir outro texto, me passa.
-- 5 perguntas do FAQ (item 5) — as que sugeri são um ponto de partida; se tiver as oficiais, envia que troco durante a implementação.
+## 2. Testimonials (`Testimonials.tsx`)
+- Fundo → `bg-navy-gradient-soft` + blob radial teal `rgba(127,200,212,0.18)` no canto (profundidade sem sair da paleta).
+- Cards dos depoimentos: `glass-dark` (vidro translúcido sobre o azul) + borda 1px branca 22%. Fica moderno, tipo dashboard Apple.
 
-Aprovando o plano, entro em build mode e faço tudo numa só rodada.
+## 3. CtaSobre (`CtaSobre.tsx`)
+- Fundo navy mantido; adicionar **ornamentos SVG** absolutos e sutis:
+  - Círculos concêntricos (stroke 1px, opacidade 0.10) laterais.
+  - 2 linhas onduladas finas atravessando ao fundo.
+  - Cluster de pontos (dot-grid) no canto oposto.
+  - 2 blobs difusos (teal/violet, blur 80px, opacidade 0.25).
+- Botão laranja ganha halo suave `box-shadow: 0 20px 40px -12px rgba(243,163,92,0.5)`.
+- `pointer-events-none` + `aria-hidden` em todos os ornamentos.
+
+## 4. FaqVideo (`FaqVideo.tsx`)
+- Fundo → `bg-mist` + dot-grid SVG (pontos 1px violet 12% opacidade) no topo.
+- **Vídeo**: glow pastel atrás (blobs teal+violet blur 60px opacidade 0.35), moldura com gradient-border 1px (navy→teal), badge "Play" glass pill flutuante no canto.
+- **Accordion**: cada item vira um `glass-card` compacto com:
+  - Ícone circular à esquerda alternando teal/violet/orange conforme o índice.
+  - Chevron colorido (herda a cor do ícone).
+  - Item aberto: destaque `background: rgba(cor,0.06)` + borda esquerda 3px na cor.
+  - Hover: pequeno translate-x + mudança de cor do título.
+
+## 5. Ambassador (`Ambassador.tsx`)
+- Fundo → gradiente azul clareando: `linear-gradient(160deg, #3F74C2 0%, #5A8ED0 60%, #7FA6D9 100%)` (respeita a regra: nunca mais escuro que #3F74C2).
+- **20% / 15%**: separar em dois cartões `glass-dark`, `gap-6 md:gap-10`, símbolo `%` menor como sobrescrito, `leading-none` no número, label caps com respiro.
+- **Lateral direita** (área vazia): composição decorativa SVG — círculos concêntricos pastel + pattern de linhas diagonais finas (opacidade 0.08) + 2–3 orbs difusos (teal/violet/peach com blur). Traz movimento sem poluir.
+
+## 6. Acompanhamento + CentralAtendimento
+Aplicar continuidade "clean-futurista":
+- **Acompanhamento.tsx**: fundo → `bg-mist`. Cada card vira `glass-card`:
+  - Borda 1px branca 60%, blur 20px.
+  - Ícone dentro de círculo pastel translúcido (token da cor do card).
+  - Sombra `0 20px 40px -20px rgba(63,116,194,0.15)` — flutuante.
+- **CentralAtendimento.tsx**: fundo `linear-gradient(180deg, #EAF1FB 0%, #FFFFFF 100%)` (encadeia com o final da seção acima). 2 blobs pastel (teal + violet, blur 80px, opacidade 0.25) absolutos ao redor do bloco central. Vídeo recebe o mesmo tratamento de glow pastel + gradient-border 1px do FaqVideo.
+
+---
+
+## Documentação Elementor
+Atualizar cada `docs/secoes/*.md` afetado com o CSS de glass, gradientes e SVGs (código pronto para colar em widget HTML do Elementor):
+- `01-header.md`, `10-depoimentos.md`, `12-cta-sobre.md`, `13-faq-video.md`, `14-embaixadores.md`, `15-acompanhamento.md`, `16-central-atendimento.md`.
+
+## O que NÃO muda
+- Paleta, fontes, textos, estrutura, ordem, quantidade de seções.
+- Nenhum arquivo criado ou removido — só edições.
+
+## Notas técnicas
+- Todos os `backdrop-filter` escritos só com a propriedade padrão (Lightning CSS cuida do prefixo).
+- Ornamentos e blobs: `position: absolute` + `pointer-events-none` + `aria-hidden`.
+- Responsividade: ornamentos pesados usam `hidden md:block`; glass funciona em mobile sem ajuste.
+
+Aprovando, entro em build mode e faço tudo numa rodada.
