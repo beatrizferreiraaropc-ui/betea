@@ -79,22 +79,26 @@ export function Header() {
           </p>
         </div>
 
-        {/* DESKTOP — logo esquerda, pills + tagline à direita, hambúrguer no canto */}
+        {/* DESKTOP — logo esq | pills glass + tagline em linha à direita, hambúrguer no canto */}
         <div className="hidden lg:flex items-center justify-between gap-8">
           <a href={site.links.home} aria-label="Meu Clube TEA — Início" className="shrink-0">
-            <Logo className="h-20 xl:h-24 w-auto" />
+            <Logo className="h-24 xl:h-28 w-auto" />
           </a>
-          <div className="flex items-center gap-6 flex-1 justify-end">
-            <div className="flex flex-col items-end gap-2">
-              <ul className="flex items-center gap-x-7 text-sm font-semibold text-foreground/85">
+          <div className="flex items-center gap-5 flex-1 justify-end">
+            <div className="flex items-center gap-4 xl:gap-5">
+              <ul className="flex items-center gap-2">
                 {pills.map(({ Icon, label, hex }) => (
-                  <li key={label} className="flex items-center gap-2">
+                  <li
+                    key={label}
+                    className="glass-pill inline-flex items-center gap-2 px-4 py-2 text-[13px] font-semibold text-foreground/85"
+                  >
                     <Icon className="h-4 w-4 shrink-0" style={{ color: hex }} strokeWidth={2.2} />
                     <span>{label}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-sm text-foreground/80">
+              <span className="text-foreground/25 text-lg leading-none select-none">·</span>
+              <p className="text-[13px] xl:text-sm text-foreground/80 whitespace-nowrap">
                 Conexão que <span style={{ color: "#7FC8D4" }} className="font-semibold">acolhe</span>.{" "}
                 Benefícios que <span style={{ color: "#F3A35C" }} className="font-semibold">transformam</span>.
               </p>
