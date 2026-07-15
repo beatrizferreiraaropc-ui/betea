@@ -7,11 +7,6 @@ import {
 import { Play } from "lucide-react";
 import videoFaq from "@/assets/video-faq.mp4.asset.json";
 
-/**
- * SEÇÃO: VÍDEO + PERGUNTAS FREQUENTES
- * Fundo bg-mist com dot-grid sutil, vídeo com glow pastel + gradient-border,
- * Accordion com cards glass e destaque colorido rotativo por item.
- */
 export function FaqVideo() {
   const faqs = [
     {
@@ -35,8 +30,6 @@ export function FaqVideo() {
       a: "Você conta com veterinário online e descontos exclusivos em produtos e serviços para o seu pet, incluído nos planos que oferecem esse benefício.",
     },
   ];
-
-  // Cores rotativas por item (paleta oficial)
   const palette = ["#7FC8D4", "#B8A4E8", "#F3A35C"];
 
   return (

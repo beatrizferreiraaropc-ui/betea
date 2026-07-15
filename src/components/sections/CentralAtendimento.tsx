@@ -3,10 +3,6 @@ import { Logo } from "./Logo";
 import { site } from "@/config/site";
 import videoCentral from "@/assets/video-central.mp4.asset.json";
 
-/**
- * SEÇÃO: CENTRAL DE ATENDIMENTO (bloco branco sobreposto ao Acompanhamento).
- * Fundo em degradê suave, blobs pastel e vídeo com glow + gradient-border.
- */
 export function CentralAtendimento() {
   const pills = [
     { Icon: Heart, label: "Cuidado", hex: "#7FC8D4" },

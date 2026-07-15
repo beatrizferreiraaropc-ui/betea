@@ -1,12 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { site } from "@/config/site";
 
-/**
- * SEÇÃO: COMO FUNCIONA
- * 4 passos coloridos conectados por linha pontilhada.
- * Desktop: linha horizontal entre os círculos.
- * Mobile: linha vertical ligando os passos.
- */
 export function HowItWorks() {
   const steps = [
     { n: 1, hex: "#7FC8D4", t: "Escolha seu plano", d: "Compare os planos e escolha o que melhor atende sua família, sem compromisso." },

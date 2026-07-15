@@ -2,12 +2,6 @@ import { useState } from "react";
 import { Play } from "lucide-react";
 import { site } from "@/config/site";
 
-/**
- * SEÇÃO: DEPOIMENTOS EM VÍDEO
- * Layout limpo, sem cores quentes — para preservar a hierarquia visual.
- * No Elementor cada card vira uma coluna onde você substitui o bloco superior
- * por um widget "Vídeo" (YouTube/Vimeo/MP4) mantendo nome + descrição abaixo.
- */
 export function VideoSection() {
   const { depoimentos } = site.videos;
   const [openIdx, setOpenIdx] = useState<number | null>(null);

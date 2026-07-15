@@ -3,16 +3,6 @@ import type { LucideIcon } from "lucide-react";
 import { site } from "@/config/site";
 import familia from "@/assets/familia-cachorro.asset.json";
 
-/**
- * SEÇÃO: SOBRE NÓS (Quem Somos)
- *
- * Desktop: imagem (esq) + texto institucional (dir) lado a lado.
- * Mobile: imagem em cima, texto abaixo.
- * Abaixo dos dois: 3 cards (Missão, Visão, Valores).
- *
- * Removida a duplicação da seção "Nossos Valores" — os valores agora vivem
- * apenas dentro do card Valores.
- */
 export function About() {
   const { sobre } = site;
 

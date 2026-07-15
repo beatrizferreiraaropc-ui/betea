@@ -2,14 +2,6 @@ import { Instagram, Facebook, Youtube, Music2, Phone, Mail, MapPin, Heart, Acces
 import { Logo } from "./Logo";
 import { site } from "@/config/site";
 
-/**
- * SEÇÃO: FOOTER
- *
- * Composição (referência cliente — image-6):
- *  1. Bloco branco SOBREPOSTO à seção Ambassador (margem negativa)
- *     — Logo grande + pills (Cuidado, Inclusão, Benefícios) + CTA Central de Atendimento
- *  2. Footer navy com colunas (Navegação, Benefícios, Ajuda, Atendimento)
- */
 export function Footer() {
   const pills = [
     { Icon: Heart, label: "Cuidado", hex: "#7FC8D4" },

@@ -3,19 +3,6 @@ import { Menu, X, Heart, Accessibility, Star, CalendarDays, Phone, Mail } from "
 import { site } from "@/config/site";
 import { Logo } from "./Logo";
 
-/**
- * SEÇÃO: HEADER (responsivo)
- *
- * MOBILE / TABLET (< lg):
- *   1. Logo grande (esq) + hambúrguer violeta (dir)
- *   2. 3 pills: Cuidados (teal) · Inclusão (violeta) · Benefícios (laranja)
- *   3. Tagline colorida
- *   4. Botão flutuante "AGENDE SUA CONSULTA" sobreposto ao hero
- *
- * DESKTOP (lg+):
- *   - Barra superior fininha (navy) com contato + Área do Cliente
- *   - Barra principal branca com logo + menu horizontal + CTA laranja
- */
 export function Header() {
   const [open, setOpen] = useState(false);
 
@@ -114,7 +101,6 @@ export function Header() {
           </div>
         </div>
       </div>
-
 
       {/* Botão flutuante AGENDE — todas as telas */}
       <div className="relative max-w-7xl mx-auto px-5 md:px-7 lg:px-8">

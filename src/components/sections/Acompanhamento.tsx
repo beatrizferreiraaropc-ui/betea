@@ -1,9 +1,5 @@
 import { Zap, CalendarCheck, Headset } from "lucide-react";
 
-/**
- * SEÇÃO: ACOMPANHAMENTO DE VERDADE
- * Fundo bg-mist + cards glass (borda 1px branca, blur, shadow flutuante).
- */
 export function Acompanhamento() {
   const cards = [
     {

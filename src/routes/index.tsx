@@ -33,10 +33,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-/**
- * LANDING PAGE — MEU CLUBE TEA
- * Ordem final das seções (1 arquivo por seção, veja docs/secoes/).
- */
 function Index() {
   return (
     <main>
