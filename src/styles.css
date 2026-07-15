@@ -34,16 +34,6 @@
   --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
 }
 
-/* ===== PALETA OFICIAL — MEU CLUBE TEA (PASTEL) =====
-   Azul principal (do banner):     #3F74C2  → navy
-   Azul profundo (gradientes):     #2E5A9E  → navy-deep
-   Lilás suave (inclusão):         #B8A4E8  → violet
-   Lilás claro:                    #D6CAF2  → violet-light
-   Coral pastel (CTA):             #F3A35C  → orange
-   Teal pastel (acolhimento):      #7FC8D4  → teal
-   Pêssego (apoio):                #F6C9A8  → peach
-   =================================================== */
-
 :root {
   --radius: 0.875rem;
   --background: #FFFFFF;
@@ -83,7 +73,6 @@
   h1, h2, h3, h4 { letter-spacing: -0.02em; }
 }
 
-/* GRADIENTES — somente azul pastel, sem roxo no fim */
 @utility bg-hero-gradient {
   background: linear-gradient(160deg, #2E5A9E 0%, #3F74C2 100%);
 }
@@ -106,7 +95,6 @@
   background: linear-gradient(160deg, rgba(46,90,158,0.88) 0%, rgba(63,116,194,0.78) 100%);
 }
 
-/* ===== GLASSMORPHISM — estilo "Apple/futurista" ===== */
 @utility glass-pill {
   background: rgba(255,255,255,0.55);
   backdrop-filter: blur(14px) saturate(140%);

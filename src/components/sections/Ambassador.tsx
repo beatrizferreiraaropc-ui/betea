@@ -1,22 +1,6 @@
 import { Users, HeartHandshake, TrendingUp, MapPin, Handshake, CircleDollarSign, Rocket, ArrowUpRight, Lock, Heart } from "lucide-react";
 import { site } from "@/config/site";
 
-/**
- * SEÇÃO: EMBAIXADORES — fiel à referência aprovada pelo cliente.
- * Layout em coluna única (max-w ~720px), fundo azul pastel #3F74C2.
- *
- * 1. Badge pill "PROGRAMA DE EMBAIXADORES"
- * 2. Headline "Seja um Embaixador do Meu Clube TEA"
- * 3. Subtítulo com ícone de coração + destaque
- * 4. Card com 3 pilares (Impacto / Renda / Liberdade) — divisores verticais
- * 5. Parágrafo com palavras destacadas
- * 6. Divisor com coração
- * 7. Título "Seu reconhecimento por transformar vidas:"
- * 8. Barras horizontais com pill 20% (teal) e 3% (lilás)
- * 9. Card foguete com frase de fechamento
- * 10. CTA pill "QUERO SER UM EMBAIXADOR"
- * 11. Linha final com cadeado
- */
 export function Ambassador() {
   const { embaixador } = site;
 

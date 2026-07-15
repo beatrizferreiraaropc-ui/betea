@@ -1,8 +1,5 @@
 import { Check } from "lucide-react";
 import { site } from "@/config/site";
-
-// SEÇÃO: PLANOS — fundo #F5F7FA, bordas por plano
-// Essencial #7FC8D4 · Família #B8A4E8 (selo #F3A35C) · Proteção Total #3F74C2
 export function Plans() {
   return (
     <section id="planos" className="py-16 md:py-24" style={{ backgroundColor: "#F5F7FA" }}>

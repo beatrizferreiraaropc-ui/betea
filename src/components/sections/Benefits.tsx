@@ -1,14 +1,5 @@
 import { Stethoscope, Brain, Shield, Tag, HeartHandshake, Users, ShieldCheck, Lock, UserCog } from "lucide-react";
 
-/**
- * SEÇÃO: BENEFÍCIOS
- *
- * Composição (referência cliente — image-7):
- *  1. Cards brancos (Telemedicina · Telepsicologia · Assistência Funeral · Descontos)
- *     — sobrepostos ao final do Hero via margem negativa (-mt-20)
- *  2. Faixa azul-claro com selo "Impacto que transforma vidas"
- *  3. Faixa navy com 3 selos de confiança (Atendimento seguro / Profissionais / Dados protegidos)
- */
 export function Benefits() {
   const items = [
     { i: Stethoscope, hex: "#7FC8D4", t: "Telemedicina", s: "Consultas online com especialistas, 24/7" },

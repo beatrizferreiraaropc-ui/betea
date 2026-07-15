@@ -1,9 +1,6 @@
 import { MapPin, Building2, Activity, Users } from "lucide-react";
 import parceiros1 from "@/assets/parceiros-saude-1.svg.asset.json";
 import parceiros2 from "@/assets/parceiros-saude-2.svg.asset.json";
-
-// SEÇÃO: ATENDIMENTO / PARCEIROS DE SAÚDE
-// Estatísticas + duas faixas com logos reais dos parceiros (SVGs enviados pelo cliente).
 export function PartnersStats() {
   const stats = [
     { icon: MapPin, n: "26", l: "Estados + DF" },

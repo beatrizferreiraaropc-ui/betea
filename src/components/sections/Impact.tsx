@@ -1,7 +1,5 @@
 import { ArrowUp } from "lucide-react";
 import { site } from "@/config/site";
-
-// SEÇÃO: IMPACTO — CTA agora leva o visitante de volta à seção de planos (#planos)
 export function Impact() {
   const stats = [
     { n: site.impacto.familias, l: "famílias atendidas" },

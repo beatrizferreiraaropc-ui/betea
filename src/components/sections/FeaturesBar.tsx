@@ -1,6 +1,4 @@
 import { Globe, MapPin, Monitor, HeartHandshake, Network, Star } from "lucide-react";
-
-// SEÇÃO: FAIXA DE DIFERENCIAIS — cada ícone com cor da paleta oficial
 export function FeaturesBar() {
   const items = [
     { i: Globe, t: "Atendimento 100% online", hex: "#7FC8D4" },

@@ -3,17 +3,6 @@ import fundoBanner from "@/assets/fundo-banner.asset.json";
 import fundoBannerMobi from "@/assets/fundo-banner-mobi.asset.json";
 import { site } from "@/config/site";
 
-/**
- * SEÇÃO: HERO
- *
- * Mobile/Tablet: imagem da família ao fundo (lado direito inferior), textos à esquerda
- *                CTAs delicados lado a lado (pill laranja + pill outline branca)
- * Desktop:       coluna esquerda com headline + CTAs; coluna direita com card
- *                branco "Impacto que transforma vidas" (3 mini-stats coloridas)
- *
- * Padding inferior reforçado para acomodar a sobreposição da seção
- * Benefícios (margem negativa).
- */
 export function Hero() {
   return (
     <section id="hero" className="relative isolate overflow-hidden bg-hero-gradient text-white">

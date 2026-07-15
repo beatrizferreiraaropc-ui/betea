@@ -19,30 +19,32 @@ Site montado **somente com widgets nativos** do Elementor / Elementor Pro
 
 ## Ordem das seções no site
 
-| # | Arquivo                       | Componente React              |
-|---|-------------------------------|-------------------------------|
-| 01 | `01-header.md`                | `Header.tsx`                  |
-| 02 | `02-hero.md`                  | `Hero.tsx`                    |
-| 03 | `03-beneficios.md`            | `Benefits.tsx`                |
-| 04 | `04-planos.md`                | `Plans.tsx`                   |
-| 05 | `05-features-bar.md`          | `FeaturesBar.tsx`             |
-| 06 | `06-videos.md`                | `VideoSection.tsx`            |
-| 07 | `07-parceiros-stats.md`       | `PartnersStats.tsx`           |
-| 08 | `08-impacto.md`               | `Impact.tsx`                  |
-| 09 | `09-como-funciona.md`         | `HowItWorks.tsx`              |
-| 10 | `10-depoimentos.md`           | `Testimonials.tsx`            |
-| 11 | `11-sobre.md`                 | `About.tsx`                   |
-| 12 | `12-parceiros-logos.md`       | `Partners.tsx`                |
-| 13 | `13-embaixadores.md`          | `Ambassador.tsx`              |
-| 14 | `14-central-atendimento.md`   | `CentralAtendimento.tsx`      |
-| 15 | `15-acompanhamento.md`        | `Acompanhamento.tsx`          |
-| 16 | `16-footer.md`                | `Footer.tsx`                  |
+| # | Arquivo                          | Componente React              |
+|---|----------------------------------|-------------------------------|
+| 01 | `01-header.md`                  | `Header.tsx`                  |
+| 02 | `02-hero.md`                    | `Hero.tsx`                    |
+| 03 | `03-beneficios.md`              | `Benefits.tsx`                |
+| 04 | `04-planos.md`                  | `Plans.tsx`                   |
+| 05 | `05-features-bar.md`            | `FeaturesBar.tsx`             |
+| 06 | `06-videos.md`                  | `VideoSection.tsx`            |
+| 07 | `07-parceiros-stats.md`         | `PartnersStats.tsx`           |
+| 08 | `08-impacto.md`                 | `Impact.tsx`                  |
+| 09 | `09-como-funciona.md`           | `HowItWorks.tsx`              |
+| 10 | `10-depoimentos.md`             | `Testimonials.tsx`            |
+| 11 | `11-sobre.md`                   | `About.tsx`                   |
+| 12 | `12-cta-sobre.md`               | `CtaSobre.tsx`                |
+| 13 | `13-faq-video.md`               | `FaqVideo.tsx`                |
+| 14 | `14-embaixadores.md`            | `Ambassador.tsx`              |
+| 15 | `15-acompanhamento.md`          | `Acompanhamento.tsx`          |
+| 16 | `16-central-atendimento.md`     | `CentralAtendimento.tsx`      |
+| 17 | `17-footer.md`                  | `Footer.tsx`                  |
 
 A ordem acima é exatamente a ordem em que as seções devem aparecer na página.
 
-> **Importante:** a seção 14 (`Central de Atendimento`) é um bloco branco
-> que **sobrepõe** o final do bloco 13 (Embaixadores) usando margem
+> **Importante:** a seção 16 (`Central de Atendimento`) é um bloco branco
+> que **sobrepõe** o final do bloco 14 (Embaixadores) usando margem
 > negativa. Veja o CSS desse arquivo.
+
 
 ---
 

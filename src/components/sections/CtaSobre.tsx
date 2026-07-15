@@ -1,11 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { site } from "@/config/site";
 
-/**
- * SEÇÃO: CTA — CHAMADA PARA AÇÃO
- * Faixa navy com ornamentos SVG delicados (círculos concêntricos, ondas, dot-grid)
- * e halo pastel atrás do botão. Estilo "vidro/glow" sutil, sem sair da paleta.
- */
 export function CtaSobre() {
   return (
     <section id="cta-sobre" className="relative py-16 md:py-24 bg-hero-gradient text-white overflow-hidden">

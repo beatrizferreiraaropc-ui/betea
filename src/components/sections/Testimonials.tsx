@@ -1,6 +1,4 @@
 import { BadgeCheck, Star } from "lucide-react";
-
-// SEÇÃO: DEPOIMENTOS — gradiente azul pastel + cards glass (estilo "vidro Apple")
 export function Testimonials() {
   const items = [
     { q: "O Meu Clube TEA mudou nossa rotina. Conseguimos atendimento rápido e humanizado quando mais precisamos.", n: "Juliana A.", r: "Mãe de menina com TEA" },
