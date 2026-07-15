@@ -34,15 +34,7 @@
   --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
 }
 
-/* ===== PALETA OFICIAL — MEU CLUBE TEA (PASTEL) =====
-   Azul principal (do banner):     #3F74C2  → navy
-   Azul profundo (gradientes):     #2E5A9E  → navy-deep
-   Lilás suave (inclusão):         #B8A4E8  → violet
-   Lilás claro:                    #D6CAF2  → violet-light
-   Coral pastel (CTA):             #F3A35C  → orange
-   Teal pastel (acolhimento):      #7FC8D4  → teal
-   Pêssego (apoio):                #F6C9A8  → peach
-   =================================================== */
+
 
 :root {
   --radius: 0.875rem;
